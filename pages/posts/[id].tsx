@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export default function Post() {
 
@@ -8,6 +9,9 @@ export default function Post() {
 
 	return (
 	<>
+		<Head>
+			<title>Post {id} | Leonardo Carlassare</title>
+		</Head>
 		<h1>Post {id} </h1>
 		<h2>
 			<Link href = "/">
