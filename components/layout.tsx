@@ -6,13 +6,15 @@ import Link from 'next/link';
 import * as constants from '../public/constants';
 
 
-export default function Layout({
+export default function Layout(
+  {
     children,
     home
-  }: {
+  } : {
     children: React.ReactNode
     home?: boolean
-  }) {
+  }
+  ) {
     return (
       <div className={styles.container}>
         <Head>
