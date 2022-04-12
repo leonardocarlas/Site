@@ -2,24 +2,57 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from './../../styles/pages-styles/Post.module.scss';
+import { getAllPostIds, getPostData } from '../../utils/posts';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Layout from '../../components/layout';
+import Date from '../../components/date';
+import { constants } from 'buffer';
 
-export default function Post() {
 
-    const router = useRouter();
-    const { id } = router.query;
 
+export default function Post(
+	{
+		postData
+  	} : {
+		postData: {
+	  		title: string
+	  		date: string
+	  		contentHtml: string
+		}
+  	}) 
+{
 	return (
-	<>
+	  <Layout>
 		<Head>
-			<title>Post {id} | Leonardo Carlassare</title>
+		  <title>{postData.title} | Leonardo Carlassare</title>
 		</Head>
-		<h1>Post {id} </h1>
-		<h2>
-			<Link href = "/">
-				<a>Back to home</a>
-			</Link>
-		</h2>
-	</>
+		<article>
+		  <h1 className={styles.headingXl}>{postData.title}</h1>
+		  <div className={styles.lightText}>
+			<Date dateString={postData.date} />
+		  </div>
+		  <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+		</article>
+	  </Layout>
 	)
-	
-}
+  }
+
+  export const getStaticProps: GetStaticProps = async ({ params }) => {
+
+	const postData = await getPostData(params!.id as string);
+
+	return {
+	  props: {
+		postData
+	  }
+	}
+  }
+
+
+  export const getStaticPaths: GetStaticPaths = async () => {
+	const paths = getAllPostIds()
+	return {
+	  paths,
+	  fallback: false
+	}
+  }
