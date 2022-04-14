@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.scss'
-import * as constants from '../public/constants'
+import { Constants } from '../constants/constants';
 import { getSortedPostsData } from '../utils/posts'
 import { GetStaticProps } from 'next/types'
 import Link from 'next/link'
@@ -20,11 +20,11 @@ export default function Home({
   return (
     <Layout home>
       <Head>
-        <title>{constants.siteTitle}</title>
+        <title>{Constants.SITETITLE}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>{constants.shortIntroduction}</p>
-        <p>{constants.websiteDescription } </p>
+        <p>{ Constants.SHORTINTRODUCTION }</p>
+        <p>{ Constants.WEBSITEDESCRIPTION } </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>

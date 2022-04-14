@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './layout.module.scss';
 import utilStyles from '../styles/utils.module.scss';
 import Link from 'next/link';
-import * as constants from '../public/constants';
+import { Constants } from '../constants/constants';
 
 
 export default function Layout(
@@ -26,10 +26,10 @@ export default function Layout(
           <meta
             property="og:image"
             content={`https://og-image.vercel.app/${encodeURI(
-              constants.siteTitle
+              Constants.SITETITLE
             )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
           />
-          <meta name="og:title" content={constants.siteTitle} />
+          <meta name="og:title" content={Constants.SITETITLE} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
         <header className={styles.header}>
@@ -41,9 +41,9 @@ export default function Layout(
                 className={utilStyles.borderCircle}
                 height={144}
                 width={144}
-                alt={constants.name}
+                alt={Constants.NAME}
               />
-              <h1 className={utilStyles.heading2Xl}>{constants.name}</h1>
+              <h1 className={utilStyles.heading2Xl}>{Constants.NAME}</h1>
             </>
           ) : (
             <>
@@ -55,13 +55,13 @@ export default function Layout(
                     className={utilStyles.borderCircle}
                     height={108}
                     width={108}
-                    alt={constants.name}
+                    alt={Constants.NAME}
                   />
                 </a>
               </Link>
               <h2 className={utilStyles.headingLg}>
                 <Link href="/">
-                  <a className={utilStyles.colorInherit}>{constants.name}</a>
+                  <a className={utilStyles.colorInherit}>{Constants.NAME}</a>
                 </Link>
               </h2>
             </>
