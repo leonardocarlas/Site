@@ -16,7 +16,8 @@ export default function Header() {
 
     return (
     <div className={styles.headercontainer}>
-            <nav className='flex items-center flex-wrap place-content-between'>
+        <nav className="flex items-center justify-between flex-wrap z-10 ">
+            <div className="flex items-center flex-shrink-0">
                 <Link href={`/`}>
                     <a className='inline-flex items-center'>
                         <Image
@@ -27,27 +28,42 @@ export default function Header() {
                         <span className={styles.logoname}>{Constants.NAME}</span>
                     </a>
                 </Link>
+            </div>
 
-                <button className='inline-flex lg:hidden ml-auto nav-toggler'>
+            <div className="block lg:hidden">
+                <button id="nav-toggle" className="flex items-center">
                         <Image
                             src={menuPic}
                             width={20}
                             height={20}
                         />
                 </button>
+            </div>
 
-                <div className='hidden top-nav lg:inline-flex lg:flex-row lg:w-auto' id='dropdown'>
-                    <div className='lg:inline-flex lg:flex-row lg:ml-auto flex flex-col'>
-                        
+            <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block lg:pt-0" id="nav-content">
+                <div className=" lg:flex justify-end flex-1 items-center">
                         <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
                         <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
                         <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
                         <Button label={'Contact me!'}></Button>
-                    </div>
                 </div>
+            </div>
+        </nav>
 
-            </nav>
+
+        <div className="container">
+
         </div>
+
+        <Script id="show-banner" strategy="lazyOnload">
+            {`  //Javascript to toggle the menu
+		        document.getElementById('nav-toggle').onclick = function(){
+			        document.getElementById("nav-content").classList.toggle("hidden");
+		        }
+            `}
+        </Script>
+
+    </div>
 
     )
 }
