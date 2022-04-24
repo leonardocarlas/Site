@@ -1,0 +1,24 @@
+@import '../../styles/variables.module.scss';
+
+.subheadercontainer {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    align-content: center;
+    padding-right: 1.5rem;
+
+    
+
+    p {
+        display: inline;
+        padding: 0 0.4rem 0 0.4rem;
+    }
+    
+    .darkLightImage {
+        padding: 0 0.4rem 0 0.4rem;
+    }
+
+}
+

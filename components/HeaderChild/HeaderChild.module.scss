@@ -1,0 +1,30 @@
+
+.container {
+
+    a {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        text-decoration: none;
+        color: black;
+    }
+
+    max-height: fit-content;
+    margin-right: 0.1rem;
+    margin-left: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 5px;
+    
+
+    &:hover {
+        //border: 1px solid black;
+        //box-shadow: 0 0 0 2px #d0d0d0;
+        background-color: #d0d0d0;
+        //transition-delay: 0.1s; /* delays for 1 second */
+        //-webkit-transition-delay: 0.1s; /* for Safari & Chrome */
+    }
+}

@@ -1,0 +1,36 @@
+@import '../../styles/variables.module.scss';
+
+.headercontainer {
+
+    nav {
+
+        a {
+            .logo {
+                padding: 0.1rem;
+            }
+
+            .logoname {
+                
+                font-size: 20px;
+                color: black;
+                padding-left: 1rem;
+            }
+
+            text-decoration: none;
+        }
+
+        div {
+            p {
+                
+                display: inline;
+                padding: 10px;
+            }
+        }
+    }
+
+    padding:  1rem;
+    margin :  0;
+    border-bottom: 1px solid black;
+
+}
+

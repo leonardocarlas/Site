@@ -1,4 +1,4 @@
-import styles from './../../styles/pages-styles/Posts.module.scss';
+import styles from './Blog.module.scss';
 
 export default function Posts() {
     return (
