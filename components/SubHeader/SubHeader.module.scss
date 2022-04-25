@@ -7,18 +7,20 @@
     justify-content: end;
     align-items: center;
     align-content: center;
-    padding-right: 1.5rem;
-
-    
-
-    p {
-        display: inline;
+  
+    button {
+        
         padding: 0 0.4rem 0 0.4rem;
     }
-    
-    .darkLightImage {
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         padding: 0 0.4rem 0 0.4rem;
+        
     }
+    
 
 }
 

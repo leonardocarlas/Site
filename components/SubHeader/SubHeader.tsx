@@ -7,27 +7,44 @@ import menuPic from '../../public/svg/hamburger-menu.svg'
 import HeaderChild from '../HeaderChild/HeaderChild'
 import Button from '../Button/Button'
 import sunPic from '../../public/svg/sun.svg'
+import { useRouter } from 'next/router'
 
 
 
 export default function SubHeader() {
 
+    let router = useRouter();
+    let greeting = 
+        router.locale === 'en'
+        ? 'Hello'
+        : router.locale === 'it'
+        ? 'Ciao'
+        : router.locale === 'de'
+        ? 'Halo'
+        : '';
+    const changeLanguage = (language : string) => {
+
+        router.push(router.asPath, language)
+    }
 
     return (
         <div className={styles.subheadercontainer}>
-                <p>EN</p>
-                <p>IT</p>
-                <p>ES</p>
-                <p>PT</p>
-                <p>FR</p>
-                <p>DE</p>
+            <div>
                 <Image 
                     src={sunPic}
-                    className={styles.darkLightImage}
                     width={20}
                     height={20}
-                    alt={'Dark / light icon'}
+                    alt={'Dark / Light icon'}
                 />
+            </div>
+            <button onClick={() => changeLanguage('en')}>EN</button>
+            <button onClick={() => changeLanguage('it')}>IT</button>
+            <button>ES</button>
+            <button>PT</button>
+            <button>FR</button>
+            <a>{greeting}</a>
+            <button onClick={() => changeLanguage('de')}>DE</button>
+                
         </div>
     )
 }
