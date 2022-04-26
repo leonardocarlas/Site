@@ -8,43 +8,47 @@ import HeaderChild from '../HeaderChild/HeaderChild'
 import Button from '../Button/Button'
 import sunPic from '../../public/svg/sun.svg'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 
 
 export default function SubHeader() {
 
-    let router = useRouter();
-    let greeting = 
-        router.locale === 'en'
-        ? 'Hello'
-        : router.locale === 'it'
-        ? 'Ciao'
-        : router.locale === 'de'
-        ? 'Halo'
-        : '';
-    const changeLanguage = (language : string) => {
+    const router = useRouter();
+    const [darkmode, setDarkmode] = useState(false);
 
-        router.push(router.asPath, language)
+    const handleChangeDarkmode = () => {
+        if (darkmode)
+            setDarkmode(false);
+        else
+            setDarkmode(true);
+    }
+
+    const handleChangeLanguage = (language : string) => {
+        router.push(router.asPath, router.asPath, { locale: language });
     }
 
     return (
+       
         <div className={styles.subheadercontainer}>
-            <div>
+            <button 
+                className={styles.sunContainer} 
+                onClick={handleChangeDarkmode}
+            >
                 <Image 
                     src={sunPic}
                     width={20}
                     height={20}
                     alt={'Dark / Light icon'}
                 />
-            </div>
-            <button onClick={() => changeLanguage('en')}>EN</button>
-            <button onClick={() => changeLanguage('it')}>IT</button>
-            <button>ES</button>
-            <button>PT</button>
-            <button>FR</button>
-            <a>{greeting}</a>
-            <button onClick={() => changeLanguage('de')}>DE</button>
-                
+            </button>
+            <button onClick={() => handleChangeLanguage('en')}>EN</button>
+            <button onClick={() => handleChangeLanguage('it')}>IT</button>
+            <button onClick={() => handleChangeLanguage('es')}>ES</button>
+            <button onClick={() => handleChangeLanguage('pt')}>PT</button>
+            <button onClick={() => handleChangeLanguage('fr')}>FR</button>
+            <button onClick={() => handleChangeLanguage('de')}>DE</button>
         </div>
+     
     )
 }

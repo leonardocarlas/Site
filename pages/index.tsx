@@ -5,26 +5,30 @@ import { Constants } from '../constants/constants';
 import { getSortedPostsData } from '../utils/posts'
 import { GetStaticProps } from 'next/types'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
+import {Util} from '../utils/util'
 
 
-
-export default function IndexPage() {
+export default function Home() {
+  let router = useRouter();
+  let t = Util.getLocale(router);
+  console.log(t);
 
   return (
-    <Layout home>
+
+    <div>
       <Head>
         <title>{Constants.SITETITLE}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <Link href="/another" locale="fr">
-          <a>To /fr/another</a>
-        </Link>
-        <p>{ Constants.WEBSITEDESCRIPTION } </p>
-      </section>
-    </Layout>
-  )
-}
 
+      <p>Home page</p>
+
+      <p>{t?.intro}</p>
+      
+    </div>
+  )
+  
+}
 
 
 
