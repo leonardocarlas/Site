@@ -8,6 +8,7 @@ import langPic from '../../public/svg/language.svg'
 import Script from 'next/script'
 import HeaderChild from '../HeaderChild/HeaderChild'
 import Button from '../Button/Button'
+import router from 'next/router'
 
 
 
@@ -45,7 +46,7 @@ export default function Header() {
                         <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
                         <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
                         <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
-                        <Button label={'Contact me!'}></Button>
+                        <Button label={'Contact me!'} callback={() => {return router.push('/contact')}}></Button>
                 </div>
             </div>
         </nav>

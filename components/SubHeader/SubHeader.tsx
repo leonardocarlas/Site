@@ -20,8 +20,6 @@ export default function SubHeader() {
     const isDarkmode = useAppSelector((state) => state.darkmode);
     const dispatch = useAppDispatch();
 
-    console.log(isDarkmode); 
-
     const handleChangeLanguage = (language : string) => {
         router.push(router.asPath, router.asPath, { locale: language });
     }
@@ -29,7 +27,7 @@ export default function SubHeader() {
 
     return (
        
-        <div className={styles.subheadercontainer}>
+        <div className={ isDarkmode ?  styles.subheadercontainer : styles.class2 }>
             <button 
                 className={styles.sunContainer}
                 onClick={
