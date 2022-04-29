@@ -1,39 +1,43 @@
 import styles from './SubHeader.module.scss'
 import Image from 'next/image'
-import { Constants } from '../../constants/constants'
-import Link from 'next/link'
-import logoPic from '../../public/svg/paper-plane-outline.svg'
-import menuPic from '../../public/svg/hamburger-menu.svg'
-import HeaderChild from '../HeaderChild/HeaderChild'
-import Button from '../Button/Button'
 import sunPic from '../../public/svg/sun.svg'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+
+import { toggleDarkmode } from '../../redux/slices/darkmodeSlice'
+import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 
+// Define a type for the slice state
+interface DarkmodeState {
+    isDarkmode: boolean;
+}
 
 export default function SubHeader() {
 
     const router = useRouter();
-    const [darkmode, setDarkmode] = useState(false);
 
-    const handleChangeDarkmode = () => {
-        if (darkmode)
-            setDarkmode(false);
-        else
-            setDarkmode(true);
-    }
+    // The `state` arg is correctly typed as `RootState` already
+    const isDarkmode = useAppSelector((state) => state.darkmode);
+    const dispatch = useAppDispatch();
+
+    console.log(isDarkmode); 
 
     const handleChangeLanguage = (language : string) => {
         router.push(router.asPath, router.asPath, { locale: language });
     }
 
+
     return (
        
         <div className={styles.subheadercontainer}>
             <button 
-                className={styles.sunContainer} 
-                onClick={handleChangeDarkmode}
+                className={styles.sunContainer}
+                onClick={
+                    () => {
+                        dispatch(toggleDarkmode());
+                        console.log(isDarkmode);
+                    }
+                }
             >
                 <Image 
                     src={sunPic}
@@ -48,7 +52,10 @@ export default function SubHeader() {
             <button onClick={() => handleChangeLanguage('pt')}>PT</button>
             <button onClick={() => handleChangeLanguage('fr')}>FR</button>
             <button onClick={() => handleChangeLanguage('de')}>DE</button>
+
         </div>
      
     )
 }
+
+
