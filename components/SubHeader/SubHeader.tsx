@@ -5,31 +5,35 @@ import { useRouter } from 'next/router'
 
 import { toggleDarkmode } from '../../redux/slices/darkmodeSlice'
 import { useAppSelector, useAppDispatch } from '../../redux/hooks'
+import { useEffect } from 'react'
 
-
-// Define a type for the slice state
-interface DarkmodeState {
-    isDarkmode: boolean;
-}
 
 export default function SubHeader() {
 
     const router = useRouter();
 
     // The `state` arg is correctly typed as `RootState` already
-    const isDarkmode = useAppSelector((state) => state.darkmode);
+    const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
+
     const dispatch = useAppDispatch();
 
     const handleChangeLanguage = (language : string) => {
         router.push(router.asPath, router.asPath, { locale: language });
     }
 
+    useEffect (
+        () => {
+        //changing color of body with darkmode in useEffect
+        document.body.style.backgroundColor = isDarkmode ? "#292c35" : "#fff";
+      }, [isDarkmode]);
+
 
     return (
        
-        <div className={ isDarkmode ?  styles.subheadercontainer : styles.class2 }>
+        <div className={ isDarkmode ?  styles.subheaderContainerDark : styles.subheaderContainerLight }
+        >
             <button 
-                className={styles.sunContainer}
+                className={styles.iconContainer}
                 onClick={
                     () => {
                         dispatch(toggleDarkmode());
@@ -50,8 +54,9 @@ export default function SubHeader() {
             <button onClick={() => handleChangeLanguage('pt')}>PT</button>
             <button onClick={() => handleChangeLanguage('fr')}>FR</button>
             <button onClick={() => handleChangeLanguage('de')}>DE</button>
-
         </div>
+
+        
      
     )
 }
