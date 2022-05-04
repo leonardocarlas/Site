@@ -1,0 +1,53 @@
+@import '../../styles/variables.module.scss';
+
+
+//&:hover {
+    //border: 1px solid black;
+    //box-shadow: 0 0 0 2px #d0d0d0;
+    //background-color: #d0d0d0;
+    //transition-delay: 0.1s; /* delays for 1 second */
+    //-webkit-transition-delay: 0.1s; /* for Safari & Chrome */
+//}
+
+
+.containerDark {
+
+    a {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        text-decoration: none;
+        color: $white;
+
+        p {
+            margin: 1.2rem;
+        }
+    }
+    max-height: fit-content;
+    margin: 0 0.4rem 0 0.4rem;
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 5px; 
+}
+
+.containerLight {
+
+    a {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        text-decoration: none;
+        color: $black;
+
+        p {
+            margin: 1.2rem;
+        }
+    }
+    max-height: fit-content;
+    margin: 0 0.4rem 0 0.4rem;
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 5px; 
+}

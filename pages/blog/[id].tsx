@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import styles from './../../styles/pages-styles/Post.module.scss';
+import styles from './Post.module.scss';
 import { getAllPostIds, getPostData } from '../../utils/posts';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Layout from '../../components/layout';
-import Date from '../../components/date';
+import Layout from '../../components/Layout/layout';
+import Date from '../../components/Date/date';
 import { constants } from 'buffer';
 
 
