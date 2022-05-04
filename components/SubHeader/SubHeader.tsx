@@ -1,6 +1,7 @@
 import styles from './SubHeader.module.scss'
 import Image from 'next/image'
 import sunPic from '../../public/svg/sun.svg'
+import moonPic from  '../../public/svg/moon.svg'
 import { useRouter } from 'next/router'
 
 import { toggleDarkmode } from '../../redux/slices/darkmodeSlice'
@@ -21,17 +22,10 @@ export default function SubHeader() {
         router.push(router.asPath, router.asPath, { locale: language });
     }
 
-    useEffect (
-        () => {
-        //changing color of body with darkmode in useEffect
-        document.body.style.backgroundColor = isDarkmode ? "#292c35" : "#fff";
-      }, [isDarkmode]);
-
 
     return (
        
-        <div className={ isDarkmode ?  styles.subheaderContainerDark : styles.subheaderContainerLight }
-        >
+        <div className={ isDarkmode ?  styles.subheaderContainerDark : styles.subheaderContainerLight }>
             <button 
                 className={styles.iconContainer}
                 onClick={
@@ -41,12 +35,20 @@ export default function SubHeader() {
                     }
                 }
             >
+                {isDarkmode ? 
                 <Image 
                     src={sunPic}
                     width={20}
                     height={20}
-                    alt={'Dark / Light icon'}
+                    alt={'Sun icon'}
+                /> : 
+                <Image 
+                    src={moonPic}
+                    width={20}
+                    height={20}
+                    alt={'Moon icon'}
                 />
+                }
             </button>
             <button onClick={() => handleChangeLanguage('en')}>EN</button>
             <button onClick={() => handleChangeLanguage('it')}>IT</button>
