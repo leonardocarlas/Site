@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Constants } from '../../constants/constants';
 import Header from '../Header/Header';
 import SubHeader from '../SubHeader/SubHeader';
+import Footer from '../Footer/Footer';
 
 
 
@@ -32,7 +33,7 @@ export default function Layout( props : LayoutProps ) {
 
         <main>{props.children}</main>
 
-        
+        <Footer></Footer>
       </div>
     )
   }
