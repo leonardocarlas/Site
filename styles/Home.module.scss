@@ -1,0 +1,120 @@
+@import './variables.module.scss';
+@import './utils.module.scss';
+
+.firstContainerDark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem 3rem 1rem;
+    background-color: $black;
+
+    p {
+        color: $white;
+        text-align: center;
+    }
+    .imageContainer {
+        margin: 2rem 0 0 0;
+        .profilePic {
+            border: 1px $white solid;
+            border-radius: 9999px;
+        }
+    }
+}
+
+.firstContainerLight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem 3rem 1rem;
+    background-color: $white;
+
+    p {
+        color: $black;
+        text-align: center;
+    }
+    .imageContainer {
+        margin: 2rem 0 0 0;
+        .profilePic {
+            border: 1px $black solid;
+            border-radius: 9999px;
+        }
+    }
+}
+
+
+
+.secondContainer {
+    display: flex;
+    flex-direction: column;
+ 
+    align-items: center;
+    padding: 8rem 1rem 3rem 1rem;
+    background-image: linear-gradient(to right,  #0080ff , #5401a7);
+    height: 30rem;
+
+    p {
+        text-align: center;
+        color: $white;
+    }
+}
+
+
+
+
+.thirdContainerDark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $black;
+    color: $white;
+    height: 60rem;
+    p {
+        text-align: center;
+    }
+    .space {
+        height: 30rem;
+    }
+
+}
+
+.thirdContainerLight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white;
+    color: $black;
+    height: 60rem;
+    p {
+        text-align: center;
+    }
+    .space {
+        height: 30rem;
+    }
+
+}
+
+
+.startupContainer {
+    padding: 3rem 1rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right,  #0080ff , #5401a7);
+    color: $white;
+    button {
+        margin-top: 1rem;
+    }
+}
+
+.fourthContainerDark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $black;
+    padding: 3rem 1rem 3rem 1rem;
+}
+
+
+

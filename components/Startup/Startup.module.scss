@@ -1,0 +1,44 @@
+@import '../../styles/variables.module.scss';
+
+
+.startupContainer {
+    border-radius: 15px;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 2rem;
+    p {
+        color: $black;
+    }
+
+    .leftContainer {
+        width: 10rem;
+        height: 10rem;
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .rightContainer {
+        margin-left: 1rem;
+        max-width: 40rem;
+
+        p {
+            margin: 0.5rem 0 0.5rem 0;
+        }
+
+        .period {
+            color: rgb(80, 78, 78);
+        }
+
+    }
+}
+
+
+
