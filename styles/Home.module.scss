@@ -44,7 +44,6 @@
 }
 
 
-
 .secondContainer {
     display: flex;
     flex-direction: column;
@@ -64,35 +63,30 @@
 
 
 .thirdContainerDark {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $black;
     color: $white;
-    height: 60rem;
+    height: 40rem;
     p {
         text-align: center;
-    }
-    .space {
-        height: 30rem;
     }
 
 }
 
 .thirdContainerLight {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $white;
     color: $black;
-    height: 60rem;
+    height: 40rem;
     p {
         text-align: center;
     }
-    .space {
-        height: 30rem;
-    }
-
 }
 
 
@@ -113,8 +107,21 @@
     flex-direction: column;
     align-items: center;
     background-color: $black;
-    padding: 3rem 1rem 3rem 1rem;
+    padding: 1rem 1rem 3rem 1rem;
+    .imageContainer {
+        margin: 2rem 0 2rem 0;
+    }
 }
 
+.fourthContainerLight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white;
+    padding: 1rem 1rem 3rem 1rem;
+    .imageContainer {
+        margin: 2rem 0 2rem 0;
+    }
+}
 
 

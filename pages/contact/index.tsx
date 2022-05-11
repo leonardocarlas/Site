@@ -1,4 +1,5 @@
-
+import Language from "../../components/Language/Language";
+import esPic from '../../public/svg/flags/es.svg';
 
 
 
@@ -7,7 +8,7 @@ export default function Contact() {
     return (
 
         <div>
-            <p>Contact</p>
+            <Language language={'Reading - Speaking - Listening'} image={esPic} ></Language>
         </div>
 
     );

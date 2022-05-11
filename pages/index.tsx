@@ -68,8 +68,6 @@ export default function Home() {
         <p className={utilStyles.headingMd}>A brief introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua. Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
       </div>
 
-      <Board></Board>
-
       <div className={isDarkmode ? styles.thirdContainerDark : styles.thirdContainerLight}>
         <div className={styles.space}></div>
         <p className={utilStyles.headingXl} >My recent works</p>
@@ -77,17 +75,15 @@ export default function Home() {
         <p className={utilStyles.headingMd}>I developed the website for the following companies.</p>
       </div>
 
-
       <div className={styles.startupContainer}>
         <p className={utilStyles.headingXl} >Startup Projects Timeline</p>
-        <Startup img={collectionitePic} name={'Collectionite'} period={'July 2020 - May 2021'} link={'https://github.com/leonardocarlas/Collectionite'} isOnline={false} text={'Collectionite was a web application for european cards collectors that could track automatically card prices for them and it was also a social network for people with the same passion. W e began a collaboration with the german company CardMarket using their APIs for gathering datas. The startup failed in June 2021 due to bad management.'}></Startup>
         <p className={utilStyles.headingMd}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
         <Button label='Contact me' callback={() => {return router.push('/contact')}}></Button>
       </div>
 
       <div className={isDarkmode ? styles.fourthContainerDark : styles.fourthContainerLight}>
         
-        <div className={styles.imageStudyContainer}>
+        <div className={styles.imageContainer}>
           { isDarkmode ? 
             <Image
             src={bookPicWhite}
@@ -97,8 +93,8 @@ export default function Home() {
             ></Image>
             : <Image
             src={bookPic}
-            height={20}
-            width={20}
+            height={80}
+            width={80}
             alt={'book icon white'}
             ></Image>
           }
@@ -109,7 +105,7 @@ export default function Home() {
         <University name={'Universidade de Coimbra'} period={'September 2021 - February 2022'} program={'Erasmus+ for Thesis'} image={coimbraPic} ></University>
         <University name={'Università degli studi di Padova'} period={'October 2019 - April 2022'} program={'Computer Engineering - Master degree'} image={paduaPic}></University> 
           
-        <div className={styles.imageStudyContainer}>
+        <div className={styles.imageContainer}>
           { isDarkmode ? 
             <Image
             src={languagePicWhite}
@@ -119,20 +115,26 @@ export default function Home() {
             ></Image>
             : <Image
             src={languagePic}
-            height={20}
-            width={20}
+            height={80}
+            width={80}
             alt={'language icon white'}
             ></Image>
           }
         </div>
+
+
         <Language language={'Reading - Speaking - Listening'} image={esPic} ></Language>
         <Language language={'Native Language'} image={itPic} ></Language>
         <Language language={'B2 Level'} image={enPic} ></Language>
         <Language language={'Loading ...'} image={frPic} ></Language>
         <Language language={'Reading - Speaking'} image={ptPic} ></Language>
         
+
+
       </div>
+
     </>
+    
   )
   
 }
