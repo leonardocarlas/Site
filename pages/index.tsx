@@ -15,19 +15,14 @@ export default function Home() {
   console.log(t);
 
   return (
-
     <div>
       <Head>
         <title>{Constants.SITETITLE}</title>
       </Head>
-
       <p>Home page</p>
-
       <p>{t?.intro}</p>
-      
     </div>
   )
-  
 }
 
 

@@ -20,9 +20,6 @@ export default function Header() {
     return (
     <div className={ isDarkmode ?  styles.headerContainerDark : styles.headerContainerLight }>
         <nav className="flex items-center justify-between flex-wrap z-10 ">
-            
-            
-
             <div className="flex items-center flex-shrink-0">
                 <Link href={`/`}>
                     <a className='inline-flex items-center'>
@@ -35,7 +32,6 @@ export default function Header() {
                     </a>
                 </Link>
             </div>
-
             <div className={styles.hamburgerMenuContainer} >
                 <button id="nav-toggle" className={styles.hamburgerMenu}>
                         { isDarkmode ?
