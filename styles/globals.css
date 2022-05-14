@@ -30,3 +30,11 @@ img {
   max-width: 100%;
   display: block;
 }
+
+
+
+.cards {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
