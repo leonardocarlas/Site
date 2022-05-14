@@ -1,0 +1,51 @@
+@import './../../styles/variables.module.scss';
+@import './../../styles/utils.module.scss';
+
+@mixin background-svg {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.firstContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $black;
+    @include background-svg();
+    p {
+        margin: 4rem 0.5rem 0 0.5rem;
+        color: $white;
+        text-align: center;
+    }
+    .imageContainer {
+        margin: 2rem 0 0 0;
+        z-index: 10;
+        .profilePic {
+            border: 1px $white solid;
+            border-radius: 9999px;
+        }
+    }
+}
+
+
+
+@media (min-width:1024px){ 
+    .firstContainer {
+        aspect-ratio: 900/400;
+        background-image: url('../../public/svg/layer1.svg');
+    }
+}
+
+@media (max-width:1023px) {
+    .firstContainer {
+        aspect-ratio: 540/960;
+        background-image: url('../../public/svg/layer1mobile.svg');
+    }
+    .imageContainer {
+        display: none;
+    }
+}

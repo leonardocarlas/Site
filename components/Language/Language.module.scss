@@ -3,9 +3,10 @@
 
 .flipcard {
     background-color: transparent;
-    width: 22rem;
+    width: 20rem;
     height: 5rem;
     perspective: 1000px;
+    margin: 1rem 0.5rem 1rem 0.5rem;
 
     .flipcardinner {
         border-radius: 15px;
@@ -49,6 +50,7 @@
             border-radius: 15px;
             background-color: #ffffff;
             transform: rotateY(180deg);
+            text-align: center;
             
         }
     }

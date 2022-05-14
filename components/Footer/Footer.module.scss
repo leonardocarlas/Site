@@ -1,11 +1,11 @@
 @import '../../styles/variables.module.scss';
 
 .footerContainerDark {
-    margin-top: 50rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     background-color: $black;
     padding: 1rem;
 
@@ -43,6 +43,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     background-color: $white;
     padding: 1rem;
 

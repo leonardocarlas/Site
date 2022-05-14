@@ -18,21 +18,18 @@
     .leftContainer {
         width: 10rem;
         height: 10rem;
-        margin-right: 1rem;
+        align-self: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
     .rightContainer {
         margin-left: 1rem;
         max-width: 40rem;
-
         p {
             margin: 0.5rem 0 0.5rem 0;
         }
-
         .period {
             color: rgb(80, 78, 78);
         }

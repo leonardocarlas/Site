@@ -5,20 +5,13 @@ import { useState } from 'react';
 
 export type languageProps = {
     language : string,
-    image    : string
+    image    : string,
+    backText : string
 }; 
 
 
 
 export default function Language( props : languageProps ) {
-
-    const [isBackside, setIsBackside] = useState(false);
-
-    function handleClick() {
-       setIsBackside(!isBackside);
-       console.log(isBackside);
-    }
-
 
     return (
         <div className={styles.flipcard}>
@@ -36,7 +29,7 @@ export default function Language( props : languageProps ) {
                     <p className={utilStyles.headingMd}>{props.language}</p>
                 </div>
                 <div className={styles.flipcardback}>
-                    <p>Hola pendejo</p>
+                    <p>{props.backText}</p>
                 </div>
             </div>
         </div>
