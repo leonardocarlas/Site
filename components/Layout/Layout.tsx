@@ -7,24 +7,33 @@ import { Constants } from '../../constants/constants';
 import Header from '../Header/Header';
 import SubHeader from '../SubHeader/SubHeader';
 import Footer from '../Footer/Footer';
-import Card from '../Card/Card';
+
+
 
 export type LayoutProps = {
   children: React.ReactNode
 }
 
-export default function Layout(props: LayoutProps) {
+export default function Layout( props : LayoutProps ) {
+    
+
+
   return (
-    <div>
-      <Head>
-        <title>{Constants.SITETITLE}</title>
-      </Head>
-      <Header></Header>
-      <SubHeader></SubHeader>
-      
-      <main>{props.children}</main>
-      
-      <Footer></Footer>
-    </div>
-  )
-}
+      <div>
+        <Head>
+          <title>{Constants.SITETITLE}</title>
+        </Head>
+        <Header></Header>
+        <SubHeader></SubHeader>
+        
+        
+
+
+        
+
+        <main>{props.children}</main>
+
+        <Footer></Footer>
+      </div>
+    )
+  }
