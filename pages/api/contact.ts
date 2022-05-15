@@ -18,14 +18,14 @@ export default async function handler(
             host : 'smtp.gmail.com',
             port : 465,
             auth : {
-                user : 'collectionsight@gmail.com',
-                pass : 'Dragalge3'
+                user : '',
+                pass : ''
             }
         });
     
         let options = {
             from : `${req.body.email}`,
-            to   : 'lio.del.bronx@gmail.com',
+            to   : '',
             subject: `${req.body.subject}`,
             text: `${req.body.message}`,
         };
