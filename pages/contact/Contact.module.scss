@@ -1,0 +1,23 @@
+@import '../../styles/variables.module.scss';
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0.5rem;
+
+    .imageContainer {
+        &:hover {
+            cursor: pointer;
+        }
+        background-color: $white;
+        border: 1px $black solid;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

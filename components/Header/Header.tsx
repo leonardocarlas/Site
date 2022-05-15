@@ -78,8 +78,4 @@ export default function Header() {
     </div>
 
     )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> homepage
