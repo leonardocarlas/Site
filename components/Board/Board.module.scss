@@ -1,0 +1,84 @@
+@import '../../styles/variables.module.scss';
+
+.boardContainer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .board {
+        border-radius: 15px;
+        margin-top: 15rem;
+        position: absolute;
+        z-index: 2;
+        background-color: $white;
+        width: 60rem;
+        height: 30rem;
+
+        .up {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            border-bottom: 1px $black solid;
+            .one {
+                width: 10rem;
+                text-align: center;
+                padding-top: 2rem;
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 18rem;
+                p {
+                    margin: 1rem;
+                }
+            }
+            .two {
+                width: 10rem;
+                text-align: center;
+                padding-top: 2rem;
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p {
+                    margin: 1rem;
+                }
+            }
+            .three {
+                width: 10rem;
+                text-align: center;
+                padding-top: 2rem;
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p {
+                    margin: 1rem;
+                }
+            }
+        }
+
+        .down {
+            text-align: center;
+            padding-top: 1rem;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            p {
+                margin: 1rem;
+            }
+
+        }
+    }
+}
+
+@media (max-width:1023px){
+    .boardContainer {
+        display : none;
+    }
+}

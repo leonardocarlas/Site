@@ -63,3 +63,80 @@
             </Link>
           </div>
         )}
+
+
+
+
+
+        <>
+        <div className={styles.languageContainer} onClick={handleClick}>
+            <div className={isBackside? styles.card : styles.flipped}>
+               
+                <div className={styles.back}>
+                    Hola pendejo
+                </div>
+    
+                <div className={styles.front}>
+                    <div className={styles.leftContainer}>
+                        <Image
+                            src={props.image}
+                            height={30}
+                            width={30}
+                        />
+                    </div>
+                    <p className={utilStyles.headingMd}>{props.language}</p>
+                </div>
+                
+            </div>
+        </div>
+        </>
+
+
+
+
+
+        <Language language={'Reading - Speaking - Listening'} image={esPic} ></Language>
+        <Language language={'Native Language'} image={itPic} ></Language>
+        <Language language={'B2 Level'} image={enPic} ></Language>
+        <Language language={'Loading ...'} image={frPic} ></Language>
+        <Language language={'Reading - Speaking'} image={ptPic} ></Language>
+        
+
+
+
+      
+
+        <div className={styles.imageContainer}>
+          { isDarkmode ? 
+            <Image
+            src={bookPicWhite}
+            height={80}
+            width={80}
+            alt={'book icon'}
+            ></Image>
+            : <Image
+            src={bookPic}
+            height={80}
+            width={80}
+            alt={'book icon white'}
+            ></Image>
+          }
+        </div>
+
+
+        <div className={styles.imageContainer}>
+          { isDarkmode ? 
+            <Image
+            src={languagePicWhite}
+            height={80}
+            width={80}
+            alt={'language icon'}
+            ></Image>
+            : <Image
+            src={languagePic}
+            height={80}
+            width={80}
+            alt={'language icon white'}
+            ></Image>
+          }
+        </div>
