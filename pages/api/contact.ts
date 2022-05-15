@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer, {Transporter} from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
-import * as http from 'http'; 
 
 type Data = {
     name: string
@@ -13,6 +12,7 @@ export default async function handler(
 ) {
 
     try {
+        // the gmail account that should send me the mail
         let transporter : Transporter =
         nodemailer.createTransport({
             host : 'smtp.gmail.com',
@@ -22,15 +22,22 @@ export default async function handler(
                 pass : ''
             }
         });
-    
+        
         let options = {
             from : `${req.body.email}`,
-            to   : '',
+            to   : '',          // info@leonardocarlassare.com
             subject: `${req.body.subject}`,
             text: `${req.body.message}`,
         };
     
-        let result : SMTPTransport.SentMessageInfo = await transporter.sendMail(options)
+        let result1 : SMTPTransport.SentMessageInfo = await transporter.sendMail(options);
+
+        options.to = `${req.body.email}`;
+        options.subject = 'Your message has been sent';
+        options.text = 'Thank you for contacting us. We will reply you as soon as possible';
+
+        let result2 : SMTPTransport.SentMessageInfo = await transporter.sendMail(options);
+
         res.status(200).json({ name: 'The email has been sent' });
     }
     catch(error) {

@@ -4,8 +4,9 @@ type MyFunctionType = () => {};
 
 export type ButtonProps = {
     label: string,
-    callback : MyFunctionType;
-    variant? : 'sm' | 'big' | 'submit'
+    callback? : MyFunctionType,
+    variant? : 'sm' | 'big' | 'submit',
+    type? : string
 }
 
 export default function Button(props : ButtonProps) {
