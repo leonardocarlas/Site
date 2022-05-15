@@ -29,7 +29,9 @@ import Board from '../components/Board/Board';
 import University from '../components/University/University';
 import Language from '../components/Language/Language';
 import Section1 from '../components/Section1/Section1';
-
+import Card from '../components/Card/Card';
+import cdcLOGO from '../public/svg/cdcLOGO.svg';
+import ecobraciLOGO from '../public/svg/ecobraciLOGO.svg';
 export default function Home() {
 
   let router = useRouter();
@@ -60,13 +62,14 @@ export default function Home() {
 
       <div className={isDarkmode ? styles.thirdContainerDark : styles.thirdContainerLight}>
         <div className={styles.space}></div>
-        <p className={utilStyles.titleWhite} >My recent works</p>
-        <br></br>
+        <p className={utilStyles.titleWhite} >Recent Works</p>
         <p className={utilStyles.headingMd}>I developed the website for the following companies.</p>
+        <Card img={cdcLOGO} title={'C.D.C. Costruzioni Edili'} link={'www.cdccostruzioniedili.it'} alt={'CDC Costruzioni Edili logo'}></Card>
+        <Card img={ecobraciLOGO} title={'Ecobraci Group'} link={'www.ecobracigroup.it'} alt={'Ecobraci Group Logo'}></Card>
       </div>
 
       <div className={styles.startupContainer}>
-        <p className={utilStyles.titleWhite} >Startup Projects Timeline</p>
+        <p className={utilStyles.titleWhite} >My Projects</p>
         <Startup img={collectionitePic} name={'Collectionite'} period={'July 2020 - June 2021'} link={'https://github.com/leonardocarlas/Collectionite-code'} isOnline={false} text={'Collectionite was a web application for european cards collectioners that could track automatically cards prices for them and it was also a social network for people with the same passion. We began a collaboration with the german company CardMarket using their APIs for gathering datas. The development process ended in June 2021'}></Startup>
         <p className={utilStyles.headingMd}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
         <Button label='Contact me' callback={() => {return router.push('/contact')}}></Button>
@@ -74,7 +77,7 @@ export default function Home() {
 
       <div className={isDarkmode ? styles.fourthContainerDark : styles.fourthContainerLight}>
         
-        <p className={utilStyles.titleWhite}>My Studies career</p>
+        <p className={utilStyles.titleWhite}>Study Career</p>
 
         <University name={'Università degli studi di Padova'} period={'October 2016 - September 2019'} program={'Computer Engineering - Bachelor degree'} image={paduaPic} link={'https://www.unipd.it/en/'}></University>
         <University name={'Universidad de Castilla La Mancha'} period={'January 2020 - July 2020'} program={'Erasmus+ for Studies'} image={uclmPic} link={'https://www.uclm.es/'} ></University>
@@ -105,5 +108,5 @@ export default function Home() {
 
 
 
-
+// <Card img={logoCDC} title={'C.D.C. Costruzioni Edili'} author={''}></Card>
 
