@@ -7,7 +7,7 @@
  * @param fromLanguage : can be ['Spanish', 'Portuguese', 'French', 'English', 'German', 'Italian']
  * @param toLanguage : can be ['Spanish', 'Portuguese', 'French', 'English', 'German', 'Italian'] 
  */
-module.exports.translate = (word, fromLanguage, toLanguage) => {
+    module.exports.translate = (word, fromLanguage, toLanguage) => {
 
     const Reverso = require('reverso-api');
     const reverso = new Reverso();
