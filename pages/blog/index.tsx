@@ -16,12 +16,8 @@ export default function Blog( allPostsData : Array<blogPost> ) {
     
     return (
         <>
-            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <h2 className={utilStyles.headingLg}>Blog</h2>
-                <ul className={utilStyles.list}>
-                
-                </ul>
-            </section>
+            <p className={`${styles.element} ${utilStyles.titleBlack} ${'text-5xl'}`}
+            >Coming sooooonn</p>                
         </>
     );
 }
