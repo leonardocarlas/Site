@@ -1,4 +1,8 @@
 import * as t from './translations';
 
+import Translation from './Translation';
 
-console.log(t.translate('Dog', 'English', 'German'));
+
+
+let s = t.translate('Dog', 'English', 'German');
+console.log(s);

@@ -5,14 +5,13 @@ import { useState } from 'react';
 
 export type TranslationCardProps = {
     image : string,
-    language : string, 
+    language : string,
+    word : string,
+    phrase : string
 }
 
 
 export default function TranslationCard(props : TranslationCardProps) {
-
-    const [translatedWord, setTranslatedWord] = useState('gatto');
-    const [context, setContext] = useState('Il gatto è nel sacco');
 
     return (
         <>
@@ -29,8 +28,8 @@ export default function TranslationCard(props : TranslationCardProps) {
                   <p className={utilStyles.headingMd}>{props.language}</p>
                 </div>
 
-                <p>{translatedWord}</p>
-                <p>{context}</p>
+                <p>{props.word}</p>
+                <p>{props.phrase}</p>
             </div>
         </>
     );

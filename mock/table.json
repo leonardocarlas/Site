@@ -1,0 +1,50 @@
+{
+    "words" : [
+        {
+            "pt" : "cao",
+            "es" : "perro",
+            "it" : "cane",
+            "fr" : "chain",
+            "en" : "dog",
+            "de" : "hund"
+        },
+        {
+            "pt" : "gato",
+            "es" : "gato",
+            "it" : "gatto",
+            "fr" : "chat",
+            "en" : "cat",
+            "de" : "katze"
+        },
+        {
+            "pt" : "casa",
+            "es" : "casa",
+            "it" : "casa",
+            "fr" : "maison",
+            "en" : "house",
+            "de" : ""
+        },
+        {
+            "pt" : "amigo",
+            "es" : "amigo",
+            "it" : "amico",
+            "fr" : "ami",
+            "en" : "friend",
+            "de" : ""
+        }
+    ],
+    "phrases" : [
+        {
+            "pt" : "Eu tenho um cao",
+            "es" : "Jo tengo un perro",
+            "it" : "Io ho un cane",
+            "fr" : "J'ai un chain",
+            "en" : "I have a dog",
+            "de" : "Ich habe eine hund"
+        }
+    ]
+}
+
+
+
+
