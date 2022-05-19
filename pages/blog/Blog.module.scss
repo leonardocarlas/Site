@@ -1,0 +1,23 @@
+@import '../../styles/variables.module.scss'; 
+@import '../../styles/utils.module.scss';
+
+
+.element {
+    animation: pulse 5s infinite;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    margin: 20rem 0 20rem;
+}
+  
+
+
+@keyframes pulse {
+    0%, 100% {
+      color: $leoblue;
+    }
+    50% {
+      color: $leoviolet;
+    }
+}
