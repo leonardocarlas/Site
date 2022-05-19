@@ -140,3 +140,13 @@
             ></Image>
           }
         </div>
+
+
+async function handleSubmit (e : SyntheticEvent) {
+    e.preventDefault();
+    console.log(form);
+    console.log( t.translate(form.word, languages[parseInt(form.from)], languages[5]) );
+}
+
+
+<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
