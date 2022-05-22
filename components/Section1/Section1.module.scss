@@ -23,10 +23,9 @@
     }
     .imageContainer {
         margin: 2rem 0 0 0;
-        z-index: 10;
         .profilePic {
             border: 1px $white solid;
-            border-radius: 9999px;
+            border-radius: 15px;
         }
     }
 }

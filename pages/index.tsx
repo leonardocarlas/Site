@@ -3,17 +3,11 @@ import Layout from '../components/Layout/Layout'
 import styles from '../styles/Home.module.scss'
 import utilStyles from '../styles/utils.module.scss';
 import { Constants } from '../constants/constants';
-import { getSortedPostsData } from '../utils/posts'
-import { GetStaticProps } from 'next/types'
-import Link from 'next/link'
 import { useRouter } from 'next/router';
 import {Util} from '../utils/util'
 import { useAppSelector } from '../redux/hooks';
 import Image from 'next/image';
 import Button from '../components/Button/Button';
-import bookPic from '../public/svg/book.svg';
-import bookPicWhite from '../public/svg/white/book-white.svg';
-import languagePic from '../public/svg/language.svg';
 import paduaPic from '../public/svg/padua.svg';
 import uclmPic from '../public/svg/uclm.svg';
 import coimbraPic from '../public/svg/coimbra.svg';
@@ -32,6 +26,7 @@ import Section1 from '../components/Section1/Section1';
 import Card from '../components/Card/Card';
 import cdcLOGO from '../public/svg/cdcLOGO.svg';
 import ecobraciLOGO from '../public/svg/ecobraciLOGO.svg';
+import TimelineSection from '../components/TimelineSection/TimelineSection';
 export default function Home() {
 
   let router = useRouter();
@@ -61,12 +56,14 @@ export default function Home() {
       </div>
 
       <div className={isDarkmode ? styles.thirdContainerDark : styles.thirdContainerLight}>
-        <div className={styles.space}></div>
-        <p className={utilStyles.titleWhite} >Recent Works</p>
-        <p className={utilStyles.headingMd}>I developed the website for the following companies.</p>
-        <Card img={cdcLOGO} title={'C.D.C. Costruzioni Edili'} link={'www.cdccostruzioniedili.it'} alt={'CDC Costruzioni Edili logo'}></Card>
-        <Card img={ecobraciLOGO} title={'Ecobraci Group'} link={'www.ecobracigroup.it'} alt={'Ecobraci Group Logo'}></Card>
-      </div>
+          <Board></Board>
+          <p className={utilStyles.titleWhite} >Recent Works</p>
+          <p className={utilStyles.headingMd}>I developed the website for the following companies.</p>
+          <div className={'flex flex-row flex-wrap justify-center'}>
+            <Card img={cdcLOGO} title={'C.D.C. Costruzioni Edili'} link={'www.cdccostruzioniedili.it'} alt={'CDC Costruzioni Edili logo'}></Card>
+            <Card img={ecobraciLOGO} title={'Ecobraci Group'} link={'www.ecobracigroup.it'} alt={'Ecobraci Group Logo'}></Card>
+          </div>
+        </div>
 
       <div className={styles.startupContainer}>
         <p className={utilStyles.titleWhite} >My Projects</p>
@@ -75,16 +72,9 @@ export default function Home() {
         <Button label='Contact me' callback={() => {return router.push('/contact')}}></Button>
       </div>
 
-      <div className={isDarkmode ? styles.fourthContainerDark : styles.fourthContainerLight}>
-        
-        <p className={utilStyles.titleWhite}>Study Career</p>
+      <TimelineSection></TimelineSection>
 
-        <University name={'Università degli studi di Padova'} period={'October 2016 - September 2019'} program={'Computer Engineering - Bachelor degree'} image={paduaPic} link={'https://www.unipd.it/en/'}></University>
-        <University name={'Universidad de Castilla La Mancha'} period={'January 2020 - July 2020'} program={'Erasmus+ for Studies'} image={uclmPic} link={'https://www.uclm.es/'} ></University>
-        <University name={'Universidade de Coimbra'} period={'September 2021 - February 2022'} program={'Erasmus+ for Thesis'} image={coimbraPic} link={'https://www.uc.pt/'} ></University>
-        <University name={'Università degli studi di Padova'} period={'October 2019 - April 2022'} program={'Computer Engineering - Master degree'} image={paduaPic} link={'https://www.unipd.it/en/'}></University> 
-          
-      </div>
+
 
       <div className={isDarkmode ? styles.fifthContainerDark : styles.fifthContainerLight}>
         <p className={utilStyles.titleWhite}>Languages I'm trying to learn</p>
@@ -111,3 +101,8 @@ export default function Home() {
 
 // <Card img={logoCDC} title={'C.D.C. Costruzioni Edili'} author={''}></Card>
 
+/*
+
+
+
+        */

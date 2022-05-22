@@ -1,6 +1,7 @@
 import finalPropsSelectorFactory from 'react-redux/es/connect/selectorFactory'
 import styles from './Card.module.scss'
 import Image from 'next/image';
+import Link from 'next/link';
 
 export type CardProps = {
     img: string,
@@ -8,6 +9,8 @@ export type CardProps = {
     link: string
     alt: string
 }
+
+
 
 export default function Card(props : CardProps) {
     return (
@@ -22,7 +25,7 @@ export default function Card(props : CardProps) {
                 />
             </div>
             <p>{props.title}</p>
-            <a href={props.link} target="_blank">View website</a>
+            <Link href={props.link}><a target='_blank'>View website</a></Link>
         </div>
     )
 }

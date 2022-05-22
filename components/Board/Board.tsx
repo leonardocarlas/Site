@@ -2,7 +2,7 @@ import styles from './Board.module.scss';
 import Image from 'next/image';
 import frontedPic from '../../public/svg/frontend.svg';
 import dbPic from '../../public/svg/db.svg';
-import devopsPic from '../../public/svg/devops.svg';
+import devopsPic from '../../public/svg/operations.svg';
 import codePic from '../../public/svg/code.svg';
 import utilStyles from '../../styles/utils.module.scss';
 
@@ -13,7 +13,7 @@ export default function Board () {
         <div className={styles.boardContainer}>
             <div className={styles.board}>
                 <div className={styles.up}>
-                    <div className={styles.one}>
+                    <div className={styles.card}>
                         <p className={utilStyles.headingMd}>Frontend Skills</p>
                         <div>
                             <Image
@@ -23,12 +23,12 @@ export default function Board () {
                             />
                         </div>
                         <p>Next.js, React, Angular,
-                            UX/UI design, <br></br> CSS, Scss, Sass,
+                            CSS, Scss, Sass,
                             Typescript, Javascript, Flutter, Dart
                         </p>
                     </div>
-                    <div className={styles.two}>
-                    <p className={utilStyles.headingMd}>Backend Skills</p>
+                    <div className={styles.card}>
+                        <p className={utilStyles.headingMd}>Backend Skills</p>
                         <div>
                             <Image
                                 src={dbPic}
@@ -40,7 +40,7 @@ export default function Board () {
                            MySQL, PostgreSQL, SQL, Mongodb
                         </p>
                     </div>
-                    <div className={styles.three}>
+                    <div className={styles.card}>
                         <p className={utilStyles.headingMd}>DevOps Skills</p>
                         <div>
                             <Image
@@ -52,7 +52,7 @@ export default function Board () {
                         <p>GitHub Actions, Git, Jira</p>
                     </div>
                 </div>
-                <div className={styles.down}>
+                <div className={`${styles.card} ${styles.noborder}`} >
                     <p className={utilStyles.headingMd}>Other programming languages</p>
                     <div>
                         <Image
