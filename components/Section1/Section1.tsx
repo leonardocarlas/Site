@@ -20,10 +20,10 @@ export default function Section1() {
             <div className={styles.imageContainer}>
                 <Image
                     priority
-                    src="/images/profile.jpg"
-                    className={utilStyles.borderCircle}
-                    height={200}
-                    width={200}
+                    src="/images/leo.jpg"
+                    height={400}
+                    width={300}
+                    className={styles.profilePic}
                     alt={Constants.NAME}
                 ></Image>
             </div>
