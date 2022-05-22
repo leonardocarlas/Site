@@ -74,9 +74,27 @@
 }
 
 .subtitleBlack {
+    text-align: center;
     font-size: 1.5rem;
     line-height: 1.4;
     margin: 1rem 0;
+    color: $black;
+}
+
+.subtitleWhite {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin: 1rem 0;
+    color: $white;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .column {
