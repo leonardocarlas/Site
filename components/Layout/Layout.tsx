@@ -8,16 +8,12 @@ import Header from '../Header/Header';
 import SubHeader from '../SubHeader/SubHeader';
 import Footer from '../Footer/Footer';
 
-
-
 export type LayoutProps = {
   children: React.ReactNode
 }
 
 export default function Layout( props : LayoutProps ) {
     
-
-
   return (
       <div>
         <Head>
@@ -26,14 +22,7 @@ export default function Layout( props : LayoutProps ) {
         </Head>
         <Header></Header>
         <SubHeader></SubHeader>
-        
-        
-
-
-        
-
         <main>{props.children}</main>
-
         <Footer></Footer>
       </div>
     )

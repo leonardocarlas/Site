@@ -8,43 +8,37 @@
     background-size: cover;
 }
 
-.firstContainer {
+.firstContainerDark, .firstContainerLight {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    background-color: $black;
     @include background-svg();
     p {
         margin: 4rem 0.5rem 0 0.5rem;
-        color: $white;
         text-align: center;
     }
-    .imageContainer {
-        margin: 2rem 0 0 0;
-        .profilePic {
-            border: 1px $white solid;
-            border-radius: 15px;
-        }
-    }
+}
+
+.firstContainerDark {
+    background-color: $black;
+    color: $white;
 }
 
 
 
 @media (min-width:1024px){ 
-    .firstContainer {
+    .firstContainerDark, .firstContainerLight {
         aspect-ratio: 900/400;
         background-image: url('../../public/svg/layer1.svg');
     }
 }
 
 @media (max-width:1023px) {
-    .firstContainer {
+    .firstContainerDark, .firstContainerLight  {
         aspect-ratio: 540/960;
         background-image: url('../../public/svg/layer1mobile.svg');
     }
-    .imageContainer {
-        display: none;
-    }
+
 }
