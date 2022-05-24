@@ -22,6 +22,7 @@ export default function Layout( props : LayoutProps ) {
       <div>
         <Head>
           <title>{Constants.SITETITLE}</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <Header></Header>
         <SubHeader></SubHeader>

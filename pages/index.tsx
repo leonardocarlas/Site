@@ -27,14 +27,16 @@ import Card from '../components/Card/Card';
 import cdcLOGO from '../public/svg/cdcLOGO.svg';
 import ecobraciLOGO from '../public/svg/ecobraciLOGO.svg';
 import TimelineSection from '../components/TimelineSection/TimelineSection';
+import Link from 'next/link';
+
+
+
 export default function Home() {
 
   let router = useRouter();
   let t = Util.getLocale(router);
   console.log(t);
   //<p>{t?.intro}</p>
-
-
 
   const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
@@ -43,6 +45,7 @@ export default function Home() {
     <>
       <Head>
         <title>{Constants.SITETITLE}</title>
+        
       </Head>
 
       <Section1></Section1>
@@ -52,16 +55,16 @@ export default function Home() {
       <div className={styles.secondContainer}>
         <p className={utilStyles.heading2Xl}>Hi! Nice to meet you.</p>
         <br></br>
-        <p className={utilStyles.headingMd}>A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua.<br></br> Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
+        <p className={utilStyles.headingLg}>A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua.<br></br> Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
       </div>
 
-      <div className={isDarkmode ? styles.thirdContainerDark : styles.thirdContainerLight}>
+      <div className={isDarkmode ? styles.workContainerDark : styles.workContainerLight}>
           <Board></Board>
-          <p className={utilStyles.titleWhite} >Recent Works</p>
-          <p className={utilStyles.headingMd}>I developed the website for the following companies.</p>
-          <div className={'flex flex-row flex-wrap justify-center'}>
-            <Card img={cdcLOGO} title={'C.D.C. Costruzioni Edili'} link={'www.cdccostruzioniedili.it'} alt={'CDC Costruzioni Edili logo'}></Card>
-            <Card img={ecobraciLOGO} title={'Ecobraci Group'} link={'www.ecobracigroup.it'} alt={'Ecobraci Group Logo'}></Card>
+          <p className={utilStyles.heading2Xl} >Recent Works</p>
+          <p className={utilStyles.headingLg}>I developed the website for the following companies.</p>
+          <div className={'flex flex-row flex-wrap justify-center p-10'}>
+            <Link href={'www.cdccostruzioniedili.it'}><a className={'mx-5'}><Image src={cdcLOGO} width={250} height={250}></Image></a></Link>
+            <Link href={'www.ecobracigroup.it'}><a className={'mx-5'}><Image src={ecobraciLOGO} width={250} height={250}></Image></a></Link>
           </div>
         </div>
 
@@ -73,8 +76,6 @@ export default function Home() {
       </div>
 
       <TimelineSection></TimelineSection>
-
-
 
       <div className={isDarkmode ? styles.fifthContainerDark : styles.fifthContainerLight}>
         <p className={utilStyles.titleWhite}>Languages I'm trying to learn</p>
@@ -94,15 +95,3 @@ export default function Home() {
   )
   
 }
-
-
-
-
-
-// <Card img={logoCDC} title={'C.D.C. Costruzioni Edili'} author={''}></Card>
-
-/*
-
-
-
-        */

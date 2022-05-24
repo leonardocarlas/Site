@@ -16,7 +16,7 @@ export default function Section1() {
     return (
         <div className={isDarkmode ? styles.firstContainer : styles.firstContainer}>
             <p className={utilStyles.heading2Xl}>My name is Leonardo Carlassare.<br></br>I'm a Software Engineer.</p>
-            <p className={utilStyles.headingXl}>I like to code, to work on startups and to learn new things every day.</p>
+            <p className={utilStyles.headingLg}>I like to code, to work on startups and to learn new things every day.</p>
             <div className={styles.imageContainer}>
                 <Image
                     priority

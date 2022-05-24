@@ -18,64 +18,43 @@ export default function Header() {
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
     return (
-    <div className={ isDarkmode ?  styles.headerContainerDark : styles.headerContainerLight }>
-        <nav className="flex items-center justify-between flex-wrap z-10 ">
-            
-            
-
-            <div className="flex items-center flex-shrink-0">
-                <Link href={`/`}>
-                    <a className='inline-flex items-center'>
-                        <Image
-                            src={logoPic}
-                            width={80}
-                            height={80}
-                            className={styles.logo} />
-                        <span className={styles.logoname}>{Constants.NAME}</span>
-                    </a>
-                </Link>
-            </div>
-
-            <div className={styles.hamburgerMenuContainer} >
-                <button id="nav-toggle" className={styles.hamburgerMenu}>
-                        { isDarkmode ?
-                            <Image
-                                src={menuPicWhite}
-                                width={20}
-                                height={20}
-                                
-                            />
-                            :
-                            <Image
-                                src={menuPic}
-                                width={20}
-                                height={20}
-                            />
-                        }
+        <nav className="navbar navbar-expand-lg">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="#">Navbar</a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
                 </button>
-            </div>
-
-            <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block lg:pt-0" id="nav-content">
-                <div className={styles.dropdownMenu}>
-                        <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
-                        <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
-                        <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
-                        <Button label={'Contact me!'} callback={() => {return router.push('/contact')}}></Button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li className="nav-item">
+                    <a className="nav-link" href="#">Link</a>
+                    </li>
+                    <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a className="dropdown-item" href="#">Action</a></li>
+                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                        <li><hr className="dropdown-divider"></hr></li>
+                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                    </li>
+                    <li className="nav-item">
+                    <a className="nav-link disabled" href="#" tabIndex={-1} aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form className="d-flex">
+                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+                    <button className="btn btn-outline-success" type="submit">Search</button>
+                </form>
                 </div>
             </div>
-        </nav>
-
-
-
-        <Script id="show-banner" strategy="lazyOnload">
-            {`  //Javascript to toggle the menu
-		        document.getElementById('nav-toggle').onclick = function(){
-			        document.getElementById("nav-content").classList.toggle("hidden");
-		        }
-            `}
-        </Script>
-
-    </div>
+    </nav>
 
     )
 }
+
