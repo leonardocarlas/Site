@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
       <div className={styles.startupContainer}>
-        <p className={utilStyles.titleWhite} >My Projects</p>
+        <p className={utilStyles.titleWhite}>My Projects</p>
         <Startup img={collectionitePic} name={'Collectionite'} period={'July 2020 - June 2021'} link={'https://github.com/leonardocarlas/Collectionite-code'} isOnline={false} text={'Collectionite was a web application for european cards collectioners that could track automatically cards prices for them and it was also a social network for people with the same passion. We began a collaboration with the german company CardMarket using their APIs for gathering datas. The development process ended in June 2021'}></Startup>
         <p className={utilStyles.headingMd}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
         <Button label='Contact me' callback={() => {return router.push('/contact')}}></Button>
@@ -77,7 +77,7 @@ export default function Home() {
 
       <TimelineSection></TimelineSection>
 
-      <div className={isDarkmode ? styles.fifthContainerDark : styles.fifthContainerLight}>
+      <div className={styles.fifthContainer}>
         <p className={utilStyles.titleWhite}>Languages I'm trying to learn</p>
         <div className={styles.row}>
           <Language language={'Reading - Speaking - Listening'} image={esPic} backText={'Holaaaa, como estas?'} ></Language>
@@ -89,7 +89,6 @@ export default function Home() {
           <Language language={'Reading - Speaking'} image={ptPic} backText={'Tenho saudade do Coimbra'} ></Language>
         </div>
       </div>
-
     </>
     
   )

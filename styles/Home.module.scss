@@ -10,8 +10,6 @@
     background-size: cover;
 }
 
-
-
 .secondContainer {
     display: flex;
     flex-direction: column;
@@ -26,18 +24,19 @@
     }
 }
 
-
-
-
-.workContainerDark {
+.workContainerDark, .workContainerLight {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
     height: 62rem;
+}
+
+.workContainerDark {
     background-color: $black;
     color: $white;
 }
+
 
 
 .startupContainer {
@@ -52,16 +51,18 @@
     }
 }
 
-.fourthContainerDark {
+.fourthContainerDark, .fourthContainerLight {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    background-color: $black;
     padding: 1rem 1rem 3rem 1rem;
 }
+.fourthContainerDark {
+    background-color: $black;
+}
 
-.fifthContainerDark {
+.fifthContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,7 +84,7 @@
 }
 
 @media (max-width:1023px) {
-    .workContainerDark {
-        height: 110rem;
+    .workContainerDark, .workContainerLight  {
+        height: 114rem;
     }
 }
