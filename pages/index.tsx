@@ -27,14 +27,17 @@ import Card from '../components/Card/Card';
 import cdcLOGO from '../public/svg/cdcLOGO.svg';
 import ecobraciLOGO from '../public/svg/ecobraciLOGO.svg';
 import TimelineSection from '../components/TimelineSection/TimelineSection';
+import Link from 'next/link';
+
+
+
+
 export default function Home() {
 
   let router = useRouter();
   let t = Util.getLocale(router);
   console.log(t);
   //<p>{t?.intro}</p>
-
-
 
   const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
@@ -43,6 +46,7 @@ export default function Home() {
     <>
       <Head>
         <title>{Constants.SITETITLE}</title>
+        
       </Head>
 
       <Section1></Section1>
@@ -50,36 +54,34 @@ export default function Home() {
       <div className={styles.layer1}></div>
 
       <div className={styles.secondContainer}>
-        <p className={utilStyles.heading2Xl}>Hi! Nice to meet you.</p>
+        <p className={utilStyles.title}>Hi! Nice to meet you.</p>
         <br></br>
-        <p className={utilStyles.headingMd}>A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua.<br></br> Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
+        <p className={utilStyles.subtitle}>A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua.<br></br> Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
       </div>
 
-      <div className={isDarkmode ? styles.thirdContainerDark : styles.thirdContainerLight}>
+      <div className={isDarkmode ? styles.workContainerDark : styles.workContainerLight}>
           <Board></Board>
-          <p className={utilStyles.titleWhite} >Recent Works</p>
-          <p className={utilStyles.headingMd}>I developed the website for the following companies.</p>
-          <div className={'flex flex-row flex-wrap justify-center'}>
-            <Card img={cdcLOGO} title={'C.D.C. Costruzioni Edili'} link={'www.cdccostruzioniedili.it'} alt={'CDC Costruzioni Edili logo'}></Card>
-            <Card img={ecobraciLOGO} title={'Ecobraci Group'} link={'www.ecobracigroup.it'} alt={'Ecobraci Group Logo'}></Card>
+          <p className={`${utilStyles.title} mt-20`} >Recent Works</p>
+          <p className={utilStyles.subtitle}>I developed the website for the following companies.</p>
+          <div className={'flex flex-row flex-wrap justify-center p-10'}>
+            <a rel="noopener noreferrer" target={'_blank'} href={'https://www.cdccostruzioniedili.it/'}  className={'mx-5'}><Image src={cdcLOGO} width={250} height={250}></Image></a>
+            <a rel="noopener noreferrer" target={'_blank'} href={'https://www.ecobracigroup.it/'} className={'mx-5'}><Image src={ecobraciLOGO} width={250} height={250}></Image></a>
           </div>
         </div>
 
       <div className={styles.startupContainer}>
-        <p className={utilStyles.titleWhite} >My Projects</p>
+        <p className={`${utilStyles.title} `}>My Projects</p>
         <Startup img={collectionitePic} name={'Collectionite'} period={'July 2020 - June 2021'} link={'https://github.com/leonardocarlas/Collectionite-code'} isOnline={false} text={'Collectionite was a web application for european cards collectioners that could track automatically cards prices for them and it was also a social network for people with the same passion. We began a collaboration with the german company CardMarket using their APIs for gathering datas. The development process ended in June 2021'}></Startup>
-        <p className={utilStyles.headingMd}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
+        <p className={`${utilStyles.subtitle} `}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
         <Button label='Contact me' callback={() => {return router.push('/contact')}}></Button>
       </div>
 
       <TimelineSection></TimelineSection>
 
-
-
-      <div className={isDarkmode ? styles.fifthContainerDark : styles.fifthContainerLight}>
-        <p className={utilStyles.titleWhite}>Languages I'm trying to learn</p>
+      <div className={styles.fifthContainer}>
+        <p className={`${utilStyles.title} text-white `}>Languages I'm trying to learn</p>
         <div className={styles.row}>
-          <Language language={'Reading - Speaking - Listening'} image={esPic} backText={'Holaaaa, como estas?'} ></Language>
+          <Language language={'Reading - Speaking'} image={esPic} backText={'Holaaaa, como estas?'} ></Language>
           <Language language={'Native Language'} image={itPic} backText={'Che sito noioso'} ></Language>
           <Language language={'B2 Level'} image={enPic} backText={'I have to thank Marine for improving my English level'} ></Language>
         </div>
@@ -88,21 +90,8 @@ export default function Home() {
           <Language language={'Reading - Speaking'} image={ptPic} backText={'Tenho saudade do Coimbra'} ></Language>
         </div>
       </div>
-
     </>
     
   )
   
 }
-
-
-
-
-
-// <Card img={logoCDC} title={'C.D.C. Costruzioni Edili'} author={''}></Card>
-
-/*
-
-
-
-        */

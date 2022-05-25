@@ -9,24 +9,12 @@ import utilStyles from '../../styles/utils.module.scss';
 
 export default function Section1() {
 
-
-
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
     return (
-        <div className={isDarkmode ? styles.firstContainer : styles.firstContainer}>
+        <div className={isDarkmode ? styles.firstContainerDark : styles.firstContainerLight}>
             <p className={utilStyles.heading2Xl}>My name is Leonardo Carlassare.<br></br>I'm a Software Engineer.</p>
-            <p className={utilStyles.headingXl}>I like to code, to work on startups and to learn new things every day.</p>
-            <div className={styles.imageContainer}>
-                <Image
-                    priority
-                    src="/images/leo.jpg"
-                    height={400}
-                    width={300}
-                    className={styles.profilePic}
-                    alt={Constants.NAME}
-                ></Image>
-            </div>
+            <p className={utilStyles.headingLg}>I like to code, to work on startups and to learn new things every day.</p>
         </div>
     );
     

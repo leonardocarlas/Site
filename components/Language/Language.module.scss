@@ -1,5 +1,5 @@
 @import '../../styles/variables.module.scss';
-
+@import './../../styles/utils.module.scss';
 
 .flipcard {
     background-color: transparent;
@@ -16,6 +16,10 @@
         transition: transform 0.6s;
         transform-style: preserve-3d;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        p {
+            margin: 0;
+            text-align: center;
+        }
 
         .flipcardfront {
             display: flex;
@@ -51,14 +55,13 @@
             background-color: #ffffff;
             transform: rotateY(180deg);
             text-align: center;
-            
         }
     }
 }
 
 
 .flipcard:hover .flipcardinner {
-    transform: rotateY(180deg);
+   transform: rotateY(180deg);
 }
 
 

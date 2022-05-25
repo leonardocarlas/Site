@@ -5,7 +5,6 @@ import Link from 'next/link'
 import logoPic from '../../public/svg/logo.svg'
 import menuPic from '../../public/svg/hamburger-menu.svg'
 import menuPicWhite from '../../public/svg/white/hamburger-menu-white.svg'
-import Script from 'next/script'
 import HeaderChild from '../HeaderChild/HeaderChild'
 import Button from '../Button/Button'
 import router from 'next/router'
@@ -18,64 +17,46 @@ export default function Header() {
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
     return (
-    <div className={ isDarkmode ?  styles.headerContainerDark : styles.headerContainerLight }>
-        <nav className="flex items-center justify-between flex-wrap z-10 ">
-            
-            
-
-            <div className="flex items-center flex-shrink-0">
+        <div className={ isDarkmode ?  styles.headerContainerDark : styles.headerContainerLight }>
+            <nav className="navbar navbar-expand-lg">
                 <Link href={`/`}>
-                    <a className='inline-flex items-center'>
+                    <a className='inline-flex items-center lg:ml-5'>
                         <Image
                             src={logoPic}
-                            width={80}
-                            height={80}
+                            width={70}
+                            height={70}
                             className={styles.logo} />
                         <span className={styles.logoname}>{Constants.NAME}</span>
                     </a>
                 </Link>
-            </div>
-
-            <div className={styles.hamburgerMenuContainer} >
-                <button id="nav-toggle" className={styles.hamburgerMenu}>
+                <div className={styles.hamburgerMenuContainer} >
+                    <button className={styles.hamburgerMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         { isDarkmode ?
-                            <Image
-                                src={menuPicWhite}
-                                width={20}
-                                height={20}
-                                
-                            />
-                            :
-                            <Image
-                                src={menuPic}
-                                width={20}
-                                height={20}
-                            />
+                                <Image
+                                    src={menuPicWhite}
+                                    width={20}
+                                    height={20}
+                                    
+                                />
+                                :
+                                <Image
+                                    src={menuPic}
+                                    width={20}
+                                    height={20}
+                                />
                         }
-                </button>
-            </div>
-
-            <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block lg:pt-0" id="nav-content">
-                <div className={styles.dropdownMenu}>
-                        <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
-                        <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
-                        <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
-                        <Button label={'Contact me!'} callback={() => {return router.push('/contact')}}></Button>
+                    </button>
                 </div>
-            </div>
-        </nav>
-
-
-
-        <Script id="show-banner" strategy="lazyOnload">
-            {`  //Javascript to toggle the menu
-		        document.getElementById('nav-toggle').onclick = function(){
-			        document.getElementById("nav-content").classList.toggle("hidden");
-		        }
-            `}
-        </Script>
-
-    </div>
-
+                <div className={`collapse navbar-collapse ${styles.end}`} id="navbarSupportedContent">
+                    <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
+                    <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
+                    <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
+                    <div className={'mr-5 my-3 sm:my-20'}>
+                        <Button label={'Contact me!'} callback={() => {return router.push('/contact')}}></Button>
+                    </div>
+                </div>
+            </nav>
+        </div>
     )
 }
+

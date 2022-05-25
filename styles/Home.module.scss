@@ -10,16 +10,13 @@
     background-size: cover;
 }
 
-
-
 .secondContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem 2rem 1rem;
+    padding: 5rem 1rem 35rem 1rem;
     background-image: linear-gradient(to bottom,  $leoblue , $leoviolet);
     height: 25rem;
-
     p {
         margin: 4rem 0.5rem 0 0.5rem;
         text-align: center;
@@ -27,26 +24,23 @@
     }
 }
 
-
-
-
-.thirdContainerDark {
+.workContainerDark, .workContainerLight {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
-    height: 70rem;
+    height: 69rem;
+}
+
+.workContainerDark {
     background-color: $black;
     color: $white;
-    p {
-        text-align: center;
-    }
-
 }
 
 
+
 .startupContainer {
-    padding: 3rem 1rem 3rem 1rem;
+    @include containerBaseStyle;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,23 +51,24 @@
     }
 }
 
-.fourthContainerDark {
-
+.fourthContainerDark, .fourthContainerLight {
+    @include containerBaseStyle;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+
+}
+.fourthContainerDark {
     background-color: $black;
-    padding: 1rem 1rem 3rem 1rem;
 }
 
-.fifthContainerDark {
-
+.fifthContainer {
+    @include containerBaseStyle;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem 1rem 3rem 1rem;
     background-image: linear-gradient(to bottom,  $leoblue , $leoviolet);
     .row {
         display: flex;
@@ -90,7 +85,7 @@
 }
 
 @media (max-width:1023px) {
-    .thirdContainerDark {
-        height: 100rem;
+    .workContainerDark, .workContainerLight  {
+        height: 118rem;
     }
 }

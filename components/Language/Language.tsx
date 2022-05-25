@@ -17,7 +17,6 @@ export default function Language( props : languageProps ) {
         <div className={styles.flipcard}>
             <div className={styles.flipcardinner}>
                 <div className={styles.flipcardfront}>
-                  
                     <div className={styles.leftContainer}>
                         <Image
                             src={props.image}
@@ -25,7 +24,6 @@ export default function Language( props : languageProps ) {
                             width={30}
                         />
                     </div>
-                
                     <p className={utilStyles.headingMd}>{props.language}</p>
                 </div>
                 <div className={styles.flipcardback}>

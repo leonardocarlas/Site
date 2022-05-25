@@ -8,31 +8,23 @@ import Header from '../Header/Header';
 import SubHeader from '../SubHeader/SubHeader';
 import Footer from '../Footer/Footer';
 
-
-
 export type LayoutProps = {
   children: React.ReactNode
 }
 
 export default function Layout( props : LayoutProps ) {
     
-
-
   return (
       <div>
         <Head>
           <title>{Constants.SITETITLE}</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <Header></Header>
-        <SubHeader></SubHeader>
-        
-        
-
-
-        
-
+        <div className={styles.headersContainer}>
+          <Header></Header>
+          <SubHeader></SubHeader>
+        </div>
         <main>{props.children}</main>
-
         <Footer></Footer>
       </div>
     )

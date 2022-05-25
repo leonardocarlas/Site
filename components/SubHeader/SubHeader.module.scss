@@ -1,6 +1,7 @@
 @import '../../styles/variables.module.scss';
+@import './../../styles/utils.module.scss';
 
-.subheaderContainerLight {
+.subheaderContainerLight, .subheaderContainerDark  {
 
     background-color: $white;
     color: $black;
@@ -27,23 +28,9 @@
 }
 
 .subheaderContainerDark {
-
     background-color: $black;
     color: $white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 0.3rem 0 0.3rem 0;
-
     .iconContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-        border-radius: 5px;
-        margin-right: 0.4rem;
         border-color: $white;
         border: 1px $white solid
     }
