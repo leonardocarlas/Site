@@ -15,7 +15,7 @@ export default function Service(props : ServiceProps) {
                 <Image
                     priority
                     src={props.img}
-                    height={120}
+                    height={100}
                     width={200}
                     alt={props.alt}
                 />
