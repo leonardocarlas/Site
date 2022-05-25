@@ -31,6 +31,7 @@ import Link from 'next/link';
 
 
 
+
 export default function Home() {
 
   let router = useRouter();
@@ -53,18 +54,18 @@ export default function Home() {
       <div className={styles.layer1}></div>
 
       <div className={styles.secondContainer}>
-        <p className={utilStyles.heading2Xl}>Hi! Nice to meet you.</p>
+        <p className={utilStyles.title}>Hi! Nice to meet you.</p>
         <br></br>
-        <p className={utilStyles.headingLg}>A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua.<br></br> Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
+        <p className={utilStyles.subtitle}>A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua.<br></br> Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
       </div>
 
       <div className={isDarkmode ? styles.workContainerDark : styles.workContainerLight}>
           <Board></Board>
-          <p className={utilStyles.title} >Recent Works</p>
+          <p className={`${utilStyles.title} mt-20`} >Recent Works</p>
           <p className={utilStyles.subtitle}>I developed the website for the following companies.</p>
           <div className={'flex flex-row flex-wrap justify-center p-10'}>
-            <Link href={'www.cdccostruzioniedili.it'}><a className={'mx-5'}><Image src={cdcLOGO} width={250} height={250}></Image></a></Link>
-            <Link href={'www.ecobracigroup.it'}><a className={'mx-5'}><Image src={ecobraciLOGO} width={250} height={250}></Image></a></Link>
+            <a rel="noopener noreferrer" target={'_blank'} href={'https://www.cdccostruzioniedili.it/'}  className={'mx-5'}><Image src={cdcLOGO} width={250} height={250}></Image></a>
+            <a rel="noopener noreferrer" target={'_blank'} href={'https://www.ecobracigroup.it/'} className={'mx-5'}><Image src={ecobraciLOGO} width={250} height={250}></Image></a>
           </div>
         </div>
 

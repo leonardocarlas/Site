@@ -1,7 +1,8 @@
 @import '../../styles/variables.module.scss';
+@import './../../styles/utils.module.scss';
 
 .headerContainerDark {
-    
+ 
     nav {
         a {
             .logo {
@@ -27,7 +28,7 @@
 
 
 .headerContainerLight {
-    
+
     nav {
         a {
             .logo {
@@ -48,7 +49,7 @@
     padding:  0.5rem;
     margin :  0;
     border-bottom: 1px solid $black;
-    background-color: transparent;
+    background-color: $white;
 }
 
 

@@ -69,6 +69,7 @@
     line-height: 1.4;
 }
 
+
 .row {
     display: flex;
     flex-direction: row;
@@ -83,6 +84,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+@mixin containerBaseStyle {
+    padding: 3rem 1rem 3rem 1rem;
 }
 
 @mixin cardFormat {

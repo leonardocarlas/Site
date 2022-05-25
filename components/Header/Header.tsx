@@ -5,7 +5,6 @@ import Link from 'next/link'
 import logoPic from '../../public/svg/logo.svg'
 import menuPic from '../../public/svg/hamburger-menu.svg'
 import menuPicWhite from '../../public/svg/white/hamburger-menu-white.svg'
-
 import HeaderChild from '../HeaderChild/HeaderChild'
 import Button from '../Button/Button'
 import router from 'next/router'
@@ -52,13 +51,12 @@ export default function Header() {
                     <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
                     <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
                     <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
-                    <div className={'mr-5 sm:my-5'}>
+                    <div className={'mr-5 my-3 sm:my-20'}>
                         <Button label={'Contact me!'} callback={() => {return router.push('/contact')}}></Button>
                     </div>
                 </div>
             </nav>
         </div>
-
     )
 }
 
