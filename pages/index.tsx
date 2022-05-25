@@ -60,8 +60,8 @@ export default function Home() {
 
       <div className={isDarkmode ? styles.workContainerDark : styles.workContainerLight}>
           <Board></Board>
-          <p className={utilStyles.heading2Xl} >Recent Works</p>
-          <p className={utilStyles.headingLg}>I developed the website for the following companies.</p>
+          <p className={utilStyles.title} >Recent Works</p>
+          <p className={utilStyles.subtitle}>I developed the website for the following companies.</p>
           <div className={'flex flex-row flex-wrap justify-center p-10'}>
             <Link href={'www.cdccostruzioniedili.it'}><a className={'mx-5'}><Image src={cdcLOGO} width={250} height={250}></Image></a></Link>
             <Link href={'www.ecobracigroup.it'}><a className={'mx-5'}><Image src={ecobraciLOGO} width={250} height={250}></Image></a></Link>
@@ -69,18 +69,18 @@ export default function Home() {
         </div>
 
       <div className={styles.startupContainer}>
-        <p className={utilStyles.titleWhite}>My Projects</p>
+        <p className={`${utilStyles.title} `}>My Projects</p>
         <Startup img={collectionitePic} name={'Collectionite'} period={'July 2020 - June 2021'} link={'https://github.com/leonardocarlas/Collectionite-code'} isOnline={false} text={'Collectionite was a web application for european cards collectioners that could track automatically cards prices for them and it was also a social network for people with the same passion. We began a collaboration with the german company CardMarket using their APIs for gathering datas. The development process ended in June 2021'}></Startup>
-        <p className={utilStyles.headingMd}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
+        <p className={`${utilStyles.subtitle} `}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
         <Button label='Contact me' callback={() => {return router.push('/contact')}}></Button>
       </div>
 
       <TimelineSection></TimelineSection>
 
       <div className={styles.fifthContainer}>
-        <p className={utilStyles.titleWhite}>Languages I'm trying to learn</p>
+        <p className={`${utilStyles.title} text-white `}>Languages I'm trying to learn</p>
         <div className={styles.row}>
-          <Language language={'Reading - Speaking - Listening'} image={esPic} backText={'Holaaaa, como estas?'} ></Language>
+          <Language language={'Reading - Speaking'} image={esPic} backText={'Holaaaa, como estas?'} ></Language>
           <Language language={'Native Language'} image={itPic} backText={'Che sito noioso'} ></Language>
           <Language language={'B2 Level'} image={enPic} backText={'I have to thank Marine for improving my English level'} ></Language>
         </div>

@@ -12,7 +12,7 @@ export default function TimelineSection() {
 
     return(
         <div className={isDarkmode ? styles.fourthContainerDark : styles.fourthContainerLight}>
-            <p>Study Career</p>
+            <p className={`${utilStyles.title} ${isDarkmode ? styles.white : styles.black} pt-5`}>Study Career</p>
             <div className='flex flex-row justify-center p-20 '>
                 
                 <ol className="relative border-l border-gray-300 dark:border-gray-700 max-w-fit">                  

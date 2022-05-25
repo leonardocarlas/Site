@@ -18,11 +18,13 @@ export default function Footer () {
   
   return (
     <div className={isDarkmode ? styles.footerContainerDark : styles.footerContainerLight}>
-        <Image
-            src={logoPic}
-            width={80}
-            height={80}
-            className={styles.logo} />
+        <div className={'p-2'}>
+          <Image
+              src={logoPic}
+              width={80}
+              height={80}
+              className={styles.logo} />
+        </div>
         <p>This website has been developed with blood and pain alongside Next.js and Tailwind</p>
         <p>info@leonardocarlassare.com</p>
         <p>www.leonardocarlassare.com</p>
