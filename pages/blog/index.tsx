@@ -2,8 +2,7 @@ import styles from './Blog.module.scss';
 import utilStyles from '../../styles/utils.module.scss'
 import { GetStaticProps } from 'next';
 import { getSortedPostsData } from '../../utils/posts';
-import Link from 'next/link';
-import Date from '../../components/Date/date';
+import { useAppSelector } from '../../redux/hooks';
 
 export type blogPost = {
     date: string
@@ -13,12 +12,18 @@ export type blogPost = {
 
 export default function Blog( allPostsData : Array<blogPost> ) {
 
+    const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
     
     return (
-        <>
-            <p className={`${styles.element} ${utilStyles.titleBlack} ${'text-5xl'}`}
-            >Coming sooooonn</p>                
-        </>
+        
+          <div className={isDarkmode ? styles.sectionDark : styles.sectionLight}>
+            <p 
+              className={`${styles.element} ${utilStyles.title} ${'text-5xl'}`}
+            >
+              Coming sooooonn
+            </p>                
+          </div>
+        
     );
 }
 
