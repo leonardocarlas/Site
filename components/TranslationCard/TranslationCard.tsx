@@ -28,8 +28,8 @@ export default function TranslationCard(props : TranslationCardProps) {
                   <p className={utilStyles.headingMd}>{props.language}</p>
                 </div>
 
-                <p>{props.word}</p>
-                <p>{props.phrase}</p>
+                <p className={utilStyles.headingMd}>{props.word}</p>
+                <p className={utilStyles.headingMd}>{props.phrase}</p>
             </div>
         </>
     );
