@@ -13,11 +13,11 @@ import gearPicWhite from '../../public/svg/white/gear-white.svg';
 import Button from '../../components/Button/Button';
 import router from 'next/router';
 import { useAppSelector } from '../../redux/hooks';
-/*
-/home/leonardo/Scrivania/MYSITE/public/svg
-*/
+
 export default function Services() {
+
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
+    
     return (
         <>
             <div className={isDarkmode ? styles.sectionDark : styles.sectionLight}>

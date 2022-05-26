@@ -1,12 +1,12 @@
 @import '../../styles/variables.module.scss';
+@import '../../styles/utils.module.scss';
 
-.translationsContainer {
-
+.translationsContainerDark, .translationsContainerLight {
+    @include containerBaseStyle;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-
 
     label,select{
         display: block;
@@ -18,11 +18,10 @@
         height: 2.7rem;
         padding: 1rem;
     }
-    button {
-        margin-top: 1rem;
-        margin-left: 6rem;
-        display: block;
-    }     
-  
+     
+}
 
+.translationsContainerDark {
+    background-color: $black;
+    color: $white;
 }

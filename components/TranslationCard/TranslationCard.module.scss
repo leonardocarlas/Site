@@ -3,6 +3,7 @@
 
 .cardContainer {
 
+    @include cardFormat;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -11,8 +12,10 @@
     background-color: $white;
     padding: 2rem;
     margin: 0.5rem;
-    width: 15rem;
+    width: 17rem;
+    min-height: 20rem;
     border-radius: 15px;
+    color: black !important;
 
     .titleContainer {
         display: flex;
@@ -20,11 +23,13 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 2rem;
+        p {
+            margin-bottom: 0;
+        }
         .imageContainer {
             display: flex;
             justify-content: center;
             margin: 0 1rem 0 0rem;
-
         }
     }
 }
