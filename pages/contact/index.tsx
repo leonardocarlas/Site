@@ -3,11 +3,13 @@ import Image from "next/image";
 import styles from './Contact.module.scss';
 import x from '../../public/svg/x.svg';
 import coffee from '../../public/svg/coffee.svg';
+import coffeeWhite from '../../public/svg/white/coffee-white.svg';
 import { useRouter } from "next/router";
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 import axios from "axios";
 import utilStyles from '../../styles/utils.module.scss';
 import Button from "../../components/Button/Button";
+import { useAppSelector } from "../../redux/hooks";
 
 export default function Contact() {
 
@@ -31,18 +33,22 @@ export default function Contact() {
         }
     }
 
+    const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
+
     return (
-        <>
+
+        <div className={isDarkmode ? styles.sectionDark : styles.sectionLight}>
+
             { success ?
-                <div className={styles.successContainer}>
+                <div className={`text-black d-flex flex-col justify-center text-center p-4 bg-green-400`}>
                     <p>The message has been sent correctly, go and check out your inbox.</p>
-                    <button onClick={() => {setSuccess(false)}}>Beautiful</button>
+                    <button className='underline block' onClick={() => {setSuccess(false)}}>Beautiful</button>
                 </div>
                 :
                 ''
             }
             { failure ?
-                <div className={styles.failureContainer}>
+                <div className={`text-black d-flex flex-col justify-center text-center p-4 bg-red-500`}>
                     <p>An error occurred. Please try again</p>
                     <button onClick={() => {setFailure(false)}}>Oh, Ok.</button>
                 </div>
@@ -50,13 +56,16 @@ export default function Contact() {
                 ''
             }
             
-
-
             <div className={utilStyles.column}>
-                <p className={utilStyles.titleBlack}>Write me. I will text you back</p>
-                <p className={utilStyles.subtitleBlack}>asking to take a coffee together</p>
+                <p className={utilStyles.title}>Write me. I will text you back</p>
+                <p className={utilStyles.subtitle}>asking to take a coffee together</p>
                 <div className={styles.imageContainer}>
+                    { isDarkmode ? 
+                    <Image src={coffeeWhite} width={100} height={100}></Image>
+                    :
                     <Image src={coffee} width={100} height={100}></Image>
+                    }
+                    
                 </div>
             </div>
 
@@ -78,13 +87,13 @@ export default function Contact() {
                             <textarea onChange={handleChange} id="text" name="text" placeholder="" required rows={7} cols={50}></textarea>
                         </div>
                     </div>
-                    <div className={styles.rowForm} >
+                    <div className={`${styles.rowForm} my-5 `} >
                         <Button label={'Submit'} type={'submit'}></Button>
                     </div>
                 </form>
             </div>
 
-        </>
+        </div>
     );
 }
 

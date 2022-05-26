@@ -1,14 +1,7 @@
 @import '../../styles/variables.module.scss';
+@import '../../styles/utils.module.scss';
 
 
-.successContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0.5rem;
-    background-color: rgb(159, 221, 159);
-}
 
 .failureContainer {
     display: flex;
@@ -19,74 +12,58 @@
     background-color: rgb(255, 119, 119);
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 0.2rem;
+.sectionDark, .sectionLight {
 
-    .imageContainer {
-        &:hover {
-            cursor: pointer;
-        }
-        background-color: $white;
-        border: 1px $black solid;
-        border-radius: 5px;
+    @include containerBaseStyle;
+
+    .formContainer {
+
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        padding: 1rem;
+
+        .rowForm {
+
+            .formElement {
+                display:flex;
+                flex-direction:column;
+                padding: 0.5rem;
+
+                input {
+                    @include cardFormat;
+                    border-radius: 15px;
+                    height: 4rem;
+                    padding: 1rem;
+                    color: black !important;
+                    cursor: auto;
+                }
+                textarea {
+                    @include cardFormat;
+                    padding: 10px;
+                    max-width: 100%;
+                    line-height: 1.5;
+                    border-radius: 15px;
+                    height: auto;
+                    width: 100%;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    color: black !important;
+                    cursor: auto;
+                }
+            }
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            margin: 1rem;
+        }
     }
 }
 
-
-
-
-.formContainer {
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem;
-
-    .rowForm {
-
-        .formElement {
-            display:flex;
-            flex-direction:column;
-            padding: 0.5rem;
-
-            input {
-                border-radius: 15px;
-                height: 4rem;
-                padding: 1rem;
-                &:active {
-                    //
-                }
-            }
-            textarea {
-                padding: 10px;
-                max-width: 100%;
-                line-height: 1.5;
-                border-radius: 15px;
-                height: auto;
-                width: 100%;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-            }
-        }
-
-        
-
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        margin: 1rem;
-    }
-
-
+.sectionDark {
+    background-color: $black;
+    color: $white;
 }
