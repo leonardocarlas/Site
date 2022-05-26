@@ -61,9 +61,9 @@ export default function Contact() {
                 <p className={utilStyles.subtitle}>asking to take a coffee together</p>
                 <div className={styles.imageContainer}>
                     { isDarkmode ? 
-                    <Image src={coffeeWhite} width={100} height={100}></Image>
+                    <Image src={coffeeWhite} width={100} height={100} alt={'coffee-image'}></Image>
                     :
-                    <Image src={coffee} width={100} height={100}></Image>
+                    <Image src={coffee} width={100} height={100} alt={'coffee-image'}></Image>
                     }
                     
                 </div>
