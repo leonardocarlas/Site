@@ -23,7 +23,9 @@ export default function Footer () {
               src={logoPic}
               width={80}
               height={80}
-              className={styles.logo} />
+              className={styles.logo}
+              alt={'Logo Image Leonardo Carlassare'}
+          />
         </div>
         <p className={utilStyles.headingMd} >This website has been developed with blood and pain alongside Next.js and Tailwind</p>
         <p className={utilStyles.headingMd}>info@leonardocarlassare.com</p>
