@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Layout from '../components/Layout/Layout'
 import styles from '../styles/Home.module.scss'
 import utilStyles from '../styles/utils.module.scss';
 import { Constants } from '../constants/constants';
@@ -36,7 +35,6 @@ export default function Home() {
 
   let router = useRouter();
   let t = Util.getLocale(router);
-  console.log(t);
   //<p>{t?.intro}</p>
 
   const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
