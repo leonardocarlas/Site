@@ -31,7 +31,6 @@ export default function SubHeader() {
                 onClick={
                     () => {
                         dispatch(toggleDarkmode());
-                        console.log(isDarkmode);
                     }
                 }
             >
