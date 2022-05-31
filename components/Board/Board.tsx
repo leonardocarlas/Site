@@ -10,7 +10,7 @@ export default function Board () {
 
     return (
         <>
-        <div className={styles.boardContainer}>
+        <div className={styles.boardContainer} data-testid='board'>
             <div className={styles.board}>
                 <div className={styles.up}>
                     <div className={styles.card}>

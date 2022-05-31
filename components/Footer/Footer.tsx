@@ -16,7 +16,7 @@ export default function Footer () {
   const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
   
   return (
-    <div className={isDarkmode ? styles.footerContainerDark : styles.footerContainerLight}>
+    <div className={isDarkmode ? styles.footerContainerDark : styles.footerContainerLight} data-testid="container">
         <div className={'p-2'}>
           <Image
               src={logoPic}
