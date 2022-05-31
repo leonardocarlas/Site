@@ -2,3 +2,4 @@ node_modules
 .next
 pages/api/contact.ts
 out
+.idea

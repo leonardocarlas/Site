@@ -13,19 +13,20 @@ import utilStyles from '../../styles/utils.module.scss';
 
 export default function Footer () {
 
-
   const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
   
   return (
-    <div className={isDarkmode ? styles.footerContainerDark : styles.footerContainerLight}>
+    <div className={isDarkmode ? styles.footerContainerDark : styles.footerContainerLight} data-testid="container">
         <div className={'p-2'}>
           <Image
               src={logoPic}
               width={80}
               height={80}
-              className={styles.logo} />
+              className={styles.logo}
+              alt={'Logo Image Leonardo Carlassare'}
+          />
         </div>
-        <p className={utilStyles.headingMd} >This website has been developed with blood and pain alongside Next.js and Tailwind</p>
+        <p className={utilStyles.headingMd}>This website has been developed with blood and pain alongside Next.js and Tailwind</p>
         <p className={utilStyles.headingMd}>info@leonardocarlassare.com</p>
         <p className={utilStyles.headingMd}>www.leonardocarlassare.com</p>
         <p className={utilStyles.headingMd}>All rights reserved, 2022</p>

@@ -14,7 +14,7 @@ export default function Button(props : ButtonProps) {
 
     return (
         <>
-            <button className={styles.button} onClick={props.callback}>
+            <button className={styles.button} onClick={props.callback} data-testid="button">
                 <span>{props.label}</span>
             </button>
         </>
