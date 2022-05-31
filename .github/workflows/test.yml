@@ -1,12 +1,15 @@
 name: test
-on: [push]
+
+on:
+  push:
+    branches: [ main ]
+
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+
+    - uses: actions/checkout@v2
+    - name: Install and Run Jest
+      run: yarn
+      run: yarn test
