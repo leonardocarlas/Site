@@ -27,7 +27,7 @@ export default function Footer () {
           />
         </div>
         <p className={utilStyles.headingMd}>This website has been developed with blood and pain alongside Next.js and Tailwind</p>
-        <p className={utilStyles.headingMd}>info@leonardocarlassare.com</p>
+        <p className={utilStyles.headingMd}>leonardo.carlassare@studenti.unipd.it</p>
         <p className={utilStyles.headingMd}>www.leonardocarlassare.com</p>
         <p className={utilStyles.headingMd}>All rights reserved, 2022</p>
         <span><Link href={`/`}><a className={utilStyles.headingMd}>Privacy</a></Link><Link href={`/`}><a className={utilStyles.headingMd}>Cookie</a></Link></span>
