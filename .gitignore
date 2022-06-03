@@ -3,3 +3,4 @@ node_modules
 pages/api/contact.ts
 out
 .idea
+node_modules
