@@ -1,0 +1,217 @@
+
+<ul>
+    {router.locales?.map(
+    (locale) => (
+        <li key={locale}>
+        <Link href={router.asPath} locale={locale}>
+        <a>
+            {locale}
+        </a>
+        </Link>
+        </li>
+    )
+    )}
+</ul>
+
+
+
+<header className={styles.header}>
+    {home ? (
+    <>
+        <Image
+        priority
+        src="/images/profile.jpg"
+        className={utilStyles.borderCircle}
+        height={144}
+        width={144}
+        alt={Constants.NAME}
+        />
+        <h1 className={utilStyles.heading2Xl}>{Constants.NAME}</h1>
+    </>
+    ) : (
+    <>
+        <Link href="/">
+        <a>
+            <Image
+            priority
+            src="/images/profile.jpg"
+            className={utilStyles.borderCircle}
+            height={108}
+            width={108}
+            alt={Constants.NAME}
+            />
+        </a>
+        </Link>
+        <h2 className={utilStyles.headingLg}>
+        <Link href="/">
+            <a className={utilStyles.colorInherit}>{Constants.NAME}</a>
+        </Link>
+        </h2>
+    </>
+    )}
+</header>
+
+
+
+
+
+
+{!home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back to home</a>
+            </Link>
+          </div>
+        )}
+
+
+
+
+
+        <>
+        <div className={styles.languageContainer} onClick={handleClick}>
+            <div className={isBackside? styles.card : styles.flipped}>
+               
+                <div className={styles.back}>
+                    Hola pendejo
+                </div>
+    
+                <div className={styles.front}>
+                    <div className={styles.leftContainer}>
+                        <Image
+                            src={props.image}
+                            height={30}
+                            width={30}
+                        />
+                    </div>
+                    <p className={utilStyles.headingMd}>{props.language}</p>
+                </div>
+                
+            </div>
+        </div>
+        </>
+
+
+
+
+
+        <Language language={'Reading - Speaking - Listening'} image={esPic} ></Language>
+        <Language language={'Native Language'} image={itPic} ></Language>
+        <Language language={'B2 Level'} image={enPic} ></Language>
+        <Language language={'Loading ...'} image={frPic} ></Language>
+        <Language language={'Reading - Speaking'} image={ptPic} ></Language>
+        
+
+
+
+      
+
+        <div className={styles.imageContainer}>
+          { isDarkmode ? 
+            <Image
+            src={bookPicWhite}
+            height={80}
+            width={80}
+            alt={'book icon'}
+            ></Image>
+            : <Image
+            src={bookPic}
+            height={80}
+            width={80}
+            alt={'book icon white'}
+            ></Image>
+          }
+        </div>
+
+
+        <div className={styles.imageContainer}>
+          { isDarkmode ? 
+            <Image
+            src={languagePicWhite}
+            height={80}
+            width={80}
+            alt={'language icon'}
+            ></Image>
+            : <Image
+            src={languagePic}
+            height={80}
+            width={80}
+            alt={'language icon white'}
+            ></Image>
+          }
+        </div>
+
+
+async function handleSubmit (e : SyntheticEvent) {
+    e.preventDefault();
+    console.log(form);
+    console.log( t.translate(form.word, languages[parseInt(form.from)], languages[5]) );
+}
+
+
+<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+
+
+/*
+
+
+    <div className={ isDarkmode ?  styles.headerContainerDark : styles.headerContainerLight }>
+        <nav className="flex items-center justify-between flex-wrap z-10 ">
+            
+            
+
+            <div className="flex items-center flex-shrink-0">
+                <Link href={`/`}>
+                    <a className='inline-flex items-center'>
+                        <Image
+                            src={logoPic}
+                            width={80}
+                            height={80}
+                            className={styles.logo} />
+                        <span className={styles.logoname}>{Constants.NAME}</span>
+                    </a>
+                </Link>
+            </div>
+
+            <div className={styles.hamburgerMenuContainer} >
+                <button id="nav-toggle" className={styles.hamburgerMenu}>
+                        { isDarkmode ?
+                            <Image
+                                src={menuPicWhite}
+                                width={20}
+                                height={20}
+                                
+                            />
+                            :
+                            <Image
+                                src={menuPic}
+                                width={20}
+                                height={20}
+                            />
+                        }
+                </button>
+            </div>
+
+            <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block lg:pt-0" id="nav-content">
+                <div className={styles.dropdownMenu}>
+                        <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
+                        <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
+                        <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
+                        <Button label={'Contact me!'} callback={() => {return router.push('/contact')}}></Button>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <Script id="show-banner" strategy="lazyOnload">
+            {`  //Javascript to toggle the menu
+		        document.getElementById('nav-toggle').onclick = function(){
+			        document.getElementById("nav-content").classList.toggle("hidden");
+		        }
+            `}
+        </Script>
+
+    </div>
+
+*/

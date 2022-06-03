@@ -1,0 +1,50 @@
+@import '../../styles/variables.module.scss';
+@import './../../styles/utils.module.scss';
+
+.footerContainerDark, .footerContainerLight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+
+    p {
+        text-align: center;
+        line-height: 17px;
+    }
+  
+    span {
+      a {
+        margin: 1rem;
+        color: black;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .imageContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem;
+      
+      img {
+        margin: 0.1rem;
+      }
+    }
+}
+
+.footerContainerDark {
+  background-color: $black;
+  p {
+    color: white;
+  }
+  span {
+    a {
+      color: white;
+    }
+  }
+}

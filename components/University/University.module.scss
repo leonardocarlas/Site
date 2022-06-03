@@ -1,0 +1,37 @@
+@import '../../styles/variables.module.scss';
+@import '../../styles/utils.module.scss';
+
+.universityContainer  {
+
+    @include cardFormat;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+    width: fit-content;
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+    .leftContainer {
+        padding: 0 0.5rem 0 0;
+    }
+    .rightContainer {
+        padding: 0 0 0 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .linkText {
+        margin: 2rem 4rem 2rem 4rem;
+        text-decoration: none;
+        color: black;
+        text-decoration: underline;
+    }
+
+}

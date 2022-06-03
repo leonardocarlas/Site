@@ -1,0 +1,19 @@
+@import '../../styles/variables.module.scss';
+@import './../../styles/utils.module.scss';
+
+.button {
+
+    margin: 0 0.5rem 0 0.5rem;
+    padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+    background-image: linear-gradient(to bottom,  $leoblue , $leoviolet);
+    border-radius: 15px;
+    
+
+    span {
+        color: white;
+    }
+
+    &:hover {
+        //box-shadow: 5px 5px rgb(0 0 0 / 0.2);
+    }
+}

@@ -1,0 +1,27 @@
+@import '../../styles/variables.module.scss';
+@import '../../styles/utils.module.scss';
+
+.translationsContainerDark, .translationsContainerLight {
+    @include containerBaseStyle;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    label,select{
+        display: block;
+        width: 100%;
+    }
+        
+    input {
+        border-radius: 15px;
+        height: 2.7rem;
+        padding: 1rem;
+    }
+     
+}
+
+.translationsContainerDark {
+    background-color: $black;
+    color: $white;
+}

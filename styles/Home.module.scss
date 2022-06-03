@@ -1,0 +1,91 @@
+@import './variables.module.scss';
+@import './utils.module.scss';
+// https://haikei.app/
+
+
+@mixin background-svg {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.secondContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1rem 35rem 1rem;
+    background-image: linear-gradient(to bottom,  $leoblue , $leoviolet);
+    height: 25rem;
+    p {
+        margin: 4rem 0.5rem 0 0.5rem;
+        text-align: center;
+        color: $white;
+    }
+}
+
+.workContainerDark, .workContainerLight {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    height: 69rem;
+}
+
+.workContainerDark {
+    background-color: $black;
+    color: $white;
+}
+
+
+
+.startupContainer {
+    @include containerBaseStyle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom,  $leoblue , $leoviolet);
+    color: $white;
+    button {
+        margin-top: 1rem;
+    }
+}
+
+.fourthContainerDark, .fourthContainerLight {
+    @include containerBaseStyle;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+}
+.fourthContainerDark {
+    background-color: $black;
+}
+
+.fifthContainer {
+    @include containerBaseStyle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to bottom,  $leoblue , $leoviolet);
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media (min-width:1024px){ 
+
+}
+
+@media (max-width:1023px) {
+    .workContainerDark, .workContainerLight  {
+        height: 118rem;
+    }
+}
