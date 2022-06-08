@@ -1,7 +1,5 @@
 import Image from "next/image";
-
 import styles from './Contact.module.scss';
-import x from '../../public/svg/x.svg';
 import coffee from '../../public/svg/coffee.svg';
 import coffeeWhite from '../../public/svg/white/coffee-white.svg';
 import { useRouter } from "next/router";
@@ -10,10 +8,12 @@ import axios from "axios";
 import utilStyles from '../../styles/utils.module.scss';
 import Button from "../../components/Button/Button";
 import { useAppSelector } from "../../redux/hooks";
+import { Util } from "../../utils/util";
 
 export default function Contact() {
 
     const router = useRouter();
+    let t = Util.getLocale(router);
     const [form, setForm] = useState({});
     const [success, setSuccess] = useState(false);
     const [failure, setFailure] = useState(false);
@@ -92,19 +92,7 @@ export default function Contact() {
                     </div>
                 </form>
             </div>
-
         </div>
+    
     );
 }
-
-
-
-/*
-
-            <div className={styles.row}>
-                <div className={styles.imageContainer} onClick={() => {router.push('/', '/')}}>
-                    <Image src={x} width={40} height={40}></Image>
-                </div>
-            </div>
-
-*/

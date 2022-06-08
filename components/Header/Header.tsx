@@ -7,12 +7,18 @@ import menuPic from '../../public/svg/hamburger-menu.svg'
 import menuPicWhite from '../../public/svg/white/hamburger-menu-white.svg'
 import HeaderChild from '../HeaderChild/HeaderChild'
 import Button from '../Button/Button'
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import { useAppSelector } from '../../redux/hooks'
+import { Util } from '../../utils/util'
+import { PathPage } from '../../constants/path-pages'
 
 
 
 export default function Header() {
+
+    let router = useRouter();
+    let t = Util.getLocale(router);
+
 
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
@@ -48,11 +54,11 @@ export default function Header() {
                     </button>
                 </div>
                 <div className={`collapse navbar-collapse ${styles.end}`} id="navbarSupportedContent">
-                    <HeaderChild title={'Services'} code={2} page={'services'}></HeaderChild>
-                    <HeaderChild title={'Blog'} code={1} page={'blog'}></HeaderChild>
-                    <HeaderChild title={'Languages'} code={0} page={'languages'}></HeaderChild>
+                    <HeaderChild title={t.header.services} code={2} page={PathPage.SERVICES}></HeaderChild>
+                    <HeaderChild title={t.header.blog} code={1} page={PathPage.BLOG}></HeaderChild>
+                    <HeaderChild title={t.header.languages} code={0} page={PathPage.LANGUAGES}></HeaderChild>
                     <div className={'mr-5 my-3 sm:my-20'}>
-                        <Button label={'Contact me!'} callback={() => {return router.push('/contact')}}></Button>
+                        <Button label={t.header.buttonContactMe} callback={() => {return router.push('/contact')}}></Button>
                     </div>
                 </div>
             </nav>

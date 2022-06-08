@@ -15,14 +15,10 @@ export default function TimelineSection() {
             <p className={`${utilStyles.title} ${isDarkmode ? styles.white : styles.black} pt-5`}>Study Career</p>
             <div className='flex flex-row justify-center p-20 '>
                 
-                <ol className="relative border-l border-gray-300 dark:border-gray-700 max-w-fit">                  
+                <ol className="relative border-l border-gray-300 dark:border-gray-700 max-w-fit">
                     <li className="mb-10 ml-4">
                         <div className="absolute w-3 h-3 bg-blue-600 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                        <University name={'Università degli studi di Padova'} period={'October 2016 - September 2019'} program={'Computer Engineering - Bachelor degree'} image={paduaPic} link={'https://www.unipd.it/en/'}></University>
-                    </li>
-                    <li className="mb-10 ml-4">
-                        <div className="absolute w-3 h-3 bg-blue-600 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                        <University name={'Universidad de Castilla La Mancha'} period={'January 2020 - July 2020'} program={'Erasmus+ for Studies'} image={uclmPic} link={'https://www.uclm.es/'} ></University>
+                        <University name={'Università degli studi di Padova'} period={'October 2019 - April 2022'} program={'Computer Engineering - Master degree'} image={paduaPic} link={'https://www.unipd.it/en/'}></University> 
                     </li>
                     <li className="mb-10 ml-4">
                         <div className="absolute w-3 h-3 bg-blue-600 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
@@ -30,7 +26,11 @@ export default function TimelineSection() {
                     </li>
                     <li className="mb-10 ml-4">
                         <div className="absolute w-3 h-3 bg-blue-600 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                        <University name={'Università degli studi di Padova'} period={'October 2019 - April 2022'} program={'Computer Engineering - Master degree'} image={paduaPic} link={'https://www.unipd.it/en/'}></University> 
+                        <University name={'Universidad de Castilla La Mancha'} period={'January 2020 - July 2020'} program={'Erasmus+ for Studies'} image={uclmPic} link={'https://www.uclm.es/'} ></University>
+                    </li>         
+                    <li className="mb-10 ml-4">
+                        <div className="absolute w-3 h-3 bg-blue-600 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                        <University name={'Università degli studi di Padova'} period={'October 2016 - September 2019'} program={'Computer Engineering - Bachelor degree'} image={paduaPic} link={'https://www.unipd.it/en/'}></University>
                     </li>
                 </ol>
             </div>

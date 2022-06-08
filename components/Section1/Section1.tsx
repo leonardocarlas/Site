@@ -13,7 +13,7 @@ export default function Section1() {
 
     return (
         <div className={isDarkmode ? styles.firstContainerDark : styles.firstContainerLight}>
-            <p className={utilStyles.heading2Xl}>My name is Leonardo Carlassare.<br></br>I'm a Software Engineer.</p>
+            <p className={utilStyles.heading2Xl}>My name is <span className ={styles.coloredName}>Leonardo Carlassare</span> and I'm a Software Engineer.</p>
             <p className={utilStyles.headingLg}>I like to code, to work on startups and to learn new things every day.</p>
         </div>
     );

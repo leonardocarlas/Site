@@ -25,7 +25,7 @@ export default async function handler(
         
         let options = {
             from : `${req.body.email}`,
-            to   : 'lio.del.bronx@gmail.com',          // info@leonardocarlassare.com
+            to   : '${{ secrets.AWS_ACCESS_KEY_ID }}',          // info@leonardocarlassare.com
             subject: `${req.body.subject}`,
             text: `${req.body.message}`,
         };

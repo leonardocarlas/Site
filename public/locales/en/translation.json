@@ -1,4 +1,123 @@
 {
-  "title": "Wellcome",
-  "intro": "Hello"
+  "header": {
+    "services": "Services",
+    "blog": "Blog",
+    "languages": "Languages",
+    "buttonContactMe": "Contact me!"
+  },
+  "home": {
+    "section1" : {
+      "title" : "My name is Leonardo Carlassare and I'm a Software Engineer",
+      "subtitle" : "I like coding, working on new projects and learning new things every day."
+    },
+    "section2" : {
+      "title" : "Hi! Nice to meet you",
+      "subtitle" : "A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua. Currently I'm working as a Frontend Developer for Sysdata S.p.A."
+    },
+    "board" : {
+      "frontend" : "Frontend Skills",
+      "backend" : "Backend Skills",
+      "devops" : "DevOps Skills",
+      "otherProgrammingLanguages" :  "Other programming languages"
+    },
+    "recentWorks" : {
+      "title" : "Recent Works",
+      "subtitle" : "I developed the website for the following companies."
+    },
+    "projects": {
+      "title" : "Projects",
+      "startups" : {
+        "Collectionite" : {
+          "name" : "Collectionite",
+          "description" : "Collectionite is a web application for european cards collectioners that could track automatically cards prices for them and it was also a social network for people with the same passion. We began a collaboration with the german company CardMarket using their APIs for gathering datas. The development process ended in June 2021",
+          "period" : "July 2020 - June 2021",
+          "online" : "No longer online",
+          "viewRepo" : "view repo"
+        }
+      },
+      "collaborations" : "Do you want to collaborate or invest? I would like to take a coffee with you.",
+      "contactButton" : "Contact me!"
+    },
+    "studyCareer" : {
+      "title" : "Study Career",
+      "subtitle" : "I developed the website for the following companies.",
+      "universities" : {
+        "paduaBachelor" : {
+          "name" : "Università degli studi di Padova",
+          "program" : "Computer Engineering - Bachelor Degree",
+          "period" : "October 2016 - September 2019"
+        },
+        "uclmErasmus" : {
+          "name" : "Universidad de Castilla La Mancha",
+          "program" : "Erasmus+ for Studies",
+          "period" : "January 2020 - July 2020"
+        },
+        "coimbraErasmus" : {
+          "name" : "Universidade de Coimbra",
+          "program" : "Erasmus+ for Thesis",
+          "period" : "September 2021 - February 2022"          
+        },
+        "paduaMaster" : {
+          "name" : "Università degli studi di Padova",
+          "program" : "Computer Engineering - Master Degree",
+          "period" : "October 2019 - September 2022"
+        }
+      }
+    },
+    "languagesSection" : {
+      "title" : "Languages I'm trying to learn",
+      "esFront" : "Reading - Speaking",
+      "enFront" : "Intermediate / Adavanced",
+      "itFront" : "Native Language",
+      "frFront" : "Trust the process...",
+      "ptFront" : "Reading - Speaking"
+    }
+  },
+  "services" : {
+    "title" : "Services",
+    "subtitle" : "I am able to provide to privates and companies",
+    "services" : {
+      "webdev" : "Website Development",
+      "api" : "API Development",
+      "home" : "Smart Home Configuration",
+      "intranet" : "Intranet Development",
+      "optimization" : "Optimization Software",
+      "dataAnalisys" : "Data Analisys"
+    },
+    "subtitleContact" : "Feel free to ask me anything",
+    "contactButton" : "Contact me!"
+  },
+  "blog" : {
+    "title" : "Coming sooooonn"
+  },
+  "languages" : {
+    "title" : "Translations Table",
+    "subtitle" : "This is how I try to learn different languages",
+    "from" : "From",
+    "textButton" : "Random Word",
+    "cards": {
+      "pt" : "Portugues",
+      "es" : "Espanol",
+      "it" : "Italiano",
+      "fr" : "Francais",
+      "en" : "English",
+      "de" : "Deutch"
+    } 
+  },
+  "contact" : {
+    "title": "Write me. I will text you back",
+    "subtitle" : "asking to take a coffee together ☕",
+    "nome" : "Name",
+    "email" : "Email",
+    "text" : "Text",
+    "submit" : "Submit" 
+  },
+  "footer": {
+    "websiteStack": "This website has been developed with blood and pain alongside Next.js and Tailwind",
+    "mail" : "leonardo.carlassare@studenti.unipd.it",
+    "website" : "www.leonardocarlassare.com",
+    "rights" : "All rights reserved, 2022",
+    "privacy" : "Privacy",
+    "cookie" : "Cookie"
+  }
 }

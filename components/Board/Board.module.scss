@@ -6,6 +6,7 @@
 .boardContainer {
     
     @include cardFormat;
+    cursor: auto !important;
     width: fit-content;
     position: relative;
     bottom: 3rem;

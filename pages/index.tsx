@@ -79,13 +79,13 @@ export default function Home() {
       <div className={styles.fifthContainer}>
         <p className={`${utilStyles.title} text-white `}>Languages I'm trying to learn</p>
         <div className={styles.row}>
-          <Language language={'Reading - Speaking'} image={esPic} backText={'Holaaaa, como estas?'} ></Language>
+          <Language language={'Reading - Speaking'} image={esPic} backText={'Hola ¿cómo estás?'} ></Language>
           <Language language={'Native Language'} image={itPic} backText={'Che sito noioso'} ></Language>
-          <Language language={'B2 Level'} image={enPic} backText={'I have to thank Marine for improving my English level'} ></Language>
+          <Language language={'Intermediate / Advanced'} image={enPic} backText={'I have to thank Marine for improving my English level'} ></Language>
         </div>
         <div className={styles.row}>
-          <Language language={'Loading ...'} image={frPic} backText={'J\'aime manger'} ></Language>
-          <Language language={'Reading - Speaking'} image={ptPic} backText={'Tenho saudade do Coimbra'} ></Language>
+          <Language language={'Trust the process ...'} image={frPic} backText={'J\'aime manger'} ></Language>
+          <Language language={'Reading - Speaking'} image={ptPic} backText={'Tenho saudade de Coimbra'} ></Language>
         </div>
       </div>
     </>

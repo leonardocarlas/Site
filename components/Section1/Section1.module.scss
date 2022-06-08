@@ -16,8 +16,11 @@
     flex-wrap: wrap;
     @include background-svg();
     p {
-        margin: 4rem 0.5rem 0 0.5rem;
+        margin: 4rem 5rem 0 5rem;
         text-align: center;
+    }
+    .coloredName {
+        animation: pulse 5s infinite;
     }
 }
 
@@ -27,6 +30,14 @@
 }
 
 
+@keyframes pulse {
+    0%, 100% {
+      color: $leoblue;
+    }
+    50% {
+      color: $leoviolet;
+    }
+}
 
 @media (min-width:1024px){ 
     .firstContainerDark, .firstContainerLight {
