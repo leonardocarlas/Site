@@ -41,24 +41,24 @@ export default function Contact() {
 
             { success ?
                 <div className={`text-black d-flex flex-col justify-center text-center p-4 bg-green-400`}>
-                    <p>The message has been sent correctly, go and check out your inbox.</p>
-                    <button className='underline block' onClick={() => {setSuccess(false)}}>Beautiful</button>
+                    <p>{t.contact.mailSuccess}</p>
+                    <button className='underline block' onClick={() => {setSuccess(false)}}>{t.contact.mailSuccess}</button>
                 </div>
                 :
                 ''
             }
             { failure ?
                 <div className={`text-black d-flex flex-col justify-center text-center p-4 bg-red-500`}>
-                    <p>An error occurred. Please try again</p>
-                    <button onClick={() => {setFailure(false)}}>Oh, Ok.</button>
+                    <p>{t.contact.mailSuccess}</p>
+                    <button onClick={() => {setFailure(false)}}>{t.contact.mailSuccessButton}</button>
                 </div>
                 :
                 ''
             }
             
             <div className={utilStyles.column}>
-                <p className={utilStyles.title}>Write me. I will text you back</p>
-                <p className={utilStyles.subtitle}>asking to take a coffee together</p>
+                <p className={utilStyles.title}>{t.contact.title}</p>
+                <p className={utilStyles.subtitle}>{t.contact.subtitle}</p>
                 <div className={styles.imageContainer}>
                     { isDarkmode ? 
                     <Image src={coffeeWhite} width={100} height={100} alt={'coffee-image'}></Image>
@@ -73,22 +73,22 @@ export default function Contact() {
                 <form method="post" onSubmit={handleSubmit}>
                     <div className={styles.rowForm}>
                         <div className={styles.formElement}>
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name">{t.contact.nome}</label>
                             <input onChange={handleChange} type="text" id="name" name="name" placeholder="Mario Rossi" required />
                         </div>
                         <div className={styles.formElement}>
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">{t.contact.email}</label>
                             <input onChange={handleChange} type="email" id="email" name="email" placeholder="mariorossi@gmail.com" required/>
                         </div>
                     </div>
                     <div className={styles.rowForm}>
                         <div className={styles.formElement}>
-                            <label htmlFor="text">Text</label>
+                            <label htmlFor="text">{t.contact.text}</label>
                             <textarea onChange={handleChange} id="text" name="text" placeholder="" required rows={7} cols={50}></textarea>
                         </div>
                     </div>
                     <div className={`${styles.rowForm} my-5 `} >
-                        <Button label={'Submit'} type={'submit'}></Button>
+                        <Button label={t.contact.submit} type={'submit'}></Button>
                     </div>
                 </form>
             </div>

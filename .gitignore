@@ -1,6 +1,7 @@
 node_modules
-.next
+.next/*
 pages/api/contact.ts
 out
 .idea
 node_modules
+.env*.local

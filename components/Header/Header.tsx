@@ -56,7 +56,7 @@ export default function Header() {
                 <div className={`collapse navbar-collapse ${styles.end}`} id="navbarSupportedContent">
                     <HeaderChild title={t.header.services} code={2} page={PathPage.SERVICES}></HeaderChild>
                     <HeaderChild title={t.header.blog} code={1} page={PathPage.BLOG}></HeaderChild>
-                    <HeaderChild title={t.header.languages} code={0} page={PathPage.LANGUAGES}></HeaderChild>
+                    <HeaderChild title={t.header.languages} code={0} page={PathPage.TRANSLATIONS}></HeaderChild>
                     <div className={'mr-5 my-3 sm:my-20'}>
                         <Button label={t.header.buttonContactMe} callback={() => {return router.push('/contact')}}></Button>
                     </div>

@@ -5,8 +5,13 @@ import dbPic from '../../public/svg/db.svg';
 import devopsPic from '../../public/svg/operations.svg';
 import codePic from '../../public/svg/code.svg';
 import utilStyles from '../../styles/utils.module.scss';
+import { useRouter } from 'next/router';
+import { Util } from '../../utils/util';
 
 export default function Board () {
+
+    let router = useRouter();
+    let t = Util.getLocale(router);
 
     return (
         <>
@@ -14,7 +19,7 @@ export default function Board () {
             <div className={styles.board}>
                 <div className={styles.up}>
                     <div className={styles.card}>
-                        <p className={utilStyles.headingMd}>Frontend Skills</p>
+                        <p className={utilStyles.headingMd}>{t.board.frontend}</p>
                         <div>
                             <Image
                                 src={frontedPic}
@@ -28,7 +33,7 @@ export default function Board () {
                         </p>
                     </div>
                     <div className={styles.card}>
-                        <p className={utilStyles.headingMd}>Backend Skills</p>
+                        <p className={utilStyles.headingMd}>{t.board.backend}</p>
                         <div>
                             <Image
                                 src={dbPic}
@@ -41,7 +46,7 @@ export default function Board () {
                         </p>
                     </div>
                     <div className={styles.card}>
-                        <p className={utilStyles.headingMd}>DevOps Skills</p>
+                        <p className={utilStyles.headingMd}>{t.board.devops}</p>
                         <div>
                             <Image
                                 src={devopsPic}
@@ -53,7 +58,7 @@ export default function Board () {
                     </div>
                 </div>
                 <div className={`${styles.card} ${styles.noborder}`} >
-                    <p className={utilStyles.headingMd}>Other programming languages</p>
+                    <p className={utilStyles.headingMd}>{t.board.otherProgrammingLanguages}</p>
                     <div>
                         <Image
                             src={codePic}

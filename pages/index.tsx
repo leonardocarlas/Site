@@ -7,10 +7,6 @@ import {Util} from '../utils/util'
 import { useAppSelector } from '../redux/hooks';
 import Image from 'next/image';
 import Button from '../components/Button/Button';
-import paduaPic from '../public/svg/padua.svg';
-import uclmPic from '../public/svg/uclm.svg';
-import coimbraPic from '../public/svg/coimbra.svg';
-import languagePicWhite from '../public/svg/white/language-white.svg';
 import Startup from '../components/Startup/Startup';
 import collectionitePic from '../public/svg/collectionite.svg';
 import esPic from '../public/svg/flags/es.svg';
@@ -22,11 +18,10 @@ import Board from '../components/Board/Board';
 import University from '../components/University/University';
 import Language from '../components/Language/Language';
 import Section1 from '../components/Section1/Section1';
-import Card from '../components/Card/Card';
 import cdcLOGO from '../public/svg/cdcLOGO.svg';
 import ecobraciLOGO from '../public/svg/ecobraciLOGO.svg';
 import TimelineSection from '../components/TimelineSection/TimelineSection';
-import Link from 'next/link';
+
 
 
 
@@ -35,7 +30,6 @@ export default function Home() {
 
   let router = useRouter();
   let t = Util.getLocale(router);
-  //<p>{t?.intro}</p>
 
   const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
@@ -52,15 +46,15 @@ export default function Home() {
       <div className={styles.layer1}></div>
 
       <div className={styles.secondContainer}>
-        <p className={utilStyles.title}>Hi! Nice to meet you.</p>
+        <p className={utilStyles.title}>{t.section2.title}</p>
         <br></br>
-        <p className={utilStyles.subtitle}>A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua.<br></br> Currently I'm workin as a Frontend Developer for Sysdata S.p.A.</p>
+        <p className={utilStyles.subtitle}>{t.section2.subtitle}</p>
       </div>
 
       <div className={isDarkmode ? styles.workContainerDark : styles.workContainerLight}>
           <Board></Board>
-          <p className={`${utilStyles.title} mt-20`} >Recent Works</p>
-          <p className={utilStyles.subtitle}>I developed the website for the following companies.</p>
+          <p className={`${utilStyles.title} mt-20`} >{t.recentWorks.title}</p>
+          <p className={utilStyles.subtitle}>{t.recentWorks.subtitle}</p>
           <div className={'flex flex-row flex-wrap justify-center p-10'}>
             <a rel="noopener noreferrer" target={'_blank'} href={'https://www.cdccostruzioniedili.it/'}  className={'mx-5'}><Image src={cdcLOGO} width={250} height={250}></Image></a>
             <a rel="noopener noreferrer" target={'_blank'} href={'https://www.ecobracigroup.it/'} className={'mx-5'}><Image src={ecobraciLOGO} width={250} height={250}></Image></a>
@@ -68,24 +62,24 @@ export default function Home() {
         </div>
 
       <div className={styles.startupContainer}>
-        <p className={`${utilStyles.title} `}>My Projects</p>
-        <Startup img={collectionitePic} name={'Collectionite'} period={'July 2020 - June 2021'} link={'https://github.com/leonardocarlas/Collectionite-code'} isOnline={false} text={'Collectionite was a web application for european cards collectioners that could track automatically cards prices for them and it was also a social network for people with the same passion. We began a collaboration with the german company CardMarket using their APIs for gathering datas. The development process ended in June 2021'}></Startup>
-        <p className={`${utilStyles.subtitle} `}>Do you want to collaborate or invest?<br></br> I would like to take a coffee with you.</p>
-        <Button label='Contact me' callback={() => {return router.push('/contact')}}></Button>
+        <p className={`${utilStyles.title} `}>{t.projects.title}</p>
+        <Startup img={collectionitePic} name={t.projects.startup} period={t.projects.period} link={'https://github.com/leonardocarlas/Collectionite-code'} isOnline={false} text={t.projects.description}></Startup>
+        <p className={`${utilStyles.subtitle} `}>{t.projects.collaborations}</p>
+        <Button label={t.projects.contactButton} callback={() => {return router.push('/contact')}}></Button>
       </div>
 
       <TimelineSection></TimelineSection>
 
       <div className={styles.fifthContainer}>
-        <p className={`${utilStyles.title} text-white `}>Languages I'm trying to learn</p>
+        <p className={`${utilStyles.title} text-white `}>{t.languageSection.title}</p>
         <div className={styles.row}>
-          <Language language={'Reading - Speaking'} image={esPic} backText={'Hola ¿cómo estás?'} ></Language>
-          <Language language={'Native Language'} image={itPic} backText={'Che sito noioso'} ></Language>
-          <Language language={'Intermediate / Advanced'} image={enPic} backText={'I have to thank Marine for improving my English level'} ></Language>
+          <Language language={t.languageSection.esFront} image={esPic} backText={Constants.ES_BACK} ></Language>
+          <Language language={t.languageSection.itFront} image={itPic} backText={Constants.IT_BACK} ></Language>
+          <Language language={t.languageSection.enFront} image={enPic} backText={Constants.EN_BACK} ></Language>
         </div>
         <div className={styles.row}>
-          <Language language={'Trust the process ...'} image={frPic} backText={'J\'aime manger'} ></Language>
-          <Language language={'Reading - Speaking'} image={ptPic} backText={'Tenho saudade de Coimbra'} ></Language>
+          <Language language={t.languageSection.frFront} image={frPic} backText={Constants.FR_BACK} ></Language>
+          <Language language={t.languageSection.ptFront} image={ptPic} backText={Constants.PT_BACK} ></Language>
         </div>
       </div>
     </>
