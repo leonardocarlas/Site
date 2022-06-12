@@ -18,7 +18,7 @@
       "frontend" : "Frontend Skills",
       "backend" : "Backend Skills",
       "devops" : "DevOps Skills",
-      "otherProgrammingLanguages" :  "Other programming languages"
+      "otherProgrammingLanguages" :  "Other programming languages that I use"
     },
     "recentWorks" : {
       "title" : "Recent Works",
@@ -39,22 +39,22 @@
       "subtitle" : "I developed the website for the following companies.",
       "universities" : {
         "paduaBachelor" : {
-          "name" : "Università degli studi di Padova",
+          "name" : "University of Padua",
           "program" : "Computer Engineering - Bachelor Degree",
           "period" : "October 2016 - September 2019"
         },
         "uclmErasmus" : {
-          "name" : "Universidad de Castilla La Mancha",
+          "name" : "University of Castilla La Mancha",
           "program" : "Erasmus+ for Studies",
           "period" : "January 2020 - July 2020"
         },
         "coimbraErasmus" : {
-          "name" : "Universidade de Coimbra",
+          "name" : "University of Coimbra",
           "program" : "Erasmus+ for Thesis",
           "period" : "September 2021 - February 2022"          
         },
         "paduaMaster" : {
-          "name" : "Università degli studi di Padova",
+          "name" : "University of Padua",
           "program" : "Computer Engineering - Master Degree",
           "period" : "October 2019 - September 2022"
         }
@@ -92,7 +92,7 @@
   },
   "contact" : {
     "title": "Write me. I will text you back",
-    "subtitle" : "asking to take a coffee together ☕",
+    "subtitle" : "asking to take a coffee together",
     "nome" : "Name",
     "email" : "Email",
     "text" : "Text",
