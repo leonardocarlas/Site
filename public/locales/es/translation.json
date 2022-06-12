@@ -27,7 +27,7 @@
     "projects": {
       "title" : "Proyectos",
       "startup" : "Collectionite",
-      "description" : "Collectionite era una web app per collezionisti di carte europei in grado di tracciare automaticamente i prezzi delle carte. Inoltre era anche un social network che connetteva persone con la stessa passione. Insieme ad alcuni amici, abbiamo iniziato una collaborazione con l'azienda tedesca CardMarket, utilizzando le loro API per aggiornare i dati. Il processo di sviluppo è terminato nel Giugno 2021",
+      "description" : "Collectionite era una aplicación web para coleccionistas de tarjetas europeas que podía rastrear automáticamente los precios de las tarjetas. También era una red social que conectaba a personas con la misma pasión. Junto con algunos amigos, comenzamos una colaboración con la empresa alemana CardMarket, utilizando sus API para actualizar los datos. El proceso de desarrollo terminó en junio de 2021",
       "period" : "Julio 2020 - Junio 2021",
       "online" : "ya no está en línea",
       "viewRepo" : "echa un vistazo a la repo",
