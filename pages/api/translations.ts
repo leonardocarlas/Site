@@ -1,5 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import axios from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 
@@ -7,25 +6,30 @@ type Data = {
     responseWord : string
 }
 
-export default function handler( req: NextApiRequest, res: NextApiResponse<Data>) {
+const Reverso = require('reverso-api');
+const reverso = new Reverso();
 
-    let s = translate('Dog', 'English', 'German');
-    res.status(200).json({ responseWord: `${s}` })
+export default async function handler( req: NextApiRequest, res: NextApiResponse<Data>) {
+    try {
+        const { text } = await reverso.getContext('Dog', 'English', 'German');
+        res.status(200).json({ responseWord : `${text}` });
+    } catch(e){
+        console.log(e)
+    }
 }
 
-function translate (word: string, fromLanguage: string, toLanguage: string) : string {
 
-    const Reverso = require('reverso-api');
-    const reverso = new Reverso();
-    let responseWord = "";
 
-    reverso.getContext(word, fromLanguage, toLanguage, (response : any) => {
-        //console.log(response);
-        responseWord = response.translation[0];
-    }).catch((err : any) => {
-        console.error(err);
-    });
+    // getContext method example
+    // reverso
+    //    .getContext('meet me half way', 'English', 'Russian', (response : any) => {
+    //        console.log(response);
+    //    })
+    //    .catch((err : any) => {
+    //        console.error(err);
+    //    });
 
-    return responseWord;
-}
+
+
+
 
