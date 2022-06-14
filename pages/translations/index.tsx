@@ -14,10 +14,10 @@ import { useAppSelector } from '../../redux/hooks';
 import { useRouter } from 'next/router';
 import { Util } from '../../utils/util';
 import { Constants } from '../../constants/constants';
+import axios from "axios";
 
 export default function Languages() {
 
-    let languages : Array<string> = ['Portuguese','Spanish','Italian','French','English','German'];
     let router = useRouter();
     let t = Util.getLocale(router);
     const [form, setForm] = useState({
@@ -25,18 +25,30 @@ export default function Languages() {
         word : ''
     });
 
+    const [words, setWords] = useState(["","","","","",""]);
     const [indexWord, setIndexWord] = useState(0);
 
-    function handleSubmit (e : SyntheticEvent) {
+    async function handleSubmit(e: SyntheticEvent) {
+        console.log(form);
         e.preventDefault();
-        let max : number = table.words.length - 1;
-        let n : number = Math.floor(Math.random() * (max + 1));
-        setIndexWord(n);
+        try {
+            let res = await axios.post('/api/translations', form);
+            console.log(res.data);
+            setWords([res.data?.portuguese, res.data?.spanish,
+                            res.data?.italian, res.data?.french,
+                            res.data?.english, res.data?.german]);
+        } catch (error) {
+            // handle failure
+        }
+        // e.preventDefault();
+        // let max : number = table.words.length - 1;
+        // let n : number = Math.floor(Math.random() * (max + 1));
+        // setIndexWord(n);
     }
 
     function handleChange(e : ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) {
         const { value, name } = e.target;
-        setForm({ ...form, [name]: value }); 
+        setForm({ ...form, [name]: value });
     }
 
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
@@ -44,10 +56,8 @@ export default function Languages() {
     return (
 
         <div className={isDarkmode ? styles.translationsContainerDark : styles.translationsContainerLight}>
-
             <p className={utilStyles.title}>{t.languages.title}</p>
             <p className={utilStyles.subtitle}>{t.languages.subtitle}</p>
-
             <div className='w-80 my-10'>
                 <form method="post" onSubmit={handleSubmit}>
                     <label htmlFor="from">{t.languages.from}</label>
@@ -60,22 +70,22 @@ export default function Languages() {
                         <option value={4}>English</option>
                         <option value={5}>German</option>
                     </select>
-                                            
+                    <label htmlFor="fname">Word</label>
+                    <input onChange={handleChange} type="text" id="word" name="word" required={true}
+                           className="h-11 pl-3 pr-6 text-base border rounded-[15px] bg-white appearance-none focus:shadow-outline text-black"></input>
                     <div className="my-4 d-flex flex-row justify-center">
                         <Button label={t.languages.textButton} type={'submit'}></Button>  
-                    </div>   
+                    </div>
                 </form>
             </div>
-
             <div className='flex flex-row flex-wrap justify-center align-center my-8'>
-                <TranslationCard image={ptPic} language={Constants.PT} word={table.words[indexWord].pt} phrase={table.phrases[indexWord].pt} ></TranslationCard>
-                <TranslationCard image={esPic} language={Constants.ES} word={table.words[indexWord].es} phrase={table.phrases[indexWord].es}></TranslationCard>
-                <TranslationCard image={itPic} language={Constants.IT} word={table.words[indexWord].it} phrase={table.phrases[indexWord].it}></TranslationCard>
-                <TranslationCard image={frPic} language={Constants.FR} word={table.words[indexWord].fr} phrase={table.phrases[indexWord].fr}></TranslationCard>
-                <TranslationCard image={enPic} language={Constants.EN} word={table.words[indexWord].en} phrase={table.phrases[indexWord].en}></TranslationCard>
-                <TranslationCard image={dePic} language={Constants.DE} word={table.words[indexWord].de} phrase={table.phrases[indexWord].de}></TranslationCard>
+                <TranslationCard image={ptPic} language={Constants.PT} word={words[0]} phrase={""} ></TranslationCard>
+                <TranslationCard image={esPic} language={Constants.ES} word={words[1]} phrase={""}></TranslationCard>
+                <TranslationCard image={itPic} language={Constants.IT} word={words[2]} phrase={""}></TranslationCard>
+                <TranslationCard image={frPic} language={Constants.FR} word={words[3]} phrase={""}></TranslationCard>
+                <TranslationCard image={enPic} language={Constants.EN} word={words[4]} phrase={""}></TranslationCard>
+                <TranslationCard image={dePic} language={Constants.DE} word={words[5]} phrase={""}></TranslationCard>
             </div>
         </div>
-
     );
 }
