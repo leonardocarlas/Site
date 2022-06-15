@@ -15,6 +15,7 @@ import { useRouter } from 'next/router';
 import { Util } from '../../utils/util';
 import { Constants } from '../../constants/constants';
 import axios from "axios";
+import {Circles} from "react-loader-spinner";
 
 export default function Languages() {
 
@@ -24,26 +25,25 @@ export default function Languages() {
         from : "1",
         word : ''
     });
-
     const [words, setWords] = useState(["","","","","",""]);
-    const [indexWord, setIndexWord] = useState(0);
+    const [contexts, setContexts] = useState(["","","","","",""]);
+    const [isLoading, setIsLoading] = useState(false);
 
     async function handleSubmit(e: SyntheticEvent) {
-        console.log(form);
         e.preventDefault();
         try {
+            setIsLoading(true);
             let res = await axios.post('/api/translations', form);
-            console.log(res.data);
-            setWords([res.data?.portuguese, res.data?.spanish,
-                            res.data?.italian, res.data?.french,
-                            res.data?.english, res.data?.german]);
+            setIsLoading(false);
+            setWords([res.data?.word.portuguese, res.data?.word.spanish,
+                            res.data?.word.italian, res.data?.word.french,
+                            res.data?.word.english, res.data?.word.german]);
+            setContexts([res.data?.context.portuguese, res.data?.context.spanish,
+                        res.data?.context.italian, res.data?.context.french,
+                        res.data?.context.english, res.data?.context.german]);
         } catch (error) {
-            // handle failure
+            console.log(error);
         }
-        // e.preventDefault();
-        // let max : number = table.words.length - 1;
-        // let n : number = Math.floor(Math.random() * (max + 1));
-        // setIndexWord(n);
     }
 
     function handleChange(e : ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) {
@@ -54,7 +54,6 @@ export default function Languages() {
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
 
     return (
-
         <div className={isDarkmode ? styles.translationsContainerDark : styles.translationsContainerLight}>
             <p className={utilStyles.title}>{t.languages.title}</p>
             <p className={utilStyles.subtitle}>{t.languages.subtitle}</p>
@@ -79,12 +78,12 @@ export default function Languages() {
                 </form>
             </div>
             <div className='flex flex-row flex-wrap justify-center align-center my-8'>
-                <TranslationCard image={ptPic} language={Constants.PT} word={words[0]} phrase={""} ></TranslationCard>
-                <TranslationCard image={esPic} language={Constants.ES} word={words[1]} phrase={""}></TranslationCard>
-                <TranslationCard image={itPic} language={Constants.IT} word={words[2]} phrase={""}></TranslationCard>
-                <TranslationCard image={frPic} language={Constants.FR} word={words[3]} phrase={""}></TranslationCard>
-                <TranslationCard image={enPic} language={Constants.EN} word={words[4]} phrase={""}></TranslationCard>
-                <TranslationCard image={dePic} language={Constants.DE} word={words[5]} phrase={""}></TranslationCard>
+                <TranslationCard image={ptPic} language={Constants.PT} word={words[0]} phrase={contexts[0]} ></TranslationCard>
+                <TranslationCard image={esPic} language={Constants.ES} word={words[1]} phrase={contexts[1]}></TranslationCard>
+                <TranslationCard image={itPic} language={Constants.IT} word={words[2]} phrase={contexts[2]}></TranslationCard>
+                <TranslationCard image={frPic} language={Constants.FR} word={words[3]} phrase={contexts[3]}></TranslationCard>
+                <TranslationCard image={enPic} language={Constants.EN} word={words[4]} phrase={contexts[4]}></TranslationCard>
+                <TranslationCard image={dePic} language={Constants.DE} word={words[5]} phrase={contexts[5]}></TranslationCard>
             </div>
         </div>
     );

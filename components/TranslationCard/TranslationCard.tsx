@@ -16,7 +16,6 @@ export default function TranslationCard(props : TranslationCardProps) {
     return (
         <>
             <div className={styles.cardContainer}>
-                
                 <div className={styles.titleContainer}>
                   <div className={styles.imageContainer}>
                       <Image
@@ -27,9 +26,8 @@ export default function TranslationCard(props : TranslationCardProps) {
                   </div>
                   <p className={utilStyles.headingMd}>{props.language}</p>
                 </div>
-
                 <p className={utilStyles.headingMd}>{props.word}</p>
-                <p className={utilStyles.headingMd}>{props.phrase}</p>
+                <p className={`${utilStyles.headingMd} text-center`}>{props.phrase}</p>
             </div>
         </>
     );

@@ -1,114 +1,114 @@
 {
   "header": {
-    "services": "Servicos",
+    "services": "Serviços",
     "blog": "Blog",
-    "languages": "Traducoes",
-    "buttonContactMe": "Escrivame!"
+    "languages": "Traduçoes",
+    "buttonContactMe": "Escreve-me!"
   },
   "home": {
     "section1" : {
-      "title" : "O meu nome è Leonardo e sou um Ingenheiro Informatico.",
-      "subtitle" : "Eu gosto do programar, trabalhar sobre novos projetos e aprender novas coisas tudos os dias."
+      "title" : "O meu nome è Leonardo Carlassare e sou um Engenheiro de Software.",
+      "subtitle" : "Eu gosto de  programar, trabalhar em novos projetos e aprender coisas novas todos os dias."
     },
     "section2" : {
-      "title" : "Olaa! E' um pracer conhecerte.",
-      "subtitle" : "Una breve introduzione: mi sono laureato nel 2022 nel corso magistrale di Ingegneria Informatica all'Università degli Studi di Padova. Attualmente sto lavorando come un Frontend Developer per l'azienda Sysdata S.p.A."
+      "title" : "Olaa! pracer em conhecer-te.",
+      "subtitle" : "Uma breve introdução: eu graduei-me em 2022 no curso de mestrado em Engenharia Informatica na Universidade de Pádua. Atualmente estou trabalhando como un Desenvolvedor Frontend para a empresa Sysdata S.p.A."
     },
     "board" : {
-      "frontend" : "Frontend Skills",
-      "backend" : "Backend Skills",
-      "devops" : "DevOps Skills",
-      "otherProgrammingLanguages" :  "Altri linguaggi di programmazione che utilizzo"
+      "frontend" : "Habilidade Frontend",
+      "backend" : "Habilidade Backend",
+      "devops" : "Habilidade DevOps",
+      "otherProgrammingLanguages" :  "Outros linguagens de programaçao que uso"
     },
     "recentWorks" : {
-      "title" : "Lavori Recenti",
-      "subtitle" : "Ho sviluppato i siti web per le seguenti aziende."
+      "title" : "Trabalhos Recentes",
+      "subtitle" : "Desenvolvi o site para as seguintes empresas."
     },
     "projects": {
-      "title" : "Progetti",
+      "title" : "Projetos",
       "startup" : "Collectionite",
-      "description" : "Collectionite era una web app per collezionisti di carte europei in grado di tracciare automaticamente i prezzi delle carte. Inoltre era anche un social network che connetteva persone con la stessa passione. Insieme ad alcuni amici, abbiamo iniziato una collaborazione con l'azienda tedesca CardMarket, utilizzando le loro API per aggiornare i dati. Il processo di sviluppo è terminato nel Giugno 2021",
-      "period" : "Luglio 2020 - Giugno 2021",
-      "online" : "Non più online",
-      "viewRepo" : "dai un'occhiata alla repo",
-      "collaborations" : "Vuoi collaborare con me o investire in un progetto? Mi piacerebbe prendere un caffé con te.",
-      "contactButton" : "Scrivimi!"
+      "description" : "Collectionite era uma aplicação Web para coleccionadores de cartões europeus que podia monitorizar automaticamente os preços dos cartões. Era também uma rede social que ligava as pessoas com a mesma paixão. Junto com alguns amigos, começamos uma colaboração com a empresa alemã Cardmarket, usando suas Apis para atualizar os dados. O processo de desenvolvimento terminou em junho de 2021",
+      "period" : "Julho 2020 - Junho 2021",
+      "online" : "Ja não online",
+      "viewRepo" : "olha a  repo",
+      "collaborations" : "Você quer trabalhar comigo ou investir em um projeto? Gostaria de tomar um café com vocé",
+      "contactButton" : "Escreve-me!"
     },
     "studyCareer" : {
-      "title" : "Carriera Accademica",
-      "subtitle" : "Ho studiato nelle seguenti Università",
+      "title" : "Carreira Acadêmica",
+      "subtitle" : "Estudei nas seguintes Universidades",
       "universities" : {
         "paduaBachelor" : {
-          "name" : "Università degli studi di Padova",
-          "program" : "Ingegneria Informatica - Laurea Triennale",
-          "period" : "Ottobre 2016 - Settembre 2019"
+          "name" : "Universidade de Padua",
+          "program" : "Engenharia Informatica - Bacharelado",
+          "period" : "Outubro 2016 - Setembro 2019"
         },
         "uclmErasmus" : {
-          "name" : "Universidad de Castilla La Mancha",
-          "program" : "Erasmus+ per Studio",
-          "period" : "Gennaio 2020 - Luglio 2020"
+          "name" : "Universidade de Castilla La Mancha",
+          "program" : "Erasmus+ para Estudo",
+          "period" : "Janeiro 2020 - Lulho 2020"
         },
         "coimbraErasmus" : {
           "name" : "Universidade de Coimbra",
-          "program" : "Erasmus+ per Tesi",
-          "period" : "Settembre 2021 - Febbraio 2022"
+          "program" : "Erasmus+ para Dissertação",
+          "period" : "Setembro 2021 - Fevereiro 2022"
         },
         "paduaMaster" : {
-          "name" : "Università degli studi di Padova",
-          "program" : "Ingegneria Informatica - Laurea Magistrale",
-          "period" : "Ottobre 2019 - Settembre 2022"
+          "name" : "Universidade de Padua",
+          "program" : "Engenharia Informatica - Maestrado",
+          "period" : "Outubro 2019 - Setembro 2022"
         }
       }
     },
     "languagesSection" : {
-      "title"   : "Lingue che sto provando ad imparare",
-      "esFront" : "Leggere - Parlare",
-      "enFront" : "Intermedio / Avanzato",
-      "itFront" : "Madrelingua",
-      "frFront" : "Lavori in corso...",
-      "ptFront" : "Leggere - Parlare"
+      "title"   : "Línguas que estou a tentar aprender",
+      "esFront" : "Ler - Falar",
+      "enFront" : "Intermédio / Avanzado",
+      "itFront" : "Falante nativo",
+      "frFront" : "Trabalhos em curso...",
+      "ptFront" : "Ler - Falar"
     }
   },
   "services" : {
-    "title" : "Servizi",
-    "subtitle" : "che sono in grado di offrire a privati ed aziende",
-    "subtitleContact" : "Sentiti libero di chiedermi qualunque cosa",
-    "contactButton" : "Scrivimi!",
-    "websiteDev" : "Sviluppo di una web app",
-    "api" : "Sviluppo di API",
-    "smartHomeConf" : "Configurazione di una Smart Home",
-    "intranetDev" : "Sviluppo di una Intranet aziendale",
-    "optSoftware" : "Software di Ottimizzazione",
-    "dataAnalys" : "Data Analisi"
+    "title" : "Serviços",
+    "subtitle" : "capazes de oferecer aos indivíduos e às empresas",
+    "subtitleContact" : "sintate livre do me preguntar qualquer coisa",
+    "contactButton" : "Escreve-me!",
+    "websiteDev" : "Desenvolvimento de uma web app",
+    "api" : "Desenvolvimento de una API",
+    "smartHomeConf" : "Configuraçao de uma Smart Home",
+    "intranetDev" : "Desenvolvimento de uma Intranet empresarial",
+    "optSoftware" : "Software de Optimizaçao",
+    "dataAnalys" : "Análise de dados"
   },
   "blog" : {
     "title" : "Coming sooooonn"
   },
   "languages" : {
-    "title" : "Tabella delle traduzioni",
-    "subtitle" : "Così è come provo ad imparare diverse lingue",
-    "from" : "Da",
-    "textButton" : "Parola Random"
+    "title" : "Tabela das traduçoes",
+    "subtitle" : "Assim é como tento aprender novos idiomas",
+    "from" : "Desde",
+    "textButton" : "Traduçes"
   },
   "contact" : {
-    "title": "Scrivimi. Ti risponderò non appena possibile",
-    "subtitle" : "chiedendoti di prendere un caffè insieme",
+    "title": "Escre-ve. Vou a responder-te logo que possível",
+    "subtitle" : "preguntando-te do tomar um café juntos",
     "nome" : "Nome",
-    "email" : "Email",
-    "text" : "Testo",
-    "submit" : "Invia",
-    "mailSuccess" : "Il messaggio è stato inviato correttamente, controlla la tua casella di posta.",
-    "mailSuccessButton" : "Grande!",
-    "mailError" : "Si è vericato un errore. Per favore, prova di nuovo",
+    "email" : "Correio",
+    "text" : "Texto",
+    "submit" : "Envia",
+    "mailSuccess" : "O mensagem è sido enviado corectamente, verifique sua caixa de entrada.",
+    "mailSuccessButton" : "Bora là!",
+    "mailError" : "Um erro foi cometido. Por favor, tenta do novo",
     "mailErrorButton" : "Ah, Ok.",
     "api" : {
-      "objectMail" : "Il tuo messaggio è stato inviato",
-      "bodyMail" : "Grazie per avermi contattato. Ti risponderò non appena possibile. Cordiali saluti, Leonardo.",
-      "htmlMessage" : "L'email è stata inviata"
+      "objectMail" : "O teu mensagem è sido enviado",
+      "bodyMail" : "Obrigado por me contatar. Responderei o mais rápido possível. Com os melhores cumprimentos, Leonardo.",
+      "htmlMessage" : "O correio è sido enviado"
     }
   },
   "footer": {
-    "websiteStack": "Questo sito è stato sviluppato con sangue e lacrime insieme a Next.js e Tailwind",
-    "rights" : "Tutti i diritti riservati, 2022"
+    "websiteStack": "Este site é sido desenvolvido com sangue e lagrimas juntos a Next.js e Tailwind",
+    "rights" : "Todos os direitos reservados, 2022"
   }
 }
