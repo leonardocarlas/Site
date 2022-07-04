@@ -18,8 +18,10 @@ export default function Section1() {
 
     return (
         <div className={isDarkmode ? styles.firstContainerDark : styles.firstContainerLight}>
-            <p className={`${utilStyles.heading2Xl} ${styles.coloredName}`}>{t.section1.title}</p>
-            <p className={utilStyles.headingLg}>{t.section1.subtitle}</p>
+            <div className={'lg:mx-[400px]'}>
+                <p className={`${utilStyles.heading2Xl} ${styles.coloredName}`}>{t.section1.title}</p>
+                <p className={utilStyles.headingLg}>{t.section1.subtitle}</p>
+            </div>
         </div>
     );
     

@@ -26,6 +26,11 @@
 
         .rowForm {
 
+            .minimizeTextarea {
+                color: red;
+                width: 37rem;
+            }
+
             .formElement {
                 display:flex;
                 flex-direction:column;
@@ -41,12 +46,11 @@
                 }
                 textarea {
                     @include cardFormat;
+                    width: 100%;
                     padding: 10px;
-                    max-width: 100%;
                     line-height: 1.5;
                     border-radius: 15px;
                     height: auto;
-                    width: 100%;
                     -webkit-box-sizing: border-box;
                     -moz-box-sizing: border-box;
                     box-sizing: border-box;
@@ -63,7 +67,10 @@
     }
 }
 
+
 .sectionDark {
     background-color: $black;
     color: $white;
 }
+
+

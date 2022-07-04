@@ -15,7 +15,7 @@ import { useRouter } from 'next/router';
 import { Util } from '../../utils/util';
 import { Constants } from '../../constants/constants';
 import axios from "axios";
-import {Circles} from "react-loader-spinner";
+import {Circles, Plane} from "react-loader-spinner";
 
 export default function Languages() {
 
@@ -55,36 +55,45 @@ export default function Languages() {
 
     return (
         <div className={isDarkmode ? styles.translationsContainerDark : styles.translationsContainerLight}>
-            <p className={utilStyles.title}>{t.languages.title}</p>
-            <p className={utilStyles.subtitle}>{t.languages.subtitle}</p>
-            <div className='w-80 my-10'>
-                <form method="post" onSubmit={handleSubmit}>
-                    <label htmlFor="from">{t.languages.from}</label>
-                    <select onChange={handleChange} id="from" name="from" value={form.from}
-                    className="h-11 pl-3 pr-6 text-base border rounded-[15px] bg-white appearance-none focus:shadow-outline text-black" >
-                        <option value={0}>Portuguese</option>
-                        <option value={1}>Spanish</option>
-                        <option value={2}>Italian</option>
-                        <option value={3}>French</option>
-                        <option value={4}>English</option>
-                        <option value={5}>German</option>
-                    </select>
-                    <label htmlFor="fname">Word</label>
-                    <input onChange={handleChange} type="text" id="word" name="word" required={true}
-                           className="h-11 pl-3 pr-6 text-base border rounded-[15px] bg-white appearance-none focus:shadow-outline text-black"></input>
-                    <div className="my-4 d-flex flex-row justify-center">
-                        <Button label={t.languages.textButton} type={'submit'}></Button>  
+            {isLoading ?
+                <div className={'my-80 sm:my-[40px]'}>
+                    <Plane />
+                </div>
+                :
+                <div>
+                    <p className={utilStyles.title}>{t.languages.title}</p>
+                    <p className={utilStyles.subtitle}>{t.languages.subtitle}</p>
+                    <div className='w-80 my-10'>
+                        <form method="post" onSubmit={handleSubmit}>
+                            <label htmlFor="from">{t.languages.from}</label>
+                            <select onChange={handleChange} id="from" name="from" value={form.from}
+                                    className="h-11 pl-3 text-base border rounded-[15px] bg-white focus:shadow-outline text-black" >
+                                <option value={0}>Portuguese</option>
+                                <option value={1}>Spanish</option>
+                                <option value={2}>Italian</option>
+                                <option value={3}>French</option>
+                                <option value={4}>English</option>
+                                <option value={5}>German</option>
+                            </select>
+                            <label htmlFor="fname">Word</label>
+                            <input onChange={handleChange} type="text" id="word" name="word" required={true}
+                                   className="h-11 pl-3 pr-6 text-base border rounded-[15px] bg-white appearance-none focus:shadow-outline text-black"></input>
+                            <div className="my-4 d-flex flex-row justify-center">
+                                <Button label={t.languages.textButton} type={'submit'}></Button>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <div className='flex flex-row flex-wrap justify-center align-center my-8'>
-                <TranslationCard image={ptPic} language={Constants.PT} word={words[0]} phrase={contexts[0]} ></TranslationCard>
-                <TranslationCard image={esPic} language={Constants.ES} word={words[1]} phrase={contexts[1]}></TranslationCard>
-                <TranslationCard image={itPic} language={Constants.IT} word={words[2]} phrase={contexts[2]}></TranslationCard>
-                <TranslationCard image={frPic} language={Constants.FR} word={words[3]} phrase={contexts[3]}></TranslationCard>
-                <TranslationCard image={enPic} language={Constants.EN} word={words[4]} phrase={contexts[4]}></TranslationCard>
-                <TranslationCard image={dePic} language={Constants.DE} word={words[5]} phrase={contexts[5]}></TranslationCard>
-            </div>
+                    <div className='flex flex-row flex-wrap justify-center align-center my-8'>
+                        <TranslationCard image={ptPic} language={Constants.PT} word={words[0]} phrase={contexts[0]} ></TranslationCard>
+                        <TranslationCard image={esPic} language={Constants.ES} word={words[1]} phrase={contexts[1]}></TranslationCard>
+                        <TranslationCard image={itPic} language={Constants.IT} word={words[2]} phrase={contexts[2]}></TranslationCard>
+                        <TranslationCard image={frPic} language={Constants.FR} word={words[3]} phrase={contexts[3]}></TranslationCard>
+                        <TranslationCard image={enPic} language={Constants.EN} word={words[4]} phrase={contexts[4]}></TranslationCard>
+                        <TranslationCard image={dePic} language={Constants.DE} word={words[5]} phrase={contexts[5]}></TranslationCard>
+                    </div>
+                </div>
+            }
         </div>
     );
 }
+1

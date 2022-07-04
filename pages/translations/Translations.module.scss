@@ -3,10 +3,12 @@
 
 .translationsContainerDark, .translationsContainerLight {
     @include containerBaseStyle;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+    div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
 
     label,select,input{
         margin: 0.5rem 0 0.5rem 0;

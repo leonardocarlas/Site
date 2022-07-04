@@ -27,7 +27,7 @@ export default function TranslationCard(props : TranslationCardProps) {
                   <p className={utilStyles.headingMd}>{props.language}</p>
                 </div>
                 <p className={utilStyles.headingMd}>{props.word}</p>
-                <p className={`${utilStyles.headingMd} text-center`}>{props.phrase}</p>
+                <p className={`${utilStyles.headingMd} text-center mb-10`}>{props.phrase}</p>
             </div>
         </>
     );

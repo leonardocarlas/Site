@@ -82,7 +82,7 @@ export default function Contact() {
                         </div>
                     </div>
                     <div className={styles.rowForm}>
-                        <div className={styles.formElement}>
+                        <div className={ `${styles.formElement} w-[300px] md:w-[610px] lg:w-[610px]`}>
                             <label htmlFor="text">{t.contact.text}</label>
                             <textarea onChange={handleChange} id="text" name="text" placeholder="" required rows={7} cols={50}></textarea>
                         </div>
