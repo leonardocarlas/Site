@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import { useAppSelector } from '../../redux/hooks'
 import { Util } from '../../utils/util'
 import { PathPage } from '../../constants/path-pages'
+import { useEffect } from 'react'
 
 
 
@@ -18,6 +19,23 @@ export default function Header() {
 
     let router = useRouter();
     let t = Util.getLocale(router);
+    let isLargeScreen = true;
+    let target = '';
+
+
+    useEffect(() => {
+        var width =window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+        console.log(width);
+        if(width < 1024)
+            isLargeScreen = false;
+    }, [])
+
+    if(isLargeScreen === true) {
+        target = "#navbarSupportedContent"
+    }
+        
 
 
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
@@ -29,8 +47,8 @@ export default function Header() {
                     <a className='inline-flex items-center lg:ml-5'>
                         <Image
                             src={logoPic}
-                            width={70}
-                            height={70}
+                            width={50}
+                            height={50}
                             className={styles.logo} />
                         <span className={styles.logoname}>{Constants.NAME}</span>
                     </a>
@@ -54,9 +72,9 @@ export default function Header() {
                     </button>
                 </div>
                 <div className={`collapse navbar-collapse ${styles.end}`} id="navbarSupportedContent">
-                    <HeaderChild title={t.header.services} code={2} page={PathPage.SERVICES}></HeaderChild>
-                    <HeaderChild title={t.header.blog} code={1} page={PathPage.BLOG}></HeaderChild>
-                    <HeaderChild title={t.header.languages} code={0} page={PathPage.TRANSLATIONS}></HeaderChild>
+                    <Link href={`/${PathPage.SERVICES}`}><a data-bs-toggle="collapse" data-bs-target={target} aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className={styles.headerLink}>{t.header.services}</a></Link>
+                    <Link href={`/${PathPage.BLOG}`}><a className={styles.headerLink}>{t.header.blog}</a></Link>
+                    <Link href={`/${PathPage.TRANSLATIONS}`}><a className={styles.headerLink}>{t.header.languages}</a></Link>
                     <div className={'mr-5 my-3 sm:my-20'}>
                         <Button label={t.header.buttonContactMe} callback={() => {return router.push('/contact')}}></Button>
                     </div>

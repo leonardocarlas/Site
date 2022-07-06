@@ -19,6 +19,24 @@
         .hamburgerMenuContainer {
             border: 1px $white solid;
         }
+        .headerLink {
+            text-decoration: none;
+            color: $white;
+            margin: 1.2rem;
+            &:link { /* Essentially means a[href], or that the link actually goes somewhere */
+                color: $white;
+            }
+            &:visited {
+                
+            }
+            &:hover {
+                border-bottom: 2px solid $white;
+            }
+            &:focus {
+                color: red;
+            }
+
+        }
     }
     padding:  0.5rem;
     margin :  0;
@@ -51,6 +69,8 @@
     border-bottom: 1px solid $black;
     background-color: $white;
 }
+
+
 
 
 

@@ -3,7 +3,7 @@ export class Constants {
     public static readonly NAME : string = 'Leonardo Carlassare';
     public static readonly SITETITLE : string = 'Leonardo Carlassare | Portfolio Website';
     public static readonly WEBSITEURL : string = 'www.leonardocarlassare.com';
-    public static readonly MAIL : string = 'leonardo.carlassare@studenti.unipd.it';
+    public static readonly MAIL : string = 'info@leonardocarlassare.com';
     public static readonly PRIVACY : string = 'Privacy';
     public static readonly COOKIE : string = 'Cookie';
     public static readonly EN_BACK: string = 'I have to thank Marine for improving my English level';
