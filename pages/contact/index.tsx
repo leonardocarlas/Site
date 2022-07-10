@@ -42,7 +42,7 @@ export default function Contact() {
             { success ?
                 <div className={`text-black d-flex flex-col justify-center text-center p-4 bg-green-400`}>
                     <p>{t.contact.mailSuccess}</p>
-                    <button className='underline block' onClick={() => {setSuccess(false)}}>{t.contact.mailSuccess}</button>
+                    <button className='underline block' onClick={() => {setSuccess(false)}}>{t.contact.mailSuccessButton}</button>
                 </div>
                 :
                 ''

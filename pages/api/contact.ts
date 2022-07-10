@@ -3,35 +3,35 @@ import nodemailer, {Transporter} from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
 type Data = {
-    name: string
+    sent : boolean
 }
 
-
-// GMAIL PROBLEM TO ALLOW THE EMAILS
 export default async function handler(req : NextApiRequest, res: NextApiResponse<Data>) {
 
     if (req.method == "POST") {
 
+        console.log(process.env.customKey)
+
         let transporter : Transporter =
             nodemailer.createTransport({
-                host : 'smtp.gmail.com',
-                port : 465,
+                host : 'smtpout.secureserver.net',
+                port : 80,
                 auth : {
-                    user : 'collectionsight@gmail.com',
-                    pass : 'Dragalge3'
+                    user : process.env.EMAIL_SENDER,
+                    pass : process.env.EMAIL_PASSWORD
                 }
             });
 
         let options = {
             from : `${req.body.email}`,
-            to   : 'lio.del.bronx@gmail.com',
+            to   : process.env.EMAIL_SENDER,
             subject: `${req.body.subject}`,
             text: `${req.body.message}`,
         };
 
         let result1 : SMTPTransport.SentMessageInfo = await transporter.sendMail(options);
 
-        res.status(200).json({ name: 'John Doe' })
+        res.status(200).json({ sent : true })
     }
  }
 

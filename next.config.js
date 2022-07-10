@@ -11,4 +11,9 @@ module.exports = {
     defaultLocale: 'en',
     localeDetection: false,
   },
+  env: {
+    EMAIL_SENDER : "JORDAN",
+    EMAIL_PASSWORD : "MICHEAL"
+
+  },
 }
