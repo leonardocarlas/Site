@@ -12,30 +12,46 @@ import { useAppSelector } from '../../redux/hooks'
 import { Util } from '../../utils/util'
 import { PathPage } from '../../constants/path-pages'
 import { useEffect } from 'react'
+import { NextPage } from 'next'
+import { toggleDarkmode } from '../../redux/slices/darkmodeSlice'
+import { useAppDispatch } from '../../redux/hooks'
+import sunPic from '../../public/svg/sun.svg'
+import moonPic from  '../../public/svg/moon.svg'
 
 
 
-export default function Header() {
 
+
+
+export default function Header2() {
+
+    const getMobileDetect = (userAgent: NavigatorID['userAgent']) => {
+        const isAndroid = () => Boolean(userAgent.match(/Android/i))
+        const isIos = () => Boolean(userAgent.match(/iPhone|iPad|iPod/i))
+        const isOpera = () => Boolean(userAgent.match(/Opera Mini/i))
+        const isWindows = () => Boolean(userAgent.match(/IEMobile/i))
+        const isSSR = () => Boolean(userAgent.match(/SSR/i))
+        const isMobile = () => Boolean(isAndroid() || isIos() || isOpera() || isWindows())
+        const isDesktop = () => Boolean(!isMobile() && !isSSR())
+        return {
+          isMobile,
+          isDesktop,
+          isAndroid,
+          isIos,
+          isSSR,
+        }
+      }
+
+    const useMobileDetect = () => {
+        useEffect(() => {}, [])
+        const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent
+        return getMobileDetect(userAgent)
+    }
+    
     let router = useRouter();
     let t = Util.getLocale(router);
-    let isLargeScreen = true;
-    let target = '';
-
-
-    useEffect(() => {
-        var width =window.innerWidth
-        || document.documentElement.clientWidth
-        || document.body.clientWidth;
-        console.log(width);
-        if(width < 1024)
-            isLargeScreen = false;
-    }, [])
-
-    if(isLargeScreen === true) {
-        target = "#navbarSupportedContent"
-    }
-        
+    let isLargeScreen : boolean = true;
+    isLargeScreen = useMobileDetect().isMobile(); 
 
 
     const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
@@ -71,16 +87,65 @@ export default function Header() {
                         }
                     </button>
                 </div>
+
+                {/* Headers */}
+                { isLargeScreen ?
+                
                 <div className={`collapse navbar-collapse ${styles.end}`} id="navbarSupportedContent">
-                    <Link href={`/${PathPage.SERVICES}`}><a data-bs-toggle="collapse" data-bs-target={target} aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className={styles.headerLink}>{t.header.services}</a></Link>
-                    <Link href={`/${PathPage.BLOG}`}><a className={styles.headerLink}>{t.header.blog}</a></Link>
-                    <Link href={`/${PathPage.TRANSLATIONS}`}><a className={styles.headerLink}>{t.header.languages}</a></Link>
-                    <div className={'mr-5 my-3 sm:my-20'}>
+                    {sunAndMoon(isDarkmode)}
+                    <Link href={`/${PathPage.SERVICES}`}><a data-bs-toggle="collapse" data-bs-target={'#navbarSupportedContent'} aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className={styles.headerLink}>{t.header.services}</a></Link>
+                    <Link href={`/${PathPage.BLOG}`}><a data-bs-toggle="collapse" data-bs-target={'#navbarSupportedContent'} aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className={styles.headerLink}>{t.header.blog}</a></Link>
+                    <Link href={`/${PathPage.TRANSLATIONS}`}><a data-bs-toggle="collapse" data-bs-target={'#navbarSupportedContent'} aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className={styles.headerLink}>{t.header.languages}</a></Link>
+                    <div className={'my-3 sm:my-20'}>
                         <Button label={t.header.buttonContactMe} callback={() => {return router.push('/contact')}}></Button>
                     </div>
                 </div>
+                :
+                <div className={`collapse navbar-collapse ${styles.end}`} id="navbarSupportedContent">
+                    {sunAndMoon(isDarkmode)}
+                    <button className={styles.headerLink} onClick={()=>{return router.push(`/${PathPage.SERVICES}`)}}>{t.header.services}</button>
+                    <button className={styles.headerLink} onClick={()=>{return router.push(`/${PathPage.BLOG}`)}}>{t.header.blog}</button>
+                    <button className={styles.headerLink} onClick={()=>{return router.push(`/${PathPage.TRANSLATIONS}`)}}>{t.header.languages}</button>
+                    <div className={'my-3 mx-3'}>
+                        <Button label={t.header.buttonContactMe} callback={() => {return router.push('/contact')}}></Button>
+                    </div>
+                </div>
+                    
+                }
+                    
             </nav>
         </div>
     )
+}
+
+function sunAndMoon (isDarkmode : boolean) {
+
+    const dispatch = useAppDispatch();
+
+    return (
+        <button 
+        className={styles.iconContainer}
+        onClick={
+            () => {
+                dispatch(toggleDarkmode());
+            }
+        }
+    >
+        {isDarkmode ? 
+        <Image 
+            src={sunPic}
+            width={20}
+            height={20}
+            alt={'Sun icon'}
+        /> : 
+        <Image 
+            src={moonPic}
+            width={20}
+            height={20}
+            alt={'Moon icon'}
+        />
+        }
+    </button>
+    );
 }
 

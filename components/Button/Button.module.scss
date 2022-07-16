@@ -18,3 +18,18 @@
         
     }
 }
+
+.buttonWhite {
+
+    margin: 0 0.5rem 0 0.5rem;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    background-image: none;
+    background-color: $white;
+    border-radius: 15px;
+    font-weight: 500;
+    
+
+    span {
+        color: $black;
+    }
+}

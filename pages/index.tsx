@@ -17,11 +17,10 @@ import frPic from '../public/svg/flags/fr.svg';
 import Board from '../components/Board/Board';
 import University from '../components/University/University';
 import Language from '../components/Language/Language';
-import Section1 from '../components/Section1/Section1';
+import Section1 from '../components/Front/Front';
 import cdcLOGO from '../public/svg/cdcLOGO.svg';
 import ecobraciLOGO from '../public/svg/ecobraciLOGO.svg';
 import TimelineSection from '../components/TimelineSection/TimelineSection';
-
 
 
 
@@ -65,7 +64,7 @@ export default function Home() {
         <p className={`${utilStyles.title} `}>{t.projects.title}</p>
         <Startup img={collectionitePic} name={t.projects.startup} period={t.projects.period} link={'https://github.com/leonardocarlas/Collectionite-code'} isOnline={false} text={t.projects.description}></Startup>
         <p className={`${utilStyles.subtitle} `}>{t.projects.collaborations}</p>
-        <Button label={t.projects.contactButton} callback={() => {return router.push('/contact')}}></Button>
+        <Button isWhite={true} label={t.projects.contactButton} callback={() => {return router.push('/contact')}}></Button>
       </div>
 
       <TimelineSection></TimelineSection>

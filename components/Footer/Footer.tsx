@@ -13,6 +13,7 @@ import utilStyles from '../../styles/utils.module.scss';
 import { Constants } from '../../constants/constants';
 import { useRouter } from 'next/router';
 import { Util } from '../../utils/util';
+import Button from '../Button/Button';
 
 export default function Footer () {
 
@@ -37,10 +38,14 @@ export default function Footer () {
         <p className={utilStyles.headingMd}> {Constants.WEBSITEURL} </p>
         <p className={utilStyles.headingMd}>{t.footer.rights}</p>
         {/* <span><Link href={`/`}><a className={utilStyles.headingMd}>{Constants.PRIVACY} </a></Link><Link href={`/`}><a className={utilStyles.headingMd}> {Constants.COOKIE} </a></Link></span> */}
+        <form method="get" action="Resume_Leonardo_Carlassare.pdf">
+          <Button label={'Download Resume'} type={'submit'} isWhite={false}></Button>
+        </form>
         <div className={styles.imageContainer}>
             <Link href={'https://github.com/leonardocarlas'}><a><Image data-testid="linkedinImage" width={55} height={55} src={isDarkmode ? githubPicWhite : githubPic} alt={'Github profile'} /></a></Link>
             <Link href={'https://www.linkedin.com/in/leonardo-carlassare-03aa491b5/'}><a><Image width={70} height={70} src={isDarkmode ? linkedinPicWhite : linkedinPic} alt={'Linkedin Profile'}/></a></Link>
         </div>
+        
     </div>
   );
 
