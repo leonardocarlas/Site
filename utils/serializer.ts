@@ -96,7 +96,8 @@ function fromJsonToObj(json : any)  {
     let la = {} as Languages;
     la.title = json?.languages?.title;
     la.subtitle = json?.languages?.subtitle;    
-    la.from = json?.languages?.from;  
+    la.from = json?.languages?.from;
+    la.word = json?.languages?.word;  
     la.textButton = json?.languages?.textButton;
     p.languages = la;
 

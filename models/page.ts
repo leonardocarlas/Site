@@ -111,6 +111,7 @@ export interface Blog {
 
 export interface Languages extends TitleSubtitle {
     from : string,
+    word: string,
     textButton : string
 }
 

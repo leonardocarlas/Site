@@ -87,7 +87,8 @@
   "languages" : {
     "title" : "Tabella delle traduzioni",
     "subtitle" : "Così è come provo ad imparare diverse lingue",
-    "from" : "Da",
+    "from" : "Scegli una lingua",
+    "word" : "Scrivi una parola in italiano",
     "textButton" : "Traduci"
   },
   "contact" : {

@@ -8,6 +8,7 @@
     background-image: linear-gradient(to bottom,  $leoblue , $leoviolet);
     border-radius: 15px;
     font-weight: 500;
+    min-width: 9rem;
     
 
     span {
@@ -27,7 +28,7 @@
     background-color: $white;
     border-radius: 15px;
     font-weight: 500;
-    
+    min-width: 9rem;
 
     span {
         color: $black;

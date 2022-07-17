@@ -2,6 +2,7 @@
 @import '../../styles/utils.module.scss';
 
 .translationsContainerDark, .translationsContainerLight {
+    
     @include containerBaseStyle;
     div {
         display: flex;
@@ -27,4 +28,8 @@
 .translationsContainerDark {
     background-color: $black;
     color: $white;
+}
+
+.minW {
+    min-height: 45rem;
 }

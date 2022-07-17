@@ -9,80 +9,130 @@ import dePic from '../../public/svg/flags/de.svg';
 import ptPic from '../../public/svg/flags/pt.svg';
 import frPic from '../../public/svg/flags/fr.svg';
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
-import table from '../../mock/table.json';
 import { useAppSelector } from '../../redux/hooks';
 import { useRouter } from 'next/router';
 import { Util } from '../../utils/util';
 import { Constants } from '../../constants/constants';
 import axios from "axios";
-import {Circles, Plane} from "react-loader-spinner";
+import {Plane} from "react-loader-spinner";
+import LanguageButton from '../../components/LanguageButton';
+
+interface TranslationForm {
+    from : number,
+    word : string
+}
 
 export default function Languages() {
 
     let router = useRouter();
     let t = Util.getLocale(router);
-    const [form, setForm] = useState({
-        from : "1",
-        word : ''
-    });
+    let translationForm = {} as TranslationForm;
+    let actualLanguage : string | undefined = router.locale;
+    let indexActualLanguage : number;
+    const languages            : Array<string>  = ['pt', 'es', 'it', 'fr', 'en', 'de'];
+    let   activeLanguagesArray : Array<boolean> = [false, false, false, false, false, false];
+    checkActualLanguage();
+    console.log(activeLanguagesArray)
     const [words, setWords] = useState(["","","","","",""]);
     const [contexts, setContexts] = useState(["","","","","",""]);
     const [isLoading, setIsLoading] = useState(false);
+    const [hasResult, setHasResult] = useState(false);
+    const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
+    const [isDisabled, setIsDisabled] = useState(true);
 
     async function handleSubmit(e: SyntheticEvent) {
         e.preventDefault();
         try {
             setIsLoading(true);
-            let res = await axios.post('/api/translations', form);
+            let res = await axios.post('/api/translations', translationForm);
             setIsLoading(false);
-            setWords([res.data?.word.portuguese, res.data?.word.spanish,
-                            res.data?.word.italian, res.data?.word.french,
-                            res.data?.word.english, res.data?.word.german]);
+            setWords([  cleanWord(res.data?.word.portuguese), cleanWord(res.data?.word.spanish),
+                cleanWord(res.data?.word.italian)   , cleanWord(res.data?.word.french),
+                cleanWord(res.data?.word.english)   , cleanWord(res.data?.word.german)
+            ]);
             setContexts([res.data?.context.portuguese, res.data?.context.spanish,
-                        res.data?.context.italian, res.data?.context.french,
-                        res.data?.context.english, res.data?.context.german]);
-        } catch (error) {
-            console.log(error);
+                res.data?.context.italian, res.data?.context.french,
+                res.data?.context.english, res.data?.context.german]);
+                setHasResult(true);
+            } catch (error) {
+                console.log(error);
+            }
         }
-    }
-
-    function handleChange(e : ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) {
+        
+    function handleChange(e : ChangeEvent<HTMLInputElement>) {
         const { value, name } = e.target;
-        setForm({ ...form, [name]: value });
+        translationForm.word = value;
+        setIsDisabled(false);
+    }
+    
+    function cleanWord(word : string) : string {
+        let s : string = '';
+        if (word.slice(word.length - 2) === ' m')
+        s = word.slice(0, word.length - 2);
+        else if (word.slice(word.length - 2) === ' f')
+        s = word.slice(0, word.length - 2);
+        else 
+        s = word;
+        return s;
     }
 
-    const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
-
-    return (
-        <div className={isDarkmode ? styles.translationsContainerDark : styles.translationsContainerLight}>
+    const handleChangeLanguage = (language : string) => {
+        router.push(router.asPath, router.asPath, { locale: language });
+    }
+    
+    // Go and check if other languages are selected
+    // function selectLanguage(index : number) {
+    //     activeLanguagesArray[index] = true;
+        // activeLanguagesArray[indexActualLanguage] = false;
+        // indexActualLanguage = index;
+        // activeLanguagesArray[indexActualLanguage] = true;
+        // translationForm.from = indexActualLanguage;
+    // }
+    
+    function checkActualLanguage() : void {
+        for(let i = 0; i < languages.length; i++) {
+            if(languages[i] == actualLanguage) {
+                indexActualLanguage = i;
+            }   
+        }
+        translationForm.from = indexActualLanguage;
+        activeLanguagesArray[indexActualLanguage] = true;
+    }
+        
+        
+        return (
+            <div className={isDarkmode ? styles.translationsContainerDark : styles.translationsContainerLight}>
             {isLoading ?
-                <div className={'my-80 sm:my-[40px]'}>
+                <div className={`my-80 sm:my-[40px] ${styles.minW}`}>
                     <Plane />
                 </div>
                 :
-                <div>
+                <div className={`${styles.minW}`}>
                     <p className={utilStyles.title}>{t.languages.title}</p>
                     <p className={utilStyles.subtitle}>{t.languages.subtitle}</p>
                     <div className='w-80 my-10'>
                         <form method="post" onSubmit={handleSubmit}>
                             <label htmlFor="from">{t.languages.from}</label>
-                            <select onChange={handleChange} id="from" name="from" value={form.from}
-                                    className="h-11 pl-3 text-base border rounded-[15px] bg-white focus:shadow-outline text-black" >
-                                <option value={0}>Portuguese</option>
-                                <option value={1}>Spanish</option>
-                                <option value={2}>Italian</option>
-                                <option value={3}>French</option>
-                                <option value={4}>English</option>
-                                <option value={5}>German</option>
-                            </select>
-                            <label htmlFor="fname">Word</label>
-                            <input onChange={handleChange} type="text" id="word" name="word" required={true}
+
+                            <div className='flex flex-row'>
+                                <LanguageButton id={1} isSelected={activeLanguagesArray[1]} flag={esPic} callback={() => handleChangeLanguage('es')}></LanguageButton>
+                                <LanguageButton id={2} isSelected={activeLanguagesArray[2]} flag={itPic} callback={() => handleChangeLanguage('it')}></LanguageButton>
+                                <LanguageButton id={3} isSelected={activeLanguagesArray[3]} flag={frPic} callback={() => handleChangeLanguage('fr')}></LanguageButton>
+                                <LanguageButton id={4} isSelected={activeLanguagesArray[4]} flag={enPic} callback={() => handleChangeLanguage('en')}></LanguageButton>
+                                <LanguageButton id={0} isSelected={activeLanguagesArray[0]} flag={ptPic} callback={() => handleChangeLanguage('pt')}></LanguageButton>
+                                <LanguageButton id={5} isSelected={activeLanguagesArray[5]} flag={dePic} callback={() => handleChangeLanguage('de')}></LanguageButton>
+                            </div> 
+                                                     
+                            <label htmlFor="fname">{t.languages.word}</label>
+                            <input onChange={handleChange} type="text" id="word" name="word" required={true} 
                                    className="h-11 pl-3 pr-6 text-base border rounded-[15px] bg-white appearance-none focus:shadow-outline text-black"></input>
                             <div className="my-4 d-flex flex-row justify-center">
-                                <Button label={t.languages.textButton} type={'submit'}></Button>
+                                <Button label={t.languages.textButton} type={'submit'} disabled={isDisabled}></Button>
                             </div>
                         </form>
                     </div>
+                    { hasResult ? 
+                    
                     <div className='flex flex-row flex-wrap justify-center align-center my-8'>
                         <TranslationCard image={ptPic} language={Constants.PT} word={words[0]} phrase={contexts[0]} ></TranslationCard>
                         <TranslationCard image={esPic} language={Constants.ES} word={words[1]} phrase={contexts[1]}></TranslationCard>
@@ -91,9 +141,18 @@ export default function Languages() {
                         <TranslationCard image={enPic} language={Constants.EN} word={words[4]} phrase={contexts[4]}></TranslationCard>
                         <TranslationCard image={dePic} language={Constants.DE} word={words[5]} phrase={contexts[5]}></TranslationCard>
                     </div>
+
+                    :
+
+                    ''
+
+                    }
+                    
                 </div>
             }
         </div>
     );
 }
-1
+
+
+

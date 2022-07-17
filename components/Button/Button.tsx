@@ -7,7 +7,8 @@ export type ButtonProps = {
     callback? : MyFunctionType,
     variant? : 'sm' | 'big' | 'submit',
     type?: string,
-    isWhite? : boolean
+    isWhite? : boolean,
+    disabled?: boolean
 }
 
 export default function Button(props : ButtonProps) {
@@ -16,7 +17,7 @@ export default function Button(props : ButtonProps) {
     return (
         <>
             
-            <button className={props.isWhite ? styles.buttonWhite : styles.button } onClick={props.callback} data-testid="button">
+            <button className={props.isWhite ? styles.buttonWhite : styles.button } onClick={props.callback} disabled={props.disabled} data-testid="button">
                 <span>{props.label}</span>
             </button>
         </>

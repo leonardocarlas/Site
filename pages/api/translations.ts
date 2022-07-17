@@ -25,7 +25,9 @@ const reverso = new Reverso();
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse<Data>) {
 
-    let languageIndex : number = parseInt(req.body.from);
+    // let languageIndex : number = parseInt(req.body.from);
+    
+    let languageIndex : number = req.body.from;
     const languages : Array<string> = ['Portuguese','Spanish','Italian','French','English','German'];
     try {
         let responseWords : Array<string> = [];

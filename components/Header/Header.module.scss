@@ -19,10 +19,11 @@
         .hamburgerMenuContainer {
             border: 1px $white solid;
         }
+
         .headerLink {
+            min-width: 7rem;
             text-decoration: none;
             color: $white;
-            margin: 1.2rem;
             &:link { /* Essentially means a[href], or that the link actually goes somewhere */
                 color: $white;
             }
@@ -75,7 +76,7 @@
     .headerLink {
         text-decoration: none;
         color: $black !important;
-        margin: 1.2rem;
+        min-width: 7rem;
         &:link { /* Essentially means a[href], or that the link actually goes somewhere */
             color: $white;
         }
