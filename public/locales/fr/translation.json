@@ -87,7 +87,8 @@
   "languages" : {
     "title" : "Tableau des traductions",
     "subtitle" : "C’est comme ça que j’essaie d’apprendre différentes langues",
-    "from" : "Par le",
+    "from" : "Choisir une langue",
+    "word" : "Ecrì un mot en francé",
     "textButton" : "Traduis"
   },
   "contact" : {

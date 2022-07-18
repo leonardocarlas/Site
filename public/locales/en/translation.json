@@ -87,7 +87,8 @@
   "languages" : {
     "title" : "Translations Table",
     "subtitle" : "This is how I try to learn different languages",
-    "from" : "From",
+    "from" : "Select a language",
+    "word" : "Write a word in english",
     "textButton" : "Translate"
   },
   "contact" : {

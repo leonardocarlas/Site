@@ -87,7 +87,8 @@
   "languages" : {
     "title" : "Übersetzungstabelle",
     "subtitle" : "So versuche ich verschiedene Sprachen zu lernen",
-    "from" : "von",
+    "from" : "wählen Sie eine Sprache",
+    "word" : "schreibe ein Wort auf Deutsch",
     "textButton": "Zufälliges Wort"
   },
   "contact" : {

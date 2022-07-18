@@ -80,14 +80,6 @@ export default function Languages() {
         router.push(router.asPath, router.asPath, { locale: language });
     }
     
-    // Go and check if other languages are selected
-    // function selectLanguage(index : number) {
-    //     activeLanguagesArray[index] = true;
-        // activeLanguagesArray[indexActualLanguage] = false;
-        // indexActualLanguage = index;
-        // activeLanguagesArray[indexActualLanguage] = true;
-        // translationForm.from = indexActualLanguage;
-    // }
     
     function checkActualLanguage() : void {
         for(let i = 0; i < languages.length; i++) {
@@ -114,14 +106,16 @@ export default function Languages() {
                         <form method="post" onSubmit={handleSubmit}>
                             <label htmlFor="from">{t.languages.from}</label>
 
-                            <div className='flex flex-row'>
+                            <div className='flex flex-row justify-around my-3'>
                                 <LanguageButton id={1} isSelected={activeLanguagesArray[1]} flag={esPic} callback={() => handleChangeLanguage('es')}></LanguageButton>
                                 <LanguageButton id={2} isSelected={activeLanguagesArray[2]} flag={itPic} callback={() => handleChangeLanguage('it')}></LanguageButton>
                                 <LanguageButton id={3} isSelected={activeLanguagesArray[3]} flag={frPic} callback={() => handleChangeLanguage('fr')}></LanguageButton>
+                            </div>
+                            <div className='flex flex-row justify-around my-3'>
                                 <LanguageButton id={4} isSelected={activeLanguagesArray[4]} flag={enPic} callback={() => handleChangeLanguage('en')}></LanguageButton>
                                 <LanguageButton id={0} isSelected={activeLanguagesArray[0]} flag={ptPic} callback={() => handleChangeLanguage('pt')}></LanguageButton>
                                 <LanguageButton id={5} isSelected={activeLanguagesArray[5]} flag={dePic} callback={() => handleChangeLanguage('de')}></LanguageButton>
-                            </div> 
+                            </div>
                                                      
                             <label htmlFor="fname">{t.languages.word}</label>
                             <input onChange={handleChange} type="text" id="word" name="word" required={true} 

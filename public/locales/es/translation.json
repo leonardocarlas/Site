@@ -87,7 +87,8 @@
   "languages" : {
     "title" : "Tabla de las traduciones",
     "subtitle" : "Assì es como intento aprender nuevos idiomas",
-    "from" : "Desde",
+    "from" : "Elige un idioma",
+    "word" : "Escribe una palavra en espanol",
     "textButton" : "Traducés"
   },
   "contact" : {
