@@ -1,4 +1,115 @@
 {
-    "title": "Bienvenido",
-    "intro": "Hola"
+  "header": {
+    "services": "Servicios",
+    "blog": "Blog",
+    "languages": "Traducciones",
+    "buttonContactMe": "Escribeme!"
+  },
+  "home": {
+    "section1" : {
+      "title" : "Me llamo Leonardo Carlassare y soy un Ingeniero Informático",
+      "subtitle" : "Me gusta programar, trabajar sobre nuevos proyectos y aprender nuevas cosas todos los dias."
+    },
+    "section2" : {
+      "title" : "Hola! Encantado de conocerte.",
+      "subtitle" : "Una breve introducción: me gradué en 2022 en el master de Ingeniería Informática de la Universidad de Padua. Actualmente estoy trabajando como un Desarrollador Frontend por la empresa Sysdata S.p.A."
+    },
+    "board" : {
+      "frontend" : "Habilidad Frontend",
+      "backend" : "Habilidad Skills",
+      "devops" : "Habilidad DevOps",
+      "otherProgrammingLanguages" :  "Otros linguajes de programación que uso"
+    },
+    "recentWorks" : {
+      "title" : "Trabajos Recientes",
+      "subtitle" : "He desarrolado los sitios web por las siguientes empresa"
+    },
+    "projects": {
+      "title" : "Proyectos",
+      "startup" : "Collectionite",
+      "description" : "Collectionite era una aplicación web para coleccionistas de tarjetas europeas que podía rastrear automáticamente los precios de las tarjetas. También era una red social que conectaba a personas con la misma pasión. Junto con algunos amigos, comenzamos una colaboración con la empresa alemana CardMarket, utilizando sus API para actualizar los datos. El proceso de desarrollo terminó en junio de 2021",
+      "period" : "Julio 2020 - Junio 2021",
+      "online" : "ya no está en línea",
+      "viewRepo" : "echa un vistazo a la repo",
+      "collaborations" : "¿Quieres colaborar conmigo o invertir en un proyecto? Me gustaria tomar un café contigo",
+      "contactButton" : "Escribeme!"
+    },
+    "studyCareer" : {
+      "title" : "Carrera Académica",
+      "subtitle" : "He estudiado en las siguientes Universidades",
+      "universities" : {
+        "paduaBachelor" : {
+          "name" : "Universidad de Padua",
+          "program" : "Ingeniería Informática - Licenciatura",
+          "period" : "Octubre 2016 - Septiembre 2019"
+        },
+        "uclmErasmus" : {
+          "name" : "Universidad de Castilla La Mancha",
+          "program" : "Erasmus+ para Estudios",
+          "period" : "Enero 2020 - Julio 2020"
+        },
+        "coimbraErasmus" : {
+          "name" : "Universidad de Coimbra",
+          "program" : "Erasmus+ para Proyecto Final",
+          "period" : "Septiembre 2021 - Febrero 2022"
+        },
+        "paduaMaster" : {
+          "name" : "Universidad de Padua",
+          "program" : "Ingeniería Informática - Máster",
+          "period" : "Octubre 2019 - Septiembre 2022"
+        }
+      }
+    },
+    "languagesSection" : {
+      "title"   : "Idiomas que estoy tratando de aprender",
+      "esFront" : "Leer - Hablar",
+      "enFront" : "Intermedio / Avanzado",
+      "itFront" : "Hablante nativo",
+      "frFront" : "Trabajos en curso...",
+      "ptFront" : "Leer - Hablar"
+    }
+  },
+  "services" : {
+    "title" : "Servicios",
+    "subtitle" : "que puedo ofrecer a privados y empresas",
+    "subtitleContact" : "Siéente libre de preguntarme lo que quieras",
+    "contactButton" : "Escribeme!",
+    "websiteDev" : "Desarollo de una web app",
+    "api" : "Desarollo de API",
+    "smartHomeConf" : "Configuraciòn de una Casa Inteligente",
+    "intranetDev" : "Desarollo de una Intranet Empresarial",
+    "optSoftware" : "Software de Optimización",
+    "dataAnalys" : "Análisis de datos"
+  },
+  "blog" : {
+    "title" : "Llega temprano"
+  },
+  "languages" : {
+    "title" : "Tabla de las traduciones",
+    "subtitle" : "Assì es como intento aprender nuevos idiomas",
+    "from" : "Elige un idioma",
+    "word" : "Escribe una palavra en espanol",
+    "textButton" : "Traducés"
+  },
+  "contact" : {
+    "title": "Escribeme. Te responderè lo antes posible",
+    "subtitle" : "pidiéndote que tomemos un café juntos",
+    "nome" : "Nombre",
+    "email" : "Email",
+    "text" : "Texto",
+    "submit" : "Entrega",
+    "mailSuccess" : "El mensaje se ha enviado corectamente, comprueba tu correo electronico",
+    "mailSuccessButton" : "Genial!",
+    "mailError" : "Ha habido un error. Por favor, intenta de nuevo",
+    "mailErrorButton" : "Ah, vale.",
+    "api" : {
+      "objectMail" : "Su mensaje ha sido enviado",
+      "bodyMail" : "Gracias por contactarme. Te responderé lo antes posible. Saludos cordiales, Leonardo.",
+      "htmlMessage" : "El correo ha sido enviado."
+    }
+  },
+  "footer": {
+    "websiteStack": "Este sitio fue desarrollado con sangre y lágrimas junto con Next.js y Tailwind",
+    "rights" : "Todos los derechos reservados, 2022"
   }
+}

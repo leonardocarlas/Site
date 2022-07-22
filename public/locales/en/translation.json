@@ -1,4 +1,115 @@
 {
-  "title": "Wellcome",
-  "intro": "Hello"
+  "header": {
+    "services": "Services",
+    "blog": "Blog",
+    "languages": "Translations",
+    "buttonContactMe": "Contact me!"
+  },
+  "home": {
+    "section1" : {
+      "title" : "My name is Leonardo Carlassare and I'm a Software Engineer",
+      "subtitle" : "I like coding, working on new projects and learning new things every day."
+    },
+    "section2" : {
+      "title" : "Hi! Nice to meet you",
+      "subtitle" : "A brief self-introduction: I graduated in 2022 in Computer Engineering MSc at the University of Padua. Currently I'm working as a Frontend Developer for Sysdata S.p.A."
+    },
+    "board" : {
+      "frontend" : "Frontend Skills",
+      "backend" : "Backend Skills",
+      "devops" : "DevOps Skills",
+      "otherProgrammingLanguages" :  "Other programming languages that I use"
+    },
+    "recentWorks" : {
+      "title" : "Recent Works",
+      "subtitle" : "I developed the website for the following companies."
+    },
+    "projects": {
+      "title" : "Projects",
+      "startup" : "Collectionite",
+      "description" : "Collectionite is a web application for european cards collectioners that could track automatically cards prices for them and it was also a social network for people with the same passion. We began a collaboration with the german company CardMarket using their APIs for gathering datas. The development process ended in June 2021",
+	  "period" : "July 2020 - June 2021",
+	  "online" : "No longer online",
+	  "viewRepo" : "view repo",
+      "collaborations" : "Do you want to collaborate or invest? I would like to take a coffee with you.",
+      "contactButton" : "Contact me!"
+    },
+    "studyCareer" : {
+      "title" : "Study Career",
+      "subtitle" : "I developed the website for the following companies.",
+      "universities" : {
+        "paduaBachelor" : {
+          "name" : "University of Padua",
+          "program" : "Computer Engineering - Bachelor Degree",
+          "period" : "October 2016 - September 2019"
+        },
+        "uclmErasmus" : {
+          "name" : "University of Castilla La Mancha",
+          "program" : "Erasmus+ for Studies",
+          "period" : "January 2020 - July 2020"
+        },
+        "coimbraErasmus" : {
+          "name" : "University of Coimbra",
+          "program" : "Erasmus+ for Thesis",
+          "period" : "September 2021 - February 2022"          
+        },
+        "paduaMaster" : {
+          "name" : "University of Padua",
+          "program" : "Computer Engineering - Master Degree",
+          "period" : "October 2019 - September 2022"
+        }
+      }
+    },
+    "languagesSection" : {
+      "title" : "Languages I'm trying to learn",
+      "esFront" : "Reading - Speaking",
+      "enFront" : "Intermediate / Adavanced",
+      "itFront" : "Native Language",
+      "frFront" : "Trust the process...",
+      "ptFront" : "Reading - Speaking"
+    }
+  },
+  "services" : {
+    "title" : "Services",
+    "subtitle" : "I am able to provide to privates and companies",
+    "subtitleContact" : "Feel free to ask me anything",
+    "contactButton" : "Contact me!",
+    "websiteDev" : "Website Development",
+    "api" : "API Development",
+    "smartHomeConf" : "Smart Home Configuration",
+    "intranetDev" : "Intranet Development",
+    "optSoftware" : "Optimization Software",
+    "dataAnalys" : "Data Analisys"
+  },
+  "blog" : {
+    "title" : "Coming sooooonn"
+  },
+  "languages" : {
+    "title" : "Translations Table",
+    "subtitle" : "This is how I try to learn different languages",
+    "from" : "Select a language",
+    "word" : "Write a word in english",
+    "textButton" : "Translate"
+  },
+  "contact" : {
+    "title": "Write me. I will text you back",
+    "subtitle" : "asking to take a coffee together",
+    "nome" : "Name",
+    "email" : "Email",
+    "text" : "Text",
+    "submit" : "Submit",
+    "mailSuccess" : "The message has been sent correctly, go and check out your inbox.",
+    "mailSuccessButton" : "Beautiful",
+    "mailError" : "An error occurred. Please try again",
+    "mailErrorButton" : "Oh, Ok.",
+    "api" : {
+      "objectMail" : "Your message has been sent",
+      "bodyMail" : "Thank you for contacting me. I will reply you as soon as possible. Best regards, Leonardo.",
+      "htmlMessage" : "The email has been sent"
+    }
+  },
+  "footer": {
+    "websiteStack": "This website has been developed with blood and pain alongside Next.js and Tailwind",
+    "rights" : "All rights reserved, 2022"
+  }
 }

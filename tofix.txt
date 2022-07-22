@@ -1,0 +1,5 @@
+Andrea
+
+- su recent works metterei meno spazio tra i 2 brand
+- services togliere l'immagine dell'ingranaggio, spiegare i servizi offerti/home/leonardo/Scrivania/MYSITE/public/locales/en/translation.json
+

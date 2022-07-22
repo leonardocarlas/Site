@@ -11,4 +11,7 @@ module.exports = {
     defaultLocale: 'en',
     localeDetection: false,
   },
+  env: {
+
+  },
 }

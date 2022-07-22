@@ -1,0 +1,55 @@
+@import './../../styles/variables.module.scss';
+@import './../../styles/utils.module.scss';
+
+@mixin background-svg {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.firstContainerDark, .firstContainerLight {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    @include background-svg();
+    p {
+        margin: 4rem 1rem 0 1rem;
+        text-align: center;
+    }
+    .coloredName {
+        animation: pulse 5s infinite;
+    }
+}
+
+.firstContainerDark {
+    background-color: $black;
+    color: $white;
+}
+
+
+@keyframes pulse {
+    0%, 100% {
+      color: $leoblue;
+    }
+    50% {
+      color: $leoviolet;
+    }
+}
+
+@media (min-width:1024px){ 
+    .firstContainerDark, .firstContainerLight {
+        aspect-ratio: 900/400;
+        background-image: url('../../public/svg/layer1.svg');
+    }
+}
+
+@media (max-width:1023px) {
+    .firstContainerDark, .firstContainerLight  {
+        aspect-ratio: 540/960;
+        background-image: url('../../public/svg/layer1mobile.svg');
+    }
+
+}

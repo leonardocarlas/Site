@@ -1,4 +1,115 @@
 {
-    "title": "Bienvenue",
-    "intro": "Salut"
+  "header": {
+    "services": "Services",
+    "blog": "Blog",
+    "languages": "Traduction",
+    "buttonContactMe": "Ecris-moi!"
+  },
+  "home": {
+    "section1" : {
+      "title" : "Je m'appelle Leonardo Carlassare e je suis un Ingénieur Informatique.",
+      "subtitle" : "J'aime programmer, travailler sur de nouveaux projets et apprendre de nouvelles choses chaque jour."
+    },
+    "section2" : {
+      "title" : "Salut! Ravi de te rencontrer.",
+      "subtitle" : "Une bréve introduction: J’ai obtenu mon diplôme en 2022 dans le cours magistral d’Ingénierie Informatique à l’Université de Padoue. Je travaille actuellement en tant que Développeur Frontend pour Sysdata S.p.A."
+    },
+    "board" : {
+      "frontend" : "Frontend Skills",
+      "backend" : "Backend Skills",
+      "devops" : "DevOps Skills",
+      "otherProgrammingLanguages" :  "autres langages de programmation que j’utilise"
+    },
+    "recentWorks" : {
+      "title" : "Travaux Récents",
+      "subtitle" : "J’ai développé des sites web pour les entreprises suivantes."
+    },
+    "projects": {
+      "title" : "Projets",
+      "startup" : "Collectionite",
+      "description" : "Collectionite était une application web pour les collectionneurs de cartes européens qui pouvait suivre automatiquement les prix des cartes. C’était aussi un réseau social qui reliait les gens avec la même passion. Avec quelques amis, nous avons commencé une collaboration avec la société allemande CardMarket, en utilisant leurs API pour mettre à jour les données. Le processus de développement est terminé en juin 2021",
+      "period" : "Juillet 2020 - Août 2021",
+      "online" : "N’est plus en ligne",
+      "viewRepo" : "consultez la repo",
+      "collaborations" : "Vous souhaitez collaborer avec moi ou investir dans un projet? J’aimerais prendre un café avec toi.",
+      "contactButton" : "Ecris-moi!!"
+    },
+    "studyCareer" : {
+      "title" : "Carrière Universitaire",
+      "subtitle" : "J'ai étudié dans les université suivants",
+      "universities" : {
+        "paduaBachelor" : {
+          "name" : "Université de Padoue",
+          "program" : "Ingegnerìe Informatique - Baccalauréat",
+          "period" : "Ottobre 2016 - Settembre 2019"
+        },
+        "uclmErasmus" : {
+          "name" : "Université de Castilla La Mancha",
+          "program" : "Erasmus+ pour Etudes",
+          "period" : "Gennaio 2020 - Luglio 2020"
+        },
+        "coimbraErasmus" : {
+          "name" : "Université de Coimbra",
+          "program" : "Erasmus+ pour Thèses",
+          "period" : "Septembre 2021 - Fevrier 2022"
+        },
+        "paduaMaster" : {
+          "name" : "Université de Padoue",
+          "program" : "Ingénierie Informatique - Maîtrise",
+          "period" : "Octobre 2019 - Septembre 2022"
+        }
+      }
+    },
+    "languagesSection" : {
+      "title"   : "Langues que j’essaie d’apprendre",
+      "esFront" : "Lire - Parler",
+      "enFront" : "Intermédiare / Avancé",
+      "itFront" : "Langue maternelle",
+      "frFront" : "Travaux en cours...",
+      "ptFront" : "Lire - Parler"
+    }
+  },
+  "services" : {
+    "title" : "Services",
+    "subtitle" : "qui sont en mesure d’offrir aux particuliers et aux entreprises",
+    "subtitleContact" : "N’hésitez pas à me demander n’importe quoi",
+    "contactButton" : "Ecris-moi!",
+    "websiteDev" : "Développement d’une application web",
+    "api" : "Développement d'une API",
+    "smartHomeConf" : "Configuration d'une Smart Home",
+    "intranetDev" : "Développement d’un intranet d’entreprise",
+    "optSoftware" : "Software d'optimisation",
+    "dataAnalys" : "Donnée analyse"
+  },
+  "blog" : {
+    "title" : "Coming sooooonn"
+  },
+  "languages" : {
+    "title" : "Tableau des traductions",
+    "subtitle" : "C’est comme ça que j’essaie d’apprendre différentes langues",
+    "from" : "Choisir une langue",
+    "word" : "Ecrì un mot en francé",
+    "textButton" : "Traduis"
+  },
+  "contact" : {
+    "title": "Écrivez-moi. Je vous répondrai dès que possible",
+    "subtitle" : "te demandant de prendre un café ensemble",
+    "nome" : "Prénom",
+    "email" : "Email",
+    "text" : "Texte",
+    "submit" : "Envoie",
+    "mailSuccess" : "Le message a été envoyé avec succès, vérifiez votre boîte de réception.",
+    "mailSuccessButton" : "Bon!",
+    "mailError" : "Une erreur s’est vérifiée. Veuillez réessayer",
+    "mailErrorButton" : "Ah, Ok.",
+    "api" : {
+      "objectMail" : "Votre message a été envoyé",
+      "bodyMail" : "Merci de me contacter. Je vous répondrai dès que possible. Cordiales salutations, Leonardo.",
+      "htmlMessage" : "L’email a été envoyé."
+    }
+  },
+  "footer": {
+    "websiteStack": "Ce site a été développé avec du sang et des larmes avec Next.js et Tailwind",
+    "rights" : "Tous droits réservés, 2022"
   }
+}

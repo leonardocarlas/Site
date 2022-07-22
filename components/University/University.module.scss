@@ -13,6 +13,7 @@
     margin: 1rem;
     border-radius: 15px;
     width: fit-content;
+    min-width: 32rem;
     
     &:hover {
         cursor: pointer;
@@ -34,4 +35,10 @@
         text-decoration: underline;
     }
 
+}
+
+@media (max-width:1023px) {
+    .universityContainer {
+        min-width: 10rem;
+    }
 }

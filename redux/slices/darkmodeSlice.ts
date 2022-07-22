@@ -8,7 +8,7 @@ interface DarkmodeState {
 
 // Define the initial state using that type
 const initialState: DarkmodeState = {
-  isDarkmode : false
+  isDarkmode : true
 }
 
 export const darkmodeSlice = createSlice({

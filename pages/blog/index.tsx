@@ -3,6 +3,8 @@ import utilStyles from '../../styles/utils.module.scss'
 import { GetStaticProps } from 'next';
 import { getSortedPostsData } from '../../utils/posts';
 import { useAppSelector } from '../../redux/hooks';
+import { useRouter } from 'next/router';
+import { Util } from '../../utils/util';
 
 export type blogPost = {
     date: string
@@ -12,7 +14,9 @@ export type blogPost = {
 
 export default function Blog( allPostsData : Array<blogPost> ) {
 
-    const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
+  let router = useRouter();
+  let t = Util.getLocale(router);
+  const isDarkmode = useAppSelector((state) => state.darkmode.isDarkmode);
     
     return (
         
@@ -20,7 +24,7 @@ export default function Blog( allPostsData : Array<blogPost> ) {
             <p 
               className={`${styles.element} ${utilStyles.title} ${'text-5xl'}`}
             >
-              Coming sooooonn
+              {t.blog.title}
             </p>                
           </div>
         
@@ -35,19 +39,3 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     }
   }
-
-  /*
-
-  {allPostsData.map(({ id, date, title }) => (
-    <li className={utilStyles.listItem} key={id}>
-    <Link href={`/posts/${id}`}>
-        <a>{title}</a>
-    </Link>
-    <br />
-    <small className={utilStyles.lightText}>
-        <p>Date</p>
-    </small>
-    </li>
-))}
-
-  */

@@ -1,8 +1,6 @@
-import * as t from './translations';
-
-import Translation from './Translation';
+import TranslatorJS from './translations'
 
 
 
-let s = t.translate('Dog', 'English', 'German');
+let s = TranslatorJS.translate('Dog', 'English', 'German');
 console.log(s);
