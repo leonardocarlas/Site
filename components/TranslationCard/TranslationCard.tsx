@@ -16,20 +16,14 @@ export default function TranslationCard(props : TranslationCardProps) {
     return (
         <>
             <div className={styles.cardContainer}>
-                
                 <div className={styles.titleContainer}>
-                  <div className={styles.imageContainer}>
-                      <Image
-                          src={props.image}
-                          height={30}
-                          width={30}
-                      />
-                  </div>
+                  <div className={styles.imageContainer}><Image src={props.image} height={30} width={30}/></div>
                   <p className={utilStyles.headingMd}>{props.language}</p>
                 </div>
-
-                <p className={utilStyles.headingMd}>{props.word}</p>
-                <p className={utilStyles.headingMd}>{props.phrase}</p>
+                <div className={styles.bodyContainer}>
+                    <p className={utilStyles.headingMd}>{props.word}</p>
+                    <p className={`${utilStyles.headingMd} text-center mb-10`}>{props.phrase}</p>
+                </div>
             </div>
         </>
     );

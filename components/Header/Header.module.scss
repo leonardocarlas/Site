@@ -1,7 +1,7 @@
 @import '../../styles/variables.module.scss';
 @import './../../styles/utils.module.scss';
 
-.headerContainerDark {
+.headerContainerDark, .headerContainerLight {
  
     nav {
         a {
@@ -19,38 +19,84 @@
         .hamburgerMenuContainer {
             border: 1px $white solid;
         }
+
+        .headerLink {
+            min-width: 7rem;
+            text-decoration: none;
+            color: $white;
+            &:link { /* Essentially means a[href], or that the link actually goes somewhere */
+                color: $white;
+            }
+            &:visited {
+                
+            }
+            &:hover {
+                border-bottom: 2px solid $white;
+            }
+            &:focus {
+                color: rgb(0, 255, 204);
+            }
+        }
     }
     padding:  0.5rem;
     margin :  0;
     border-bottom: 1px solid $white;
     background-color: $black;
+
+    .iconContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        border-radius: 5px;
+        margin-right: 0.4rem;
+        border: 1px $white solid;
+        margin: 1.2rem;
+    }
+
 }
 
 
 .headerContainerLight {
 
-    nav {
-        a {
-            .logo {
-                padding: 0.2rem;
+   
+    a, .logoname  {
+        color: $black !important;
+    }
 
-            }
-            .logoname {
-                color: $black;
-                padding-left: 0.5rem;
-            }
-            text-decoration: none;
+    .hamburgerMenuContainer {
+        border: 1px $black solid !important;
+    }
+
+    .iconContainer {
+        border-color: $black;
+        border: 1px $black solid;
+    }
+
+    .headerLink {
+        text-decoration: none;
+        color: $black !important;
+        min-width: 7rem;
+        &:link { /* Essentially means a[href], or that the link actually goes somewhere */
+            color: $white;
         }
-        
-        .hamburgerMenuContainer {
-            border: 1px $black solid;
+        &:visited {
+            
+        }
+        &:hover {
+            border-bottom: 2px solid $black !important;
+        }
+        &:focus {
+            color: rgb(75, 39, 255) !important;
         }
     }
-    padding:  0.5rem;
-    margin :  0;
+
     border-bottom: 1px solid $black;
     background-color: $white;
 }
+
+
+
 
 
 
@@ -83,8 +129,7 @@
         }
     }
     .logoname {
-        font-size: 100%;
-        font-weight: 600;
+        display:none;
     }
     .end {
         display: flex;

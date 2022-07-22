@@ -1,0 +1,114 @@
+{
+  "Header": {
+    "Dienste": "Dienste",
+    "Blog": "Blog",
+    "Sprachen": "Übersetzungen",
+    "buttonContactMe": "Kontaktiere mich!"
+  },
+  "Heimat": {
+    "Abschnitt 1" : {
+      "title" : "Mein Name ist Leonardo Carlassare und ich bin Software Engineer",
+      "subtitle" : "Ich mag Programmieren, arbeite gerne an neuen Projekten und lerne jeden Tag neue Dinge."
+    },
+    "Sektion 2" : {
+      "title" : "Hallo! Schön dich kennenzulernen",
+      "subtitle" : "Eine kurze Selbstvorstellung: Ich habe 2022 meinen Abschluss in Computer Engineering MSc an der Universität Padua gemacht. Derzeit arbeite ich als Frontend-Entwickler für Sysdata S.p.A."
+    },
+   "Tafel" : {
+      "frontend": "Frontend-Fähigkeiten",
+      "backend": "Backend-Fähigkeiten",
+      "devops": "DevOps-Fähigkeiten",
+      "otherProgrammingLanguages": "Andere Programmiersprachen, die ich verwende"
+    },
+   "neuesteWerke" : {
+      "title" : "Neueste Werke",
+      "subtitle" : "Ich habe die Website für die folgenden Unternehmen entwickelt."
+    },
+    "Projekte": {
+      "title" : "Projekte",
+      "startup": "Collectionite",
+      "description" : "Collectionite ist eine Webanwendung für europäische Kartensammler, die automatisch Kartenpreise für sie verfolgen konnte, und es war auch ein soziales Netzwerk für Menschen mit der gleichen Leidenschaft. Wir begannen eine Zusammenarbeit mit der deutschen Firma CardMarket, indem wir ihre APIs zum Sammeln nutzten Daten. Der Entwicklungsprozess endete im Juni 2021",
+"Zeitraum": "Juli 2020 - Juni 2021",
+"online": "Nicht mehr online",
+"viewRepo": "Repository anzeigen",
+      "collaborations" : "Möchten Sie zusammenarbeiten oder investieren? Ich würde gerne einen Kaffee mit Ihnen trinken.",
+      "contactButton": "Kontaktieren Sie mich!"
+    },
+      "studiumKarriere" : {
+      "title" : "Studienverlauf",
+      "subtitle" : "Für folgende Unternehmen habe ich die Website entwickelt.",
+      "Universitäten" : {
+        "paduaBachelor" : {
+          "name" : "Universität Padua",
+          "Programm": "Ingenieurinformatik - Bachelor",
+          "Zeitraum": "Oktober 2016 - September 2019"
+        },
+      "uclmErasmus": {
+          "name" : "University of Castilla La Mancha",
+          "Programm": "Erasmus+ fürs Studium",
+          "Zeitraum": "Januar 2020 - Juli 2020"
+        },
+       "coimbraErasmus" : {
+          "name" : "Universität Coimbra",
+          "Programm": "Erasmus+ für Abschlussarbeiten",
+          "Zeitraum": "September 2021 - Februar 2022"
+        },
+       "paduaMaster" : {
+          "name" : "Universität Padua",
+          "Programm": "Computer Engineering - Master Degree",
+          "Zeitraum": "Oktober 2019 - September 2022"
+        }
+      }
+    },
+    "Sprachenbereich" : {
+      "title" : "Sprachen, die ich zu lernen versuche",
+      "esFront": "Lesen - Sprechen",
+      "enFront" : "Fortgeschrittene / Fortgeschrittene",
+      "itFront" : "Muttersprache",
+      "frFront": "Vertraue dem Prozess...",
+      "ptFront": "Lesen - Sprechen"
+    }
+  },
+  "Dienstleistungen" : {
+    "title" : "Dienste",
+    "subtitle" : "Ich kann Privatpersonen und Firmen zur Verfügung stellen",
+    "subtitleContact": "Fühlen Sie sich frei, mich etwas zu fragen",
+    "contactButton": "Kontaktieren Sie mich!",
+    "websiteDev": "Website-Entwicklung",
+    "api": "API-Entwicklung",
+    "smartHomeConf" : "Smart Home Konfiguration",
+    "intranetDev": "Intranet-Entwicklung",
+    "optSoftware": "Optimierungssoftware",
+    "dataAnalys": "Datenanalyse"
+  },
+  "blog" : {
+    "titel" : "Demnächst verfügbar"
+  },
+  "Sprachen" : {
+    "title" : "Übersetzungstabelle",
+    "subtitle" : "So versuche ich verschiedene Sprachen zu lernen",
+    "von" : "von",
+    "textButton": "Zufälliges Wort"
+  },
+  "Kontakt" : {
+    "title": "Schreib mir. Ich schreibe dir zurück",
+    "subtitle" : "bitte um einen Kaffee zusammen",
+    "Name": "Name",
+    "Email Email",
+    "Text": "Text",
+    "Absenden Absenden",
+    "mailSuccess": "Die Nachricht wurde korrekt gesendet, gehen Sie und überprüfen Sie Ihren Posteingang.",
+    "mailSuccessButton": "Schön",
+    "mailError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut",
+    "mailErrorButton": "Oh, okay.",
+    "API": {
+      "objectMail": "Ihre Nachricht wurde gesendet",
+      "bodyMail": "Danke, dass Sie mich kontaktiert haben. Ich werde Ihnen so schnell wie möglich antworten. Viele Grüße, Leonardo.",
+      "htmlMessage": "Die E-Mail wurde gesendet"
+    }
+  },
+ "Fusszeile": {
+    "websiteStack": "Diese Website wurde neben Next.js und Tailwind mit viel Herzblut entwickelt",
+    "Rechte": "Alle Rechte vorbehalten, 2022"
+  }
+}
