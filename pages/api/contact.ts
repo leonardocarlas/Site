@@ -1,16 +1,30 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { useRouter } from 'next/router';
 import nodemailer, {Transporter} from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import { Util } from '../../utils/util';
+
 
 type Data = {
     sent : boolean
 }
 
+// body: {
+//     form: { name: 'LEONARDO', email: 'lio.del.bronx@gmail.com', text: 't' },
+//     locale: 'en'
+//   },
+
+
+
 export default async function handler(req : NextApiRequest, res: NextApiResponse<Data>) {
 
-    if (req.method == "POST") {
+    console.log(req.body);
+    console.log(process.env.EMAIL_SENDER)
+    console.log(process.env.EMAIL_PASSWORD)
 
-        console.log(process.env.customKey)
+    let t = Util.getLocaleFromString(req.body.locale);
+
+    if (req.method == "POST") {
 
         let transporter : Transporter =
             nodemailer.createTransport({
@@ -22,14 +36,24 @@ export default async function handler(req : NextApiRequest, res: NextApiResponse
                 }
             });
 
-        let options = {
-            from : `${req.body.email}`,
+        let options1 = {
+            from : process.env.EMAIL_SENDER,
             to   : process.env.EMAIL_SENDER,
-            subject: `${req.body.subject}`,
-            text: `${req.body.message}`,
+            subject: `${req.body.form.name} : a new message from ${req.body.form.email}`,
+            text: req.body.form.text,
         };
 
-        let result1 : SMTPTransport.SentMessageInfo = await transporter.sendMail(options);
+        let result1 : SMTPTransport.SentMessageInfo = await transporter.sendMail(options1); // To me
+
+        let options2 = {
+            from : process.env.EMAIL_SENDER,
+            to   : req.body.form.email,
+            subject: t.contact.apiObjectMail,
+            text: t.contact.apiBodyMail,
+        };
+
+
+        let result2 : SMTPTransport.SentMessageInfo = await transporter.sendMail(options2); // To client
 
         res.status(200).json({ sent : true })
     }
@@ -74,15 +98,15 @@ export default async function handler(req : NextApiRequest, res: NextApiResponse
 //             });
             
 //             let options = {
-//                 from : `${req.body.email}`,
+//                 from : `${req.body.form.email}`,
 //                 to   : 'lio.del.bronx@gmail.com',          // info@leonardocarlassare.com
-//                 subject: `${req.body.subject}`,
-//                 text: `${req.body.message}`,
+//                 subject: `${req.body.form.subject}`,
+//                 text: `${req.body.form.message}`,
 //             };
         
 //             let result1 : SMTPTransport.SentMessageInfo = await transporter.sendMail(options);
     
-//             options.to = `${req.body.email}`;
+//             options.to = `${req.body.form.email}`;
 //             options.subject = 'Your message has been sent';
 //             options.text = 'Thank you for contacting us. We will reply you as soon as possible';
     

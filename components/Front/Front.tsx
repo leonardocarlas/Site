@@ -22,9 +22,9 @@ export default function Front() {
                 <p className={`${utilStyles.heading2Xl} ${styles.coloredName}`}>{t.section1.title}</p>
                 <p className={utilStyles.headingLg}>{t.section1.subtitle}</p>
             </div>
-            <div className={'flex flex-wrap flex-row justify-center mb-4 md:mb-32 lg:mb-48'}>
+            {/* <div className={'flex flex-wrap flex-row justify-center mb-4 md:mb-32 lg:mb-48'}>
                 <Image src={arrowDown} height={20} width={20}></Image>
-            </div>
+            </div> */}
         </div>
     );
     

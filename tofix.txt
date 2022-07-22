@@ -1,18 +1,5 @@
-Carlos
-- Email universitario sembra di bambino. 
-- Se clicchi su privay non ti porta da nessuna parte (so che e ancora in costruzione) 
-- Stesso con cookies
-- Non capisco la translations table. Le parole non sono random e c'è un errore (yo in spagnolo, non jo)
-- Languages, en portugues: cão* (con la tilde, mi ero scordato)
-+ Ho appena visto che il brillo del logo cambia dependendo da in quale pagina sei. Mi piace
- - Url de linkedin: Si possono cambiare per fare che invece di essere 
- https://www.linkedin.com/in/leonardo-carlassare-03aa491b5/ sia
-  https://www.linkedin.com/in/leonardo-carlassare/ o una cosa del genere
-
-
 Andrea
 
 - su recent works metterei meno spazio tra i 2 brand
-- Study career: vedere i dettagli delle università, le università come cv, mettere le card tutte della stessa dim
 - services togliere l'immagine dell'ingranaggio, spiegare i servizi offerti/home/leonardo/Scrivania/MYSITE/public/locales/en/translation.json
 
